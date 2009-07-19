@@ -5,20 +5,20 @@
 
 <web-app>
 
-  <!-- Default page to serve -->
-  <welcome-file-list>
-    <welcome-file>Psytest.html</welcome-file>
-  </welcome-file-list>
-  
-  <!-- Servlets -->
-  <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.mamykin.psytest.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/psytest/greet</url-pattern>
-  </servlet-mapping>
+	<!-- Default page to serve -->
+	<welcome-file-list>
+		<welcome-file>Psytest.html</welcome-file>
+	</welcome-file-list>
+
+	<!-- Servlets -->
+	<servlet>
+		<servlet-name>studyServlet</servlet-name>
+		<servlet-class>com.mamykin.psytest.server.StudyServiceImpl</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>studyServlet</servlet-name>
+		<url-pattern>/psytest/study</url-pattern>
+	</servlet-mapping>
 
 </web-app>
