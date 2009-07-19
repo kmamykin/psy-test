@@ -28,4 +28,13 @@ public class StudyRunPanel extends VerticalPanel implements StudyRunController.R
 		super.setVisible(visible);
 	}
 
+	public void setContent(String[] elements) {
+		content.setText(""); // clear the slide
+		StringBuilder sbBuilder = new StringBuilder();
+		for(String element : elements){
+			sbBuilder.append(element).append("<br>");
+		}
+		content.setText(sbBuilder.toString());
+	}
+
 }
