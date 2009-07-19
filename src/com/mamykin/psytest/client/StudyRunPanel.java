@@ -5,7 +5,7 @@ import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class StudyRunPanel extends VerticalPanel{
+public class StudyRunPanel extends VerticalPanel implements StudyRunController.RunView {
 
 	Label content = new Label(); 
 	Button continueButton = new Button("Continue");
@@ -22,6 +22,10 @@ public class StudyRunPanel extends VerticalPanel{
 
 	public void setContent(long currentTimeMillis) {
 		content.setText(Long.toString(currentTimeMillis));
+	}
+
+	public void setVisible(Boolean visible) {
+		super.setVisible(visible);
 	}
 
 }

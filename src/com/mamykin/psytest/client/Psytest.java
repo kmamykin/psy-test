@@ -19,7 +19,7 @@ public class Psytest implements EntryPoint {
 	/**
 	 * Create a remote service proxy to talk to the server-side Greeting service.
 	 */
-	private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
+	//private final GreetingServiceAsync greetingService = GWT.create(GreetingService.class);
 
 	private final StudyStartPanel startTestPanel = new StudyStartPanel();
 	private final StudyRunPanel studyRunPanel = new StudyRunPanel();
@@ -34,5 +34,6 @@ public class Psytest implements EntryPoint {
 		mainRootPanel.add(studyRunPanel);
 		mainRootPanel.add(studyFinishPanel);
 		this.controller = new StudyRunController(startTestPanel, studyRunPanel, studyFinishPanel);
+		this.controller.start();
 	}
 }

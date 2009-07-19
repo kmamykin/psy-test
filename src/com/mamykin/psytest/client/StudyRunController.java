@@ -2,33 +2,60 @@ package com.mamykin.psytest.client;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.HasClickHandlers;
 
 public class StudyRunController {
 	interface StartView {
+		void setGroupsList(String[] groups);
 
+		String getSelectedGroup();
+
+		HasClickHandlers getStartButton();
+
+		void setVisible(Boolean visible);
 	}
 
-	private StudyStartPanel startView;
-	private StudyRunPanel runView;
-	private StudyFinishPanel finishView;
+	interface RunView {
+		void setContent(long content);
+
+		HasClickHandlers getContinueButton();
+
+		void setVisible(Boolean visible);
+	}
+
+	interface FinishView {
+		HasClickHandlers getFinishButton();
+
+		void setVisible(Boolean visible);
+	}
+
+	private StartView startView;
+	private RunView runView;
+	private FinishView finishView;
 	private int slideCount;
 
-	public StudyRunController(StudyStartPanel startView,
-			StudyRunPanel runPanel, StudyFinishPanel finishPanel) {
+	public StudyRunController(StartView startView, RunView runView,
+			FinishView finishView) {
 		this.startView = startView;
-		this.runView = runPanel;
-		this.finishView = finishPanel;
-		initializeViews();
+		this.runView = runView;
+		this.finishView = finishView;
+		wireEvents();
 	}
 
-	private void initializeViews() {
+	public void start() {
 		startView.setVisible(true);
+		startView.setGroupsList(new String[] { "Group1", "Group2", "Group3" });
+		runView.setVisible(false);
+		finishView.setVisible(false);
+	}
+
+	private void wireEvents() {
 		startView.getStartButton().addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
 				startRun();
 			}
 		});
-		runView.setVisible(false);
+
 		runView.getContinueButton().addClickHandler(new ClickHandler() {
 
 			public void onClick(ClickEvent event) {
@@ -36,7 +63,7 @@ public class StudyRunController {
 			}
 
 		});
-		finishView.setVisible(false);
+
 		finishView.getFinishButton().addClickHandler(new ClickHandler() {
 
 			public void onClick(ClickEvent event) {
