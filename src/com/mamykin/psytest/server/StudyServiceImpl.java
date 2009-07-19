@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.mamykin.psytest.client.StudyService;
 import com.mamykin.psytest.client.model.Study;
+import com.mamykin.psytest.client.model.StudyRun;
 import com.mamykin.psytest.client.model.StudySlide;
 import com.mamykin.psytest.client.model.elements.StudySlideParagraph;
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
@@ -42,8 +43,8 @@ public class StudyServiceImpl extends RemoteServiceServlet implements
 			+ "pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa "
 			+ "qui officia deserunt mollit anim id est laborum.";
 
-	public ArrayList<StudySlide> getStudyRunSlides(String groupName,
-			String caseName) {
+	public StudyRun getStudyRun(String groupName, String caseName,
+			String participant) {
 		ArrayList<StudySlide> slides = new ArrayList<StudySlide>();
 
 		StudySlide slide1 = new StudySlide();
@@ -55,9 +56,10 @@ public class StudyServiceImpl extends RemoteServiceServlet implements
 		StudySlide slide2 = new StudySlide();
 		slide2.addElement(new StudySlideParagraph(loremIpsum)).addElement(
 				new StudySlideParagraph(loremIpsum)).addElement(
+				new StudySlideParagraph(loremIpsum)).addElement(
 				new StudySlideParagraph(loremIpsum));
 		slides.add(slide2);
 
-		return slides;
+		return new StudyRun(participant, slides);
 	}
 }

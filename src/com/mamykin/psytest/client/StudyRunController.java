@@ -1,6 +1,5 @@
 package com.mamykin.psytest.client;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
@@ -12,7 +11,7 @@ import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.Widget;
 import com.mamykin.psytest.client.model.Study;
-import com.mamykin.psytest.client.model.StudySlide;
+import com.mamykin.psytest.client.model.StudyRun;
 
 public class StudyRunController {
 
@@ -64,9 +63,7 @@ public class StudyRunController {
 	private FinishView finishView;
 	private StudyServiceAsync studyService;
 	private ErrorsNotification errorsNotification;
-	private ArrayList<StudySlide> slides;
-	private int currentSlide;
-	private String currentPatricipant;
+	private StudyRun currentRun;
 
 	public StudyRunController(StartView startView, RunView runView,
 			FinishView finishView, ErrorsNotification errorsNotification,
@@ -109,14 +106,14 @@ public class StudyRunController {
 	private void wireEvents() {
 		startView.getStartButton().addClickHandler(new ClickHandler() {
 			public void onClick(ClickEvent event) {
-				startRun();
+				startButtonPressed();
 			}
 		});
 
 		runView.getContinueButton().addClickHandler(new ClickHandler() {
 
 			public void onClick(ClickEvent event) {
-				nextSlide();
+				nextSlideButtonPressed();
 			}
 
 		});
@@ -124,59 +121,52 @@ public class StudyRunController {
 		finishView.getFinishButton().addClickHandler(new ClickHandler() {
 
 			public void onClick(ClickEvent event) {
-				finishRun();
+				finishButtonPressed();
 			}
 
 		});
 	}
 
-	private void startRun() {
+	private void startButtonPressed() {
+		retrieveStudyRunSlides();
 		startView.setVisible(false);
 		runView.setVisible(true);
-		this.currentPatricipant = startView.getParticipantName().getValue();
-		startView.getParticipantName().setValue("");
-		retrieveStudyRunSlides();
 	}
 
 	private void retrieveStudyRunSlides() {
-		studyService.getStudyRunSlides(startView.getSelectedGroup(), startView
-				.getSelectedCase(), new AsyncCallback<ArrayList<StudySlide>>() {
+		studyService.getStudyRun(startView.getSelectedGroup(), startView
+				.getSelectedCase(), startView.getParticipantName().getValue(),
+				new AsyncCallback<StudyRun>() {
 
 					public void onFailure(Throwable caught) {
 						errorsNotification.displayError(caught.getMessage());
 					}
 
-					public void onSuccess(ArrayList<StudySlide> result) {
-						displaySlides(result);
+					public void onSuccess(StudyRun result) {
+						displayStudyRun(result);
 					}
-		});
+				});
 	}
 
-	protected void displaySlides(ArrayList<StudySlide> result) {
-		this.slides = result;
-		this.currentSlide = 0;
-		displayCurrentSlide();
+	protected void displayStudyRun(StudyRun run) {
+		this.currentRun = run;
+		displayNextSlide();
 	}
 
-	private void displayCurrentSlide() {
-		runView.setContent(getCurrentSlide().createUIElements());
+	private void displayNextSlide() {
+		runView.setContent(currentRun.getNextSlide().createUIElements());
 	}
 
-	private StudySlide getCurrentSlide() {
-		return slides.get(currentSlide);
-	}
-
-	protected void nextSlide() {
-		currentSlide++;
-		if (currentSlide >= slides.size()) {
+	protected void nextSlideButtonPressed() {
+		if (currentRun.hasMoreSlides()) {
+			displayNextSlide();
+		} else {
 			runView.setVisible(false);
 			finishView.setVisible(true);
-		} else {
-			displayCurrentSlide();
 		}
 	}
 
-	private void finishRun() {
+	private void finishButtonPressed() {
 		finishView.setVisible(false);
 		startView.setVisible(true);
 	}

@@ -9,13 +9,16 @@ import com.google.gwt.user.client.ui.Widget;
 
 public class StudyRunPanel extends VerticalPanel implements StudyRunController.RunView {
 
+	VerticalPanel main = new VerticalPanel();
 	VerticalPanel content = new VerticalPanel(); 
 	Button continueButton = new Button("Continue");
 	
 	public StudyRunPanel() {
 		super();
-		this.add(content);
-		this.add(continueButton);
+		this.add(main);
+		main.setHorizontalAlignment(ALIGN_CENTER);
+		main.add(content);
+		main.add(continueButton);
 	}
 	
 	public HasClickHandlers getContinueButton(){

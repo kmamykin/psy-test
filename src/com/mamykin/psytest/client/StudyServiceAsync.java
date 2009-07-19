@@ -1,10 +1,8 @@
 package com.mamykin.psytest.client;
 
-import java.util.ArrayList;
-
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.mamykin.psytest.client.model.Study;
-import com.mamykin.psytest.client.model.StudySlide;
+import com.mamykin.psytest.client.model.StudyRun;
 
 /**
  * The async counterpart of <code>StudyService</code>.
@@ -12,7 +10,7 @@ import com.mamykin.psytest.client.model.StudySlide;
 public interface StudyServiceAsync {
 	void getStudy(AsyncCallback<Study> callback);
 
-	void getStudyRunSlides(String groupName, String caseName,
-			AsyncCallback<ArrayList<StudySlide>> callback);
+	void getStudyRun(String groupName, String caseName, String participant,
+			AsyncCallback<StudyRun> callback);
 
 }
