@@ -2,6 +2,7 @@ package com.mamykin.psytest.client;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
@@ -9,6 +10,7 @@ import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HasValue;
+import com.google.gwt.user.client.ui.Widget;
 import com.mamykin.psytest.client.model.Study;
 import com.mamykin.psytest.client.model.StudySlide;
 
@@ -33,7 +35,7 @@ public class StudyRunController {
 	}
 
 	interface RunView {
-		void setContent(String[] elements);
+		void setContent(List<Widget> elements);
 
 		HasClickHandlers getContinueButton();
 
@@ -157,7 +159,7 @@ public class StudyRunController {
 	}
 
 	private void displayCurrentSlide() {
-		runView.setContent(getCurrentSlide().getElements());
+		runView.setContent(getCurrentSlide().createUIElements());
 	}
 
 	private StudySlide getCurrentSlide() {

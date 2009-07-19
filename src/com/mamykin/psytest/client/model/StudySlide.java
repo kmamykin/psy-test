@@ -1,26 +1,40 @@
 package com.mamykin.psytest.client.model;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.google.gwt.user.client.ui.Widget;
 
 public class StudySlide implements Serializable{
 
 	private static final long serialVersionUID = 1950612878896366169L;
 
-	private String[] elements;
+	private ArrayList<StudySlideElement> elements;
 	
 	public StudySlide() {
-		this.elements = new String[]{};
-	}
-	public StudySlide(String... elements) {
-		this.elements = elements;
+		this.elements = new ArrayList<StudySlideElement>();
 	}
 
-	public String[] getElements() {
+	public ArrayList<StudySlideElement> getElements() {
 		return elements;
 	}
 
-	public void setElements(String[] elements) {
+	public void setElements(ArrayList<StudySlideElement> elements) {
 		this.elements = elements;
+	}
+	
+	public StudySlide addElement(StudySlideElement element){
+		elements.add(element);
+		return this;
+	}
+	
+	public List<Widget> createUIElements(){
+		List<Widget> widgets = new ArrayList<Widget>();
+		for(StudySlideElement element : elements){
+			widgets.add(element.createUIElement());
+		}
+		return widgets;
 	}
 
 }

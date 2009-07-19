@@ -1,13 +1,15 @@
 package com.mamykin.psytest.client;
 
+import java.util.List;
+
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.ui.Button;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
+import com.google.gwt.user.client.ui.Widget;
 
 public class StudyRunPanel extends VerticalPanel implements StudyRunController.RunView {
 
-	Label content = new Label(); 
+	VerticalPanel content = new VerticalPanel(); 
 	Button continueButton = new Button("Continue");
 	
 	public StudyRunPanel() {
@@ -20,21 +22,15 @@ public class StudyRunPanel extends VerticalPanel implements StudyRunController.R
 		return continueButton;
 	}
 
-	public void setContent(long currentTimeMillis) {
-		content.setText(Long.toString(currentTimeMillis));
-	}
-
 	public void setVisible(Boolean visible) {
 		super.setVisible(visible);
 	}
 
-	public void setContent(String[] elements) {
-		content.setText(""); // clear the slide
-		StringBuilder sbBuilder = new StringBuilder();
-		for(String element : elements){
-			sbBuilder.append(element).append("<br>");
+	public void setContent(List<Widget> elements) {
+		content.clear();
+		for(Widget widget : elements){
+			content.add(widget);
 		}
-		content.setText(sbBuilder.toString());
 	}
 
 }
