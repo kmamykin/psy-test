@@ -4,6 +4,7 @@ import java.io.Serializable;
 
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.Widget;
+import com.mamykin.psytest.client.model.StudyResultLogger;
 import com.mamykin.psytest.client.model.StudySlideElement;
 
 public class StudySlideParagraph extends StudySlideElement implements
@@ -13,10 +14,11 @@ public class StudySlideParagraph extends StudySlideElement implements
 	private String text;
 
 	public StudySlideParagraph() {
-		this("");
+		this("", "");
 	}
 
-	public StudySlideParagraph(String text) {
+	public StudySlideParagraph(String id, String text) {
+		super(id);
 		this.text = text;
 	}
 
@@ -34,8 +36,13 @@ public class StudySlideParagraph extends StudySlideElement implements
 	}
 
 	@Override
-	public String id() {
-		return Integer.toString(text.hashCode());
+	public boolean isUIValid() {
+		return true;
+	}
+
+	@Override
+	public void recordResult(StudyResultLogger logger) {
+		// do nothing
 	}
 
 }

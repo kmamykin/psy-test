@@ -150,25 +150,43 @@ public class StudyRunController {
 
 	protected void displayStudyRun(StudyRun run) {
 		this.currentRun = run;
-		displayNextSlide();
-	}
-
-	private void displayNextSlide() {
-		runView.setContent(currentRun.getNextSlide().createUIElements());
+		displayCurrentSlide();
 	}
 
 	protected void nextSlideButtonPressed() {
-		if (currentRun.hasMoreSlides()) {
-			displayNextSlide();
-		} else {
-			runView.setVisible(false);
-			finishView.setVisible(true);
+		if (currentRun.currentSlideValid()) {
+			currentRun.currentSlideRecordResults();
+
+			if (currentRun.hasMoreSlides()) {
+				currentRun.moveToNextSlide();
+				displayCurrentSlide();
+			} else {
+				runView.setVisible(false);
+				finishView.setVisible(true);
+			}
 		}
 	}
 
+	private void displayCurrentSlide() {
+		runView.setContent(currentRun.getCurrentSlide().createUIElements());
+	}
+
 	private void finishButtonPressed() {
-		finishView.setVisible(false);
-		startView.setVisible(true);
+		recordStudyResults();
+	}
+
+	private void recordStudyResults() {
+		studyService.recordRunResults(currentRun.getResults(),
+				new AsyncCallback<Boolean>() {
+
+					public void onFailure(Throwable caught) {
+						errorsNotification.displayError(caught.getMessage());
+					}
+
+					public void onSuccess(Boolean result) {
+						start();
+					}
+				});
 	}
 
 }
