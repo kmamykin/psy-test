@@ -2,7 +2,7 @@ package com.mamykin.psytest.client;
 
 import com.google.gwt.user.client.rpc.RemoteService;
 import com.google.gwt.user.client.rpc.RemoteServiceRelativePath;
-import com.mamykin.psytest.client.model.Study;
+import com.mamykin.psytest.client.model.StudyInfo;
 import com.mamykin.psytest.client.model.StudyRun;
 import com.mamykin.psytest.client.model.StudyRunResults;
 
@@ -11,7 +11,7 @@ import com.mamykin.psytest.client.model.StudyRunResults;
  */
 @RemoteServiceRelativePath("study")
 public interface StudyService extends RemoteService {
-	Study getStudy();
+	StudyInfo getStudyInfo();
 	StudyRun getStudyRun(String groupName, String caseName, String participant);
 	boolean recordRunResults(StudyRunResults results);
 }

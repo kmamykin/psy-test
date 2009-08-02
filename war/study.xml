@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <study name="study name">
-	
+	<groups>
+		<group name="Group1"></group>
+		<group name="Group2"></group>
+		<group name="Group3"></group>
+	</groups>
+
+	<cases>
+		<case name="Case1"></case>
+		<case name="Case2"></case>
+		<case name="Case3"></case>
+	</cases>
+
+	<slides>
+		<slide></slide>
+		<slide></slide>
+		<slide></slide>
+		<slide></slide>
+	</slides>
 </study>

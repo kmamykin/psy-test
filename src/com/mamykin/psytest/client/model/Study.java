@@ -35,5 +35,9 @@ public class Study implements Serializable {
 	public void setCases(ArrayList<String> cases) {
 		this.cases = cases;
 	}
+	
+	public StudyInfo getStudyInfo(){
+		return new StudyInfo(getName(), getGroups(), getCases());
+	}
 
 }

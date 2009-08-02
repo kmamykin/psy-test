@@ -11,6 +11,7 @@ import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.Widget;
 import com.mamykin.psytest.client.model.Study;
+import com.mamykin.psytest.client.model.StudyInfo;
 import com.mamykin.psytest.client.model.StudyRun;
 
 public class StudyRunController {
@@ -84,22 +85,22 @@ public class StudyRunController {
 	}
 
 	private void retrieveStudy() {
-		studyService.getStudy(new AsyncCallback<Study>() {
+		studyService.getStudyInfo(new AsyncCallback<StudyInfo>() {
 
 			public void onFailure(Throwable caught) {
 				errorsNotification.displayError(caught.getMessage());
 			}
 
-			public void onSuccess(Study result) {
+			public void onSuccess(StudyInfo result) {
 				displayStudy(result);
 			}
 		});
 	}
 
-	private void displayStudy(Study study) {
-		startView.getStudyName().setText(study.getName());
-		startView.setGroupsList(study.getGroups());
-		startView.setCasesList(study.getCases());
+	private void displayStudy(StudyInfo info) {
+		startView.getStudyName().setText(info.getName());
+		startView.setGroupsList(info.getGroups());
+		startView.setCasesList(info.getCases());
 		startView.getParticipantName().setValue("");
 	}
 

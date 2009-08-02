@@ -14,6 +14,7 @@ import org.xml.sax.SAXException;
 
 import com.mamykin.psytest.client.StudyService;
 import com.mamykin.psytest.client.model.Study;
+import com.mamykin.psytest.client.model.StudyInfo;
 import com.mamykin.psytest.client.model.StudyRun;
 import com.mamykin.psytest.client.model.StudyRunResults;
 import com.mamykin.psytest.client.model.StudySlide;
@@ -32,7 +33,7 @@ public class StudyServiceImpl extends RemoteServiceServlet implements
 	private static final Logger log = Logger.getLogger(StudyServiceImpl.class
 			.getName());
 
-	public Study getStudy() {
+	public StudyInfo getStudyInfo() {
 		Study newStudy = new Study();
 		newStudy.setName("Some Study");
 		ArrayList<String> groups = new ArrayList<String>();
@@ -48,7 +49,7 @@ public class StudyServiceImpl extends RemoteServiceServlet implements
 		cases.add("Case3");
 		cases.add("Case4");
 		newStudy.setCases(cases);
-		return newStudy;
+		return newStudy.getStudyInfo();
 	}
 
 	private final String loremIpsum = "Lorem ipsum dolor sit amet, consectetur adipisicing elit, "
