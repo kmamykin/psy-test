@@ -15,19 +15,19 @@ public class StudySlideSingleChoice extends StudySlideElement implements
 		Serializable {
 
 	private static final long serialVersionUID = -1243708904233988308L;
-	
+
 	private String question;
-	private String[] answers;
+	private List<String> answers;
 	private int correctAnswerIndex;
-	
+
 	private List<RadioButton> radioButtons;
 
 	public StudySlideSingleChoice() {
-		super("");
+		this("", "", new ArrayList<String>(), 0);
 	}
 
-	public StudySlideSingleChoice(String id, String question, String[] answers,
-			int correctAnswerIndex) {
+	public StudySlideSingleChoice(String id, String question,
+			List<String> answers, int correctAnswerIndex) {
 		super(id);
 		this.question = question;
 		this.answers = answers;
@@ -43,12 +43,12 @@ public class StudySlideSingleChoice extends StudySlideElement implements
 		this.question = question;
 	}
 
-	public String[] getAnswers() {
+	public List<String> getAnswers() {
 		return answers;
 	}
 
-	public void setAnswers(String[] answers) {
-		this.answers = answers;
+	public void addAnswer(String value) {
+		this.answers.add(value);
 	}
 
 	public int getCorrectAnswerIndex() {
@@ -63,7 +63,7 @@ public class StudySlideSingleChoice extends StudySlideElement implements
 	public Widget createUIElement() {
 		VerticalPanel panel = new VerticalPanel();
 		panel.add(new Label(question));
-		for(String answer : answers){
+		for (String answer : answers) {
 			RadioButton radioButton = new RadioButton(getId(), answer);
 			radioButtons.add(radioButton);
 			panel.add(radioButton);
@@ -78,19 +78,21 @@ public class StudySlideSingleChoice extends StudySlideElement implements
 
 	@Override
 	public void recordResult(StudyResultLogger logger) {
-		logger.addValue(getId(), "user_selection", Integer.toString(getCurrentSelectionIndex()));
-		logger.addValue(getId(), "correct_answer", Integer.toString(correctAnswerIndex));
+		logger.addValue(getId(), "user_selection", Integer
+				.toString(getCurrentSelectionIndex()));
+		logger.addValue(getId(), "correct_answer", Integer
+				.toString(correctAnswerIndex));
 	}
 
 	private int getCurrentSelectionIndex() {
-		for( int i = 0; i < radioButtons.size(); i++){
+		for (int i = 0; i < radioButtons.size(); i++) {
 			RadioButton rb = radioButtons.get(i);
-			if(rb.getValue() == true){
+			if (rb.getValue() == true) {
 				// something is selected
 				return i;
 			}
 		}
-		// nothing is selected 
+		// nothing is selected
 		return -1;
 	}
 

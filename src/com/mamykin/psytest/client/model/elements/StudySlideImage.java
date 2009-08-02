@@ -24,7 +24,7 @@ public class StudySlideImage extends StudySlideElement implements Serializable {
 	@Override
 	public Widget createUIElement() {
 		Image image = new Image();
-		image.setUrl("http://localhost:8080" + imageRelativeUrl);
+		image.setUrl(imageRelativeUrl);
 		return image;
 	}
 

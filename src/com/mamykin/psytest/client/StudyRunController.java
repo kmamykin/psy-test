@@ -10,7 +10,6 @@ import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HasValue;
 import com.google.gwt.user.client.ui.Widget;
-import com.mamykin.psytest.client.model.Study;
 import com.mamykin.psytest.client.model.StudyInfo;
 import com.mamykin.psytest.client.model.StudyRun;
 

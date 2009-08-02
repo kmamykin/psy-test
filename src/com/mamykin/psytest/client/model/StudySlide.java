@@ -10,12 +10,21 @@ public class StudySlide implements Serializable {
 
 	private static final long serialVersionUID = 1950612878896366169L;
 
+	private String name;
 	private ArrayList<StudySlideElement> elements;
 
 	public StudySlide() {
 		this.elements = new ArrayList<StudySlideElement>();
 	}
 
+	public String getName(){
+		return name;
+	}
+	
+	public void setName(String value){
+		name = value;
+	}
+	
 	public ArrayList<StudySlideElement> getElements() {
 		return elements;
 	}

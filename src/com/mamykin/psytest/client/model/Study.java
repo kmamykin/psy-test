@@ -1,16 +1,13 @@
 package com.mamykin.psytest.client.model;
 
-import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.List;
 
-public class Study implements Serializable {
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -5837029246857886526L;
+public class Study {
 	String name = "";
-	ArrayList<String> groups = new ArrayList<String>();
-	ArrayList<String> cases = new ArrayList<String>();
+	List<String> groups = new ArrayList<String>();
+	List<String> cases = new ArrayList<String>();
+	List<StudySlide> slides = new ArrayList<StudySlide>();
 
 	public String getName() {
 		return name;
@@ -20,24 +17,36 @@ public class Study implements Serializable {
 		this.name = name;
 	}
 
-	public ArrayList<String> getGroups() {
+	public List<String> getGroups() {
 		return groups;
 	}
 
-	public void setGroups(ArrayList<String> groups) {
-		this.groups = groups;
+	public void addGroup(String group) {
+		this.groups.add(group);
 	}
 
-	public ArrayList<String> getCases() {
+	public List<String> getCases() {
 		return cases;
 	}
 
-	public void setCases(ArrayList<String> cases) {
-		this.cases = cases;
+	public void addCase(String aCase) {
+		this.cases.add(aCase);
+	}
+	
+	public List<StudySlide> getSlides(){
+		return slides;
+	}
+	
+	public void addSlide(StudySlide slide){
+		slides.add(slide);
 	}
 	
 	public StudyInfo getStudyInfo(){
 		return new StudyInfo(getName(), getGroups(), getCases());
 	}
 
+	public StudyRun createRun(String groupName, String caseName,
+			String participant) {
+		return new StudyRun(participant, getSlides());
+	}
 }

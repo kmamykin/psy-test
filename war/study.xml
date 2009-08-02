@@ -13,9 +13,32 @@
 	</cases>
 
 	<slides>
-		<slide></slide>
-		<slide></slide>
-		<slide></slide>
-		<slide></slide>
+		<slide name="slide1">
+			<paragraph>
+				Aliquam dignissim imperdiet magna at euismod. Fusce
+				lobortis tortor non ligula accumsan ac cursus est pulvinar. Nam
+				tempus diam nisl, eget viverra ligula. Aliquam tempor placerat ante,
+				eget vehicula nisi malesuada a. Aliquam sollicitudin felis sed odio
+				cursus quis mollis orci posuere. Pellentesque habitant morbi
+				tristique senectus et netus et malesuada fames ac turpis egestas.
+				Morbi faucibus elementum arcu, a bibendum odio pharetra in.
+				Suspendisse vulputate elementum mollis. Integer volutpat sem nec
+				justo lacinia ullamcorper. Nam consectetur posuere dapibus. Nulla
+				nunc nibh, venenatis nec ultricies a, mattis eget sapien.
+			</paragraph>
+			<image id="image1" url="/images/breakfast.jpg"/>
+			<singlechoice id="image1question">
+				<question>What is the meaning of this picture?</question>
+				<answer correct="true">This is breakfast</answer>
+				<answer>This is lunch</answer>
+				<answer>This is dinner</answer>
+			</singlechoice> 
+		</slide>
+		<slide name="slide2">
+		</slide>
+		<slide name="slide3">
+		</slide>
+		<slide name="slide4">
+		</slide>
 	</slides>
 </study>
