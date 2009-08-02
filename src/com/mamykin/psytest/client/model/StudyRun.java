@@ -48,6 +48,6 @@ public class StudyRun implements Serializable {
 	}
 
 	public boolean currentSlideValid() {
-		return getCurrentSlide().isValid();
+		return getCurrentSlide().allElementsValid();
 	}
 }

@@ -46,7 +46,7 @@ public class StudySlide implements Serializable {
 		return widgets;
 	}
 
-	public boolean isValid() {
+	public boolean allElementsValid() {
 		boolean allElementsValid = true;
 		for (StudySlideElement element : elements) {
 			if (!element.isUIValid()) {
