@@ -18,6 +18,7 @@ import com.mamykin.psytest.client.model.StudySlideElement;
 import com.mamykin.psytest.client.model.elements.StudySlideImage;
 import com.mamykin.psytest.client.model.elements.StudySlideParagraph;
 import com.mamykin.psytest.client.model.elements.StudySlideSingleChoice;
+import com.mamykin.psytest.client.model.elements.StudySlideTextArea;
 
 public class StudyFactory {
 
@@ -69,7 +70,7 @@ public class StudyFactory {
 	}
 
 	private enum ElementType {
-		paragraph, image, singlechoice
+		paragraph, image, singlechoice, textarea
 	}
 
 	private StudySlide parseSlide(Element node) {
@@ -91,6 +92,9 @@ public class StudyFactory {
 				case singlechoice:
 					slide.addElement(parseSingleChoice(slideElement));
 					break;
+				case textarea:
+					slide.addElement(parseTextArea(slideElement));
+					break;
 
 				default:
 					break;
@@ -98,6 +102,10 @@ public class StudyFactory {
 			}
 		}
 		return slide;
+	}
+
+	private StudySlideElement parseTextArea(Element slideElement) {
+		return new StudySlideTextArea(slideElement.getAttribute("id"));
 	}
 
 	private StudySlideElement parseSingleChoice(Element slideElement) {
