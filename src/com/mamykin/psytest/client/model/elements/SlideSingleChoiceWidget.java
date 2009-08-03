@@ -3,6 +3,9 @@ package com.mamykin.psytest.client.model.elements;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gwt.user.client.ui.HasVerticalAlignment;
+import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Image;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -19,10 +22,19 @@ public class SlideSingleChoiceWidget extends SlideElementWidget {
 		this.element = element;
 		this.radioButtons = new ArrayList<RadioButton>();
 		panel.add(new Label(element.getQuestion()));
-		for (String answer : element.getAnswers()) {
-			RadioButton radioButton = new RadioButton(element.getId(), answer);
+		for (SlideChoiceAnswer answer : element.getAnswers()) {
+			HorizontalPanel answerPanel = new HorizontalPanel();
+			answerPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
+			RadioButton radioButton = new RadioButton(element.getId(), answer.getText());
+			
 			radioButtons.add(radioButton);
-			panel.add(radioButton);
+			if(answer.hasImage()){
+				Image image = new Image();
+				image.setUrl(answer.getImageUrl());
+				answerPanel.add(image);
+			}
+			answerPanel.add(radioButton);
+			panel.add(answerPanel);
 		}
 		initWidget(panel);
 	}

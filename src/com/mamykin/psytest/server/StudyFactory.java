@@ -2,6 +2,7 @@ package com.mamykin.psytest.server;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -16,6 +17,7 @@ import org.xml.sax.SAXException;
 import com.mamykin.psytest.client.model.Study;
 import com.mamykin.psytest.client.model.StudySlide;
 import com.mamykin.psytest.client.model.StudySlideElement;
+import com.mamykin.psytest.client.model.elements.SlideChoiceAnswer;
 import com.mamykin.psytest.client.model.elements.SlideImageElement;
 import com.mamykin.psytest.client.model.elements.SlideParagraphElement;
 import com.mamykin.psytest.client.model.elements.SlideSingleChoiceElement;
@@ -71,7 +73,7 @@ public class StudyFactory {
 	}
 
 	private enum ElementType {
-		paragraph, image, singlechoice, textarea
+		paragraph, image, singlechoice, textarea, imagesinglechoice
 	}
 
 	private StudySlide parseSlide(Element node) {
@@ -113,21 +115,28 @@ public class StudyFactory {
 		String id = slideElement.getAttribute("id");
 		String question = slideElement.getElementsByTagName("question").item(0)
 				.getTextContent();
-		ArrayList<String> answers = new ArrayList<String>();
-		int correctAnswerIndex = -1;
+		List<SlideChoiceAnswer> answers = parseChoiceAnswers(slideElement);
+		return new SlideSingleChoiceElement(id, question, answers);
+	}
+
+	private List<SlideChoiceAnswer> parseChoiceAnswers(Element slideElement) {
+		ArrayList<SlideChoiceAnswer> answers = new ArrayList<SlideChoiceAnswer>();
 		NodeList answerNodes = slideElement.getElementsByTagName("answer");
 		for (int i = 0; i < answerNodes.getLength(); i++) {
 			Element answerElement = (Element) answerNodes.item(i);
-			if (answerElement.hasAttribute("correct")
-					&& answerElement.getAttribute("correct").equalsIgnoreCase(
-							"true")) {
-				correctAnswerIndex = i;
+			SlideChoiceAnswer answer = new SlideChoiceAnswer();
+
+			if (answerElement.hasAttribute("correct")) {
+				answer.setCorrect(answerElement.getAttribute("correct")
+						.equalsIgnoreCase("true"));
 			}
-			answers.add(answerElement.getTextContent());
+			if (answerElement.hasAttribute("url")) {
+				answer.setImageUrl(answerElement.getAttribute("url"));
+			}
+			answer.setText(answerElement.getTextContent());
+			answers.add(answer);
 		}
-		SlideSingleChoiceElement singleChoice = new SlideSingleChoiceElement(id,
-				question, answers, correctAnswerIndex);
-		return singleChoice;
+		return answers;
 	}
 
 	private StudySlideElement parseImage(Element slideElement) {

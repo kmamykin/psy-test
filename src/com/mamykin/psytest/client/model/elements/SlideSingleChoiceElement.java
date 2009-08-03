@@ -8,26 +8,25 @@ import com.mamykin.psytest.client.model.SlideElementWidget;
 import com.mamykin.psytest.client.model.StudyResultLogger;
 import com.mamykin.psytest.client.model.StudySlideElement;
 
-public class SlideSingleChoiceElement implements StudySlideElement, Serializable {
-
+public class SlideSingleChoiceElement implements StudySlideElement,
+		Serializable {
 	private static final long serialVersionUID = -1243708904233988308L;
 
-	private String id;
-	private String question;
-	private List<String> answers;
-	private int correctAnswerIndex;
+	protected String id;
+	protected String question;
+	protected List<SlideChoiceAnswer> answers;
 	private int userSelectedAnswerIndex;
 
 	public SlideSingleChoiceElement() {
-		this("", "", new ArrayList<String>(), 0);
+		this("", "", new ArrayList<SlideChoiceAnswer>());
 	}
 
 	public SlideSingleChoiceElement(String id, String question,
-			List<String> answers, int correctAnswerIndex) {
+			List<SlideChoiceAnswer> answers) {
 		this.id = id;
 		this.question = question;
 		this.answers = answers;
-		this.correctAnswerIndex = correctAnswerIndex;
+		this.userSelectedAnswerIndex = -1;
 	}
 
 	public String getId() {
@@ -38,12 +37,16 @@ public class SlideSingleChoiceElement implements StudySlideElement, Serializable
 		return question;
 	}
 
-	public List<String> getAnswers() {
+	public List<SlideChoiceAnswer> getAnswers() {
 		return answers;
 	}
 
 	public int getCorrectAnswerIndex() {
-		return correctAnswerIndex;
+		for (int i = 0; i < answers.size(); i++) {
+			if (answers.get(i).isCorrect())
+				return i;
+		}
+		return -1;
 	}
 
 	public int getUserSelectedAnswerIndex() {

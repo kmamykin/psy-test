@@ -26,7 +26,7 @@
 				justo lacinia ullamcorper. 
 			</paragraph>
 			<image id="image1" url="/images/breakfast.jpg" />
-			<singlechoice id="image1question">
+			<singlechoice id="Q1">
 				<question>What is the meaning of this picture?</question>
 				<answer correct="true">This is breakfast</answer>
 				<answer>This is lunch</answer>
@@ -43,9 +43,24 @@
 				bibendum fermentum, elit turpis feugiat tortor, a venenatis quam
 				purus id turpis. 
 			</paragraph>
-			<textarea id="slide2freeformtext"/>
+			<textarea id="Q2"/>
 		</slide>
 		<slide name="slide3">
+			<paragraph>
+				Vivamus viverra malesuada malesuada. Quisque imperdiet
+				interdum lorem, at porta dolor auctor id. Nulla pharetra aliquam
+				justo quis aliquam. Mauris at lacus ante, id pellentesque felis.
+				Morbi dolor diam, auctor vitae lobortis sed, pretium vitae nunc.
+				Nunc fermentum ultrices luctus. Curabitur egestas, sapien vel
+				bibendum fermentum, elit turpis feugiat tortor, a venenatis quam
+				purus id turpis. 
+			</paragraph>
+			<singlechoice id="Q3">
+				<question>Which picture better describes a healthy lunch?</question>
+				<answer url="/images/pancakes.jpg">Is it this one?</answer>
+				<answer correct="true" url="/images/croissants.jpg">Or may be this one?</answer>
+				<answer url="/images/pancakes.jpg">This one for sure.</answer>
+			</singlechoice>
 		</slide>
 		<slide name="slide4">
 		</slide>

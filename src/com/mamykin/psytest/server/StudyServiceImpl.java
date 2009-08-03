@@ -1,5 +1,6 @@
 package com.mamykin.psytest.server;
 
+import java.io.IOException;
 import java.util.logging.Logger;
 
 import com.google.appengine.api.mail.MailService;
@@ -18,8 +19,8 @@ import com.mamykin.psytest.client.model.StudyRunResults;
 public class StudyServiceImpl extends RemoteServiceServlet implements
 		StudyService {
 	private static final String STUDY_XML = "http://localhost:8080/study.xml";
-	private static final Logger log = Logger.getLogger(StudyServiceImpl.class
-			.getName());
+//	private static final String STUDY_XML = "http://psy-test.appspot.com/study.xml";
+	private static final Logger log = Logger.getLogger(StudyServiceImpl.class.getName());
 
 	public StudyInfo getStudyInfo() {
 		StudyFactory factory = new StudyFactory();
@@ -41,11 +42,11 @@ public class StudyServiceImpl extends RemoteServiceServlet implements
 				"kmamyk@gmail.com", "Study results", results
 						.formatAsEmailBody());
 		log.info(email.getTextBody());
-//		try {
-//			mailService.send(email);
-//		} catch (IOException e) {
-//			throw new RuntimeException("Could not deliver email.", e);
-//		}
+		try {
+			mailService.send(email);
+		} catch (IOException e) {
+			throw new RuntimeException("Could not deliver email.", e);
+		}
 		return true;
 	}
 
