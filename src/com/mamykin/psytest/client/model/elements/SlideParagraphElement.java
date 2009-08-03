@@ -2,21 +2,20 @@ package com.mamykin.psytest.client.model.elements;
 
 import java.io.Serializable;
 
+import com.mamykin.psytest.client.model.SlideElementWidget;
 import com.mamykin.psytest.client.model.StudyResultLogger;
 import com.mamykin.psytest.client.model.StudySlideElement;
-import com.mamykin.psytest.client.widgets.SlideElementWidget;
-import com.mamykin.psytest.client.widgets.SlideParagraphWidget;
 
-public class StudySlideParagraph implements StudySlideElement, Serializable {
+public class SlideParagraphElement implements StudySlideElement, Serializable {
 
 	private static final long serialVersionUID = -2605107804906451484L;
 	private String text;
 
-	public StudySlideParagraph() {
+	public SlideParagraphElement() {
 		this("");
 	}
 
-	public StudySlideParagraph(String text) {
+	public SlideParagraphElement(String text) {
 		this.text = text;
 	}
 
@@ -24,7 +23,7 @@ public class StudySlideParagraph implements StudySlideElement, Serializable {
 		return text;
 	}
 
-	public SlideElementWidget createUIElement() {
+	public SlideElementWidget createWidget() {
 		return new SlideParagraphWidget(this);
 	}
 

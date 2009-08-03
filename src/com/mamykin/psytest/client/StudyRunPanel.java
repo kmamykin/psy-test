@@ -5,7 +5,7 @@ import java.util.List;
 import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.mamykin.psytest.client.widgets.SlideElementWidget;
+import com.mamykin.psytest.client.model.SlideElementWidget;
 
 public class StudyRunPanel extends VerticalPanel implements
 		StudyRunController.RunView {

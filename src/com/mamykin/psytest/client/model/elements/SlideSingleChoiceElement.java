@@ -4,12 +4,11 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mamykin.psytest.client.model.SlideElementWidget;
 import com.mamykin.psytest.client.model.StudyResultLogger;
 import com.mamykin.psytest.client.model.StudySlideElement;
-import com.mamykin.psytest.client.widgets.SlideElementWidget;
-import com.mamykin.psytest.client.widgets.SlideSingleChoiceWidget;
 
-public class StudySlideSingleChoice implements StudySlideElement, Serializable {
+public class SlideSingleChoiceElement implements StudySlideElement, Serializable {
 
 	private static final long serialVersionUID = -1243708904233988308L;
 
@@ -19,11 +18,11 @@ public class StudySlideSingleChoice implements StudySlideElement, Serializable {
 	private int correctAnswerIndex;
 	private int userSelectedAnswerIndex;
 
-	public StudySlideSingleChoice() {
+	public SlideSingleChoiceElement() {
 		this("", "", new ArrayList<String>(), 0);
 	}
 
-	public StudySlideSingleChoice(String id, String question,
+	public SlideSingleChoiceElement(String id, String question,
 			List<String> answers, int correctAnswerIndex) {
 		this.id = id;
 		this.question = question;
@@ -55,7 +54,7 @@ public class StudySlideSingleChoice implements StudySlideElement, Serializable {
 		this.userSelectedAnswerIndex = value;
 	}
 
-	public SlideElementWidget createUIElement() {
+	public SlideElementWidget createWidget() {
 		return new SlideSingleChoiceWidget(this);
 	}
 

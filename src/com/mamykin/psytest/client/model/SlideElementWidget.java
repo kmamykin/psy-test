@@ -1,4 +1,4 @@
-package com.mamykin.psytest.client.widgets;
+package com.mamykin.psytest.client.model;
 
 import com.google.gwt.user.client.ui.Composite;
 
@@ -10,6 +10,6 @@ public class SlideElementWidget extends Composite {
 	}
 
 	public void recordValues() {
-		// do nothing be default
+		// do nothing by default
 	}
 }

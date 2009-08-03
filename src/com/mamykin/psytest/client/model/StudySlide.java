@@ -4,7 +4,6 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.mamykin.psytest.client.widgets.SlideElementWidget;
 
 public class StudySlide implements Serializable {
 
@@ -37,7 +36,7 @@ public class StudySlide implements Serializable {
 	public List<SlideElementWidget> createUIElements() {
 		ArrayList<SlideElementWidget> widgets = new ArrayList<SlideElementWidget>();
 		for (StudySlideElement element : elements) {
-			widgets.add(element.createUIElement());
+			widgets.add(element.createWidget());
 		}
 		return widgets;
 	}

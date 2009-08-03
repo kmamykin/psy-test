@@ -1,4 +1,4 @@
-package com.mamykin.psytest.client.widgets;
+package com.mamykin.psytest.client.model.elements;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,15 +6,15 @@ import java.util.List;
 import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RadioButton;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.mamykin.psytest.client.model.elements.StudySlideSingleChoice;
+import com.mamykin.psytest.client.model.SlideElementWidget;
 
 public class SlideSingleChoiceWidget extends SlideElementWidget {
 
-	private final StudySlideSingleChoice element;
+	private final SlideSingleChoiceElement element;
 	private final VerticalPanel panel = new VerticalPanel();
 	private final List<RadioButton> radioButtons;
 
-	public SlideSingleChoiceWidget(StudySlideSingleChoice element) {
+	public SlideSingleChoiceWidget(SlideSingleChoiceElement element) {
 		super();
 		this.element = element;
 		this.radioButtons = new ArrayList<RadioButton>();

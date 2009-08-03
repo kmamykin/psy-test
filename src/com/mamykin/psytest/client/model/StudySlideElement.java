@@ -1,8 +1,7 @@
 package com.mamykin.psytest.client.model;
 
-import com.mamykin.psytest.client.widgets.SlideElementWidget;
 
 public interface StudySlideElement {
-	public SlideElementWidget createUIElement();
+	public SlideElementWidget createWidget();
 	public void recordResult(StudyResultLogger logger);
 }

@@ -1,16 +1,16 @@
-package com.mamykin.psytest.client.widgets;
+package com.mamykin.psytest.client.model.elements;
 
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
-import com.mamykin.psytest.client.model.elements.StudySlideTextArea;
+import com.mamykin.psytest.client.model.SlideElementWidget;
 
 public class SlideTextAreaWidget extends SlideElementWidget {
 
 	private final VerticalPanel panel = new VerticalPanel();
 	private final TextArea textArea = new TextArea();
-	private final StudySlideTextArea element;
+	private final SlideTextAreaElement element;
 
-	public SlideTextAreaWidget(StudySlideTextArea element) {
+	public SlideTextAreaWidget(SlideTextAreaElement element) {
 		super();
 		this.element = element;
 		panel.add(textArea);

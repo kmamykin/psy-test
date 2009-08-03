@@ -16,10 +16,10 @@ import org.xml.sax.SAXException;
 import com.mamykin.psytest.client.model.Study;
 import com.mamykin.psytest.client.model.StudySlide;
 import com.mamykin.psytest.client.model.StudySlideElement;
-import com.mamykin.psytest.client.model.elements.StudySlideImage;
-import com.mamykin.psytest.client.model.elements.StudySlideParagraph;
-import com.mamykin.psytest.client.model.elements.StudySlideSingleChoice;
-import com.mamykin.psytest.client.model.elements.StudySlideTextArea;
+import com.mamykin.psytest.client.model.elements.SlideImageElement;
+import com.mamykin.psytest.client.model.elements.SlideParagraphElement;
+import com.mamykin.psytest.client.model.elements.SlideSingleChoiceElement;
+import com.mamykin.psytest.client.model.elements.SlideTextAreaElement;
 
 public class StudyFactory {
 
@@ -106,7 +106,7 @@ public class StudyFactory {
 	}
 
 	private StudySlideElement parseTextArea(Element slideElement) {
-		return new StudySlideTextArea(slideElement.getAttribute("id"));
+		return new SlideTextAreaElement(slideElement.getAttribute("id"));
 	}
 
 	private StudySlideElement parseSingleChoice(Element slideElement) {
@@ -125,19 +125,19 @@ public class StudyFactory {
 			}
 			answers.add(answerElement.getTextContent());
 		}
-		StudySlideSingleChoice singleChoice = new StudySlideSingleChoice(id,
+		SlideSingleChoiceElement singleChoice = new SlideSingleChoiceElement(id,
 				question, answers, correctAnswerIndex);
 		return singleChoice;
 	}
 
 	private StudySlideElement parseImage(Element slideElement) {
-		StudySlideImage image = new StudySlideImage(slideElement
+		SlideImageElement image = new SlideImageElement(slideElement
 				.getAttribute("id"), slideElement.getAttribute("url"));
 		return image;
 	}
 
 	private StudySlideElement parseParagraph(Element slideElement) {
-		return new StudySlideParagraph(slideElement.getTextContent());
+		return new SlideParagraphElement(slideElement.getTextContent());
 	}
 
 }

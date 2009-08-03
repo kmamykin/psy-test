@@ -9,9 +9,9 @@ import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HasValue;
+import com.mamykin.psytest.client.model.SlideElementWidget;
 import com.mamykin.psytest.client.model.StudyInfo;
 import com.mamykin.psytest.client.model.StudyRun;
-import com.mamykin.psytest.client.widgets.SlideElementWidget;
 
 public class StudyRunController {
 
