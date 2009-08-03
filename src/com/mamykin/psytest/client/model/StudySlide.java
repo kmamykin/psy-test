@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.google.gwt.user.client.ui.Widget;
+import com.mamykin.psytest.client.widgets.SlideElementWidget;
 
 public class StudySlide implements Serializable {
 
@@ -29,32 +29,17 @@ public class StudySlide implements Serializable {
 		return elements;
 	}
 
-	public void setElements(ArrayList<StudySlideElement> elements) {
-		this.elements = elements;
-	}
-
 	public StudySlide addElement(StudySlideElement element) {
 		elements.add(element);
 		return this;
 	}
 
-	public List<Widget> createUIElements() {
-		List<Widget> widgets = new ArrayList<Widget>();
+	public List<SlideElementWidget> createUIElements() {
+		ArrayList<SlideElementWidget> widgets = new ArrayList<SlideElementWidget>();
 		for (StudySlideElement element : elements) {
 			widgets.add(element.createUIElement());
 		}
 		return widgets;
-	}
-
-	public boolean allElementsValid() {
-		boolean allElementsValid = true;
-		for (StudySlideElement element : elements) {
-			if (!element.isUIValid()) {
-				allElementsValid = false;
-				// don't break here, invoke isUIvalid for all elements
-			}
-		}
-		return allElementsValid;
 	}
 
 	public void recordResults(StudyResultLogger logger) {

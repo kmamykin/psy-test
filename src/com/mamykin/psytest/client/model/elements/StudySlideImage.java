@@ -2,14 +2,15 @@ package com.mamykin.psytest.client.model.elements;
 
 import java.io.Serializable;
 
-import com.google.gwt.user.client.ui.Image;
-import com.google.gwt.user.client.ui.Widget;
 import com.mamykin.psytest.client.model.StudyResultLogger;
 import com.mamykin.psytest.client.model.StudySlideElement;
+import com.mamykin.psytest.client.widgets.SlideElementWidget;
+import com.mamykin.psytest.client.widgets.SlideImageWidget;
 
-public class StudySlideImage extends StudySlideElement implements Serializable {
+public class StudySlideImage implements StudySlideElement, Serializable {
 
 	private static final long serialVersionUID = -327405498439968945L;
+	private String id;
 	private String imageRelativeUrl;
 
 	public StudySlideImage() {
@@ -17,25 +18,23 @@ public class StudySlideImage extends StudySlideElement implements Serializable {
 	}
 
 	public StudySlideImage(String id, String imageRelativeUrl) {
-		super(id);
+		this.id = id;
 		this.imageRelativeUrl = imageRelativeUrl;
 	}
 
-	@Override
-	public Widget createUIElement() {
-		Image image = new Image();
-		image.setUrl(imageRelativeUrl);
-		return image;
+	public SlideElementWidget createUIElement() {
+		return new SlideImageWidget(this);
 	}
 
-	@Override
-	public boolean isUIValid() {
-		return true;
-	}
-
-	@Override
 	public void recordResult(StudyResultLogger logger) {
 		// do nothing
 	}
 
+	public String getUrl() {
+		return imageRelativeUrl;
+	}
+
+	public String getId() {
+		return id;
+	}
 }

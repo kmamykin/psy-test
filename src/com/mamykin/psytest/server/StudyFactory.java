@@ -1,6 +1,7 @@
 package com.mamykin.psytest.server;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -109,22 +110,23 @@ public class StudyFactory {
 	}
 
 	private StudySlideElement parseSingleChoice(Element slideElement) {
-		StudySlideSingleChoice singleChoice = new StudySlideSingleChoice();
-		singleChoice.setId(slideElement.getAttribute("id"));
+		String id = slideElement.getAttribute("id");
 		String question = slideElement.getElementsByTagName("question").item(0)
 				.getTextContent();
-		singleChoice.setQuestion(question);
-		NodeList answers = slideElement.getElementsByTagName("answer");
-		for (int i = 0; i < answers.getLength(); i++) {
-			Element answer = (Element) answers.item(i);
-			boolean correctAnswer = answer.hasAttribute("correct")
-					&& answer.getAttribute("correct").equalsIgnoreCase("true");
-			String answerText = answer.getTextContent();
-			if (correctAnswer) {
-				singleChoice.setCorrectAnswerIndex(i);
+		ArrayList<String> answers = new ArrayList<String>();
+		int correctAnswerIndex = -1;
+		NodeList answerNodes = slideElement.getElementsByTagName("answer");
+		for (int i = 0; i < answerNodes.getLength(); i++) {
+			Element answerElement = (Element) answerNodes.item(i);
+			if (answerElement.hasAttribute("correct")
+					&& answerElement.getAttribute("correct").equalsIgnoreCase(
+							"true")) {
+				correctAnswerIndex = i;
 			}
-			singleChoice.addAnswer(answerText);
+			answers.add(answerElement.getTextContent());
 		}
+		StudySlideSingleChoice singleChoice = new StudySlideSingleChoice(id,
+				question, answers, correctAnswerIndex);
 		return singleChoice;
 	}
 
@@ -135,7 +137,7 @@ public class StudyFactory {
 	}
 
 	private StudySlideElement parseParagraph(Element slideElement) {
-		return new StudySlideParagraph("", slideElement.getTextContent());
+		return new StudySlideParagraph(slideElement.getTextContent());
 	}
 
 }

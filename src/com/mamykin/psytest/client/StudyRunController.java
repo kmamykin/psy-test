@@ -9,9 +9,9 @@ import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HasValue;
-import com.google.gwt.user.client.ui.Widget;
 import com.mamykin.psytest.client.model.StudyInfo;
 import com.mamykin.psytest.client.model.StudyRun;
+import com.mamykin.psytest.client.widgets.SlideElementWidget;
 
 public class StudyRunController {
 
@@ -34,11 +34,15 @@ public class StudyRunController {
 	}
 
 	interface RunView {
-		void setContent(List<Widget> elements);
+		void setContent(List<SlideElementWidget> elements);
 
 		HasClickHandlers getContinueButton();
 
 		void setVisible(Boolean visible);
+
+		boolean contentIsValid();
+
+		void recordResults();
 	}
 
 	interface FinishView {
@@ -154,8 +158,8 @@ public class StudyRunController {
 	}
 
 	protected void nextSlideButtonPressed() {
-		if (currentRun.currentSlideValid()) {
-			currentRun.currentSlideRecordResults();
+		if (runView.contentIsValid()) {
+			runView.recordResults();
 
 			if (currentRun.hasMoreSlides()) {
 				currentRun.moveToNextSlide();

@@ -2,40 +2,43 @@ package com.mamykin.psytest.client.model.elements;
 
 import java.io.Serializable;
 
-import com.google.gwt.user.client.ui.TextArea;
-import com.google.gwt.user.client.ui.Widget;
 import com.mamykin.psytest.client.model.StudyResultLogger;
 import com.mamykin.psytest.client.model.StudySlideElement;
+import com.mamykin.psytest.client.widgets.SlideElementWidget;
+import com.mamykin.psytest.client.widgets.SlideTextAreaWidget;
 
-public class StudySlideTextArea extends StudySlideElement implements
-		Serializable {
+public class StudySlideTextArea implements StudySlideElement, Serializable {
 
 	private static final long serialVersionUID = -5954010399318894396L;
-	private TextArea textArea;
+	private String id;
+	private String text;
 
 	public StudySlideTextArea() {
 		this("");
 	}
 
 	public StudySlideTextArea(String id) {
-		super(id);
+		this.id = id;
 	}
 
-	@Override
-	public Widget createUIElement() {
-		//this.textArea = new TextArea();
-		return new TextArea();
+	public SlideElementWidget createUIElement() {
+		return new SlideTextAreaWidget(this);
 	}
 
-	@Override
-	public boolean isUIValid() {
-		return true; //(textArea.getText().trim().length() > 0);
+	public String getId() {
+		return id;
 	}
 
-	@Override
 	public void recordResult(StudyResultLogger logger) {
-		logger.addValue(getId(), "text", ""); //textArea.getText());
+		logger.addValue(getId(), "text", text);
+	}
 
+	public void setText(String value) {
+		this.text = value;
+	}
+	
+	public String getText(){
+		return text;
 	}
 
 }

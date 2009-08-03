@@ -2,23 +2,21 @@ package com.mamykin.psytest.client.model.elements;
 
 import java.io.Serializable;
 
-import com.google.gwt.user.client.ui.Label;
-import com.google.gwt.user.client.ui.Widget;
 import com.mamykin.psytest.client.model.StudyResultLogger;
 import com.mamykin.psytest.client.model.StudySlideElement;
+import com.mamykin.psytest.client.widgets.SlideElementWidget;
+import com.mamykin.psytest.client.widgets.SlideParagraphWidget;
 
-public class StudySlideParagraph extends StudySlideElement implements
-		Serializable {
+public class StudySlideParagraph implements StudySlideElement, Serializable {
 
 	private static final long serialVersionUID = -2605107804906451484L;
 	private String text;
 
 	public StudySlideParagraph() {
-		this("", "");
+		this("");
 	}
 
-	public StudySlideParagraph(String id, String text) {
-		super(id);
+	public StudySlideParagraph(String text) {
 		this.text = text;
 	}
 
@@ -26,21 +24,10 @@ public class StudySlideParagraph extends StudySlideElement implements
 		return text;
 	}
 
-	public void setText(String text) {
-		this.text = text;
+	public SlideElementWidget createUIElement() {
+		return new SlideParagraphWidget(this);
 	}
 
-	@Override
-	public Widget createUIElement() {
-		return new Label(text, true);
-	}
-
-	@Override
-	public boolean isUIValid() {
-		return true;
-	}
-
-	@Override
 	public void recordResult(StudyResultLogger logger) {
 		// do nothing
 	}
