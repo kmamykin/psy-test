@@ -13,56 +13,273 @@
 	</cases>
 
 	<slides>
-		<slide name="slide1">
+		<slide name="general_intro">
 			<paragraph>
-				Aliquam dignissim imperdiet magna at euismod. Fusce
-				lobortis tortor non ligula accumsan ac cursus est pulvinar. Nam
-				tempus diam nisl, eget viverra ligula. Aliquam tempor placerat ante,
-				eget vehicula nisi malesuada a. Aliquam sollicitudin felis sed odio
-				cursus quis mollis orci posuere. Pellentesque habitant morbi
-				tristique senectus et netus et malesuada fames ac turpis egestas.
-				Morbi faucibus elementum arcu, a bibendum odio pharetra in.
-				Suspendisse vulputate elementum mollis. Integer volutpat sem nec
-				justo lacinia ullamcorper. 
+				Hello and welcome to the test!
+
+				In the next few pages you will be presented with photographs of different meals that 
+				composed a diet of an individual. The photographs will be marked as Breakfast, Lunch, 
+				and Dinner. You will see meals for three consecutive days. Please look at the photographs 
+				carefully, think about what the meals consisted of and how healthy these meals were.
+				When you think you are ready to continue, please click the Continue button. 
+				You will have 30 seconds to view each photograph. If you do not click Continue within 
+				these 30 seconds, the picture will change automatically. After you have reviewed all 
+				photographs, you will be asked to answer some questions about the meals of this individual.
+
+ 				When you are ready to begin, please press Start button below. 
 			</paragraph>
-			<image id="image1" url="/images/breakfast.jpg" />
-			<singlechoice id="Q1">
-				<question>What is the meaning of this picture?</question>
-				<answer correct="true">This is breakfast</answer>
-				<answer>This is lunch</answer>
-				<answer>This is dinner</answer>
-			</singlechoice>
 		</slide>
-		<slide name="slide2">
+		
+		<slide name="case1_breakfast">
 			<paragraph>
-				Vivamus viverra malesuada malesuada. Quisque imperdiet
-				interdum lorem, at porta dolor auctor id. Nulla pharetra aliquam
-				justo quis aliquam. Mauris at lacus ante, id pellentesque felis.
-				Morbi dolor diam, auctor vitae lobortis sed, pretium vitae nunc.
-				Nunc fermentum ultrices luctus. Curabitur egestas, sapien vel
-				bibendum fermentum, elit turpis feugiat tortor, a venenatis quam
-				purus id turpis. 
+				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
-			<textarea id="Q2"/>
-		</slide>
-		<slide name="slide3">
 			<paragraph>
-				Vivamus viverra malesuada malesuada. Quisque imperdiet
-				interdum lorem, at porta dolor auctor id. Nulla pharetra aliquam
-				justo quis aliquam. Mauris at lacus ante, id pellentesque felis.
-				Morbi dolor diam, auctor vitae lobortis sed, pretium vitae nunc.
-				Nunc fermentum ultrices luctus. Curabitur egestas, sapien vel
-				bibendum fermentum, elit turpis feugiat tortor, a venenatis quam
-				purus id turpis. 
+				Day 1: Breakfast
+			</paragraph>
+			<image id="image1" url="/images/breakfast1_5.png" />
+		</slide>
+		
+		<slide name="case1_lunch">
+			<paragraph>
+				Please look at the picture below and think whether this is a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 1: Lunch
+			</paragraph>
+			<image id="image1" url="/images/lunch1_4.png" />
+		</slide>
+		
+		<slide name="case1_dinner">
+			<paragraph>
+				Please look at the picture below and think whether this is a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 1: Dinner
+			</paragraph>
+			<image id="image1" url="/images/dinner1_5.png" />
+		</slide>
+		
+		<slide name="case2_breakfast">
+			<paragraph>
+				Please look at the picture below and think whether this is a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 2: Breakfast
+			</paragraph>
+			<image id="image1" url="/images/breakfast1_5.png" />
+		</slide>
+		
+		<slide name="case2_lunch">
+			<paragraph>
+				Please look at the picture below and think whether this is a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 2: Lunch
+			</paragraph>
+			<image id="image1" url="/images/lunch1_4.png" />
+		</slide>
+		
+		<slide name="case2_dinner">
+			<paragraph>
+				Please look at the picture below and think whether this is a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 2: Dinner
+			</paragraph>
+			<image id="image1" url="/images/dinner1_5.png" />
+		</slide>
+		
+		<slide name="case3_breakfast">
+			<paragraph>
+				Please look at the picture below and think whether this is a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 3: Breakfast
+			</paragraph>
+			<image id="image1" url="/images/breakfast1_5.png" />
+		</slide>
+		
+		<slide name="case3_lunch">
+			<paragraph>
+				Please look at the picture below and think whether this is a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 2: Lunch
+			</paragraph>
+			<image id="image1" url="/images/lunch1_4.png" />
+		</slide>
+		
+		<slide name="case3_dinner">
+			<paragraph>
+				Please look at the picture below and think whether this is a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 3: Dinner
+			</paragraph>
+			<image id="image1" url="/images/dinner1_5.png" />
+		</slide>
+	
+		<slide name="question1_recall">
+			<paragraph>
+				Could you please recall what this person had for breakfasts?
+				Day 1
+			</paragraph>
+			<textarea id="Q1_day1"/>
+			<paragraph>
+				Day 2
+			</paragraph>
+			<textarea id="Q1_day2"/>
+			<paragraph>
+				Day 3
+			</paragraph>
+			<textarea id="Q1_day3"/>		
+		</slide>
+		
+		<slide name="question2_recognition">
+			<paragraph>
+				Please look at the picture below. Was this meal a part of the individual's diet?
+			</paragraph>
+			<image id="image5" url="/images/breakfast1_5.png" />
+			<singlechoice id="Q2">
+				<question>Was this meal a part of the individual's diet?</question>
+				<answer correct="True">Yes</answer>
+				<answer>No</answer>
+			</singlechoice>	
+		</slide>
+		
+		<slide name="question3_health_judgement_diet">
+			<paragraph>
+				Based on the pictures that you have seen, how healthy is the diet of this individual?
 			</paragraph>
 			<singlechoice id="Q3">
-				<question>Which picture better describes a healthy lunch?</question>
-				<answer url="/images/pancakes.jpg">Is it this one?</answer>
-				<answer correct="true" url="/images/croissants.jpg">Or may be this one?</answer>
-				<answer url="/images/pancakes.jpg">This one for sure.</answer>
-			</singlechoice>
+				<question>How healthy is the diet of this individual?</question>
+				<answer correct="True">Very healthy</answer>
+				<answer>Moderately healthy</answer>
+				<answer>Neutral</answer>
+				<answer>Not very healthy</answer>
+				<answer>Not at all healthy</answer>
+			</singlechoice>	
+			<paragraph>
+				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+			</paragraph>
+			<textarea id="Q3_explanation"/>	
 		</slide>
-		<slide name="slide4">
+		
+		<slide name="question4_health_judgement_meal1">
+			<paragraph>
+				Please look at the picture below. How healthy do you think this meal is?
+			</paragraph>
+			<image id="image5" url="/images/breakfast1_5.png" />
+			<singlechoice id="Q4_1">
+				<question>How healthy is this meal?</question>
+				<answer correct="True">Very healthy</answer>
+				<answer correct="True">Very healthy</answer>
+				<answer>Moderately healthy</answer>
+				<answer>Neutral</answer>
+				<answer>Not very healthy</answer>
+				<answer>Not at all healthy</answer>
+			</singlechoice>	
+			<paragraph>
+				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+			</paragraph>
+			<textarea id="Q4_explanation1"/>	
+		</slide>
+		
+		<slide name="question4_health_judgement_meal2">
+			<paragraph>
+				Please look at the picture below. How healthy do you think this meal is?
+			</paragraph>
+			<image id="image5" url="/images/breakfast1_5.png" />
+			<singlechoice id="Q4_2">
+				<question>How healthy is this meal?</question>
+				<answer correct="True">Very healthy</answer>
+				<answer correct="True">Very healthy</answer>
+				<answer>Moderately healthy</answer>
+				<answer>Neutral</answer>
+				<answer>Not very healthy</answer>
+				<answer>Not at all healthy</answer>
+			</singlechoice>	
+			<paragraph>
+				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+			</paragraph>
+			<textarea id="Q4_explanation2"/>	
+		</slide>
+		
+		<slide name="question4_health_judgement_meal3">
+			<paragraph>
+				Please look at the picture below. How healthy do you think this meal is?
+			</paragraph>
+			<image id="image5" url="/images/breakfast1_5.png" />
+			<singlechoice id="Q4_3">
+				<question>How healthy is this meal?</question>
+				<answer correct="True">Very healthy</answer>
+				<answer correct="True">Very healthy</answer>
+				<answer>Moderately healthy</answer>
+				<answer>Neutral</answer>
+				<answer>Not very healthy</answer>
+				<answer>Not at all healthy</answer>
+			</singlechoice>	
+			<paragraph>
+				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+			</paragraph>
+			<textarea id="Q4_explanation3"/>	
+		</slide>
+		
+		<slide name="question4_health_judgement_meal4">
+			<paragraph>
+				Please look at the picture below. How healthy do you think this meal is?
+			</paragraph>
+			<image id="image5" url="/images/breakfast1_5.png" />
+			<singlechoice id="Q4_4">
+				<question>How healthy is this meal?</question>
+				<answer correct="True">Very healthy</answer>
+				<answer correct="True">Very healthy</answer>
+				<answer>Moderately healthy</answer>
+				<answer>Neutral</answer>
+				<answer>Not very healthy</answer>
+				<answer>Not at all healthy</answer>
+			</singlechoice>	
+			<paragraph>
+				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+			</paragraph>
+			<textarea id="Q4_explanation4"/>	
+		</slide>
+		
+		<slide name="question4_health_judgement_meal5">
+			<paragraph>
+				Please look at the picture below. How healthy do you think this meal is?
+			</paragraph>
+			<image id="image5" url="/images/breakfast1_5.png" />
+			<singlechoice id="Q4_5">
+				<question>How healthy is this meal?</question>
+				<answer correct="True">Very healthy</answer>
+				<answer correct="True">Very healthy</answer>
+				<answer>Moderately healthy</answer>
+				<answer>Neutral</answer>
+				<answer>Not very healthy</answer>
+				<answer>Not at all healthy</answer>
+			</singlechoice>	
+			<paragraph>
+				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+			</paragraph>
+			<textarea id="Q4_explanation5"/>	
+		</slide>
+
+		<slide name="question5_mealchoice">
+			<paragraph>
+				Please look at the pictures below. Which of these meals would you choose as a healthy meal for yourself? 
+			</paragraph>
+			<singlechoice id="Q5">
+				<question>Which of these meals would you choose?</question>
+				<answer url="/images/breakfast1_5.png">I would choose this meal</answer>
+				<answer correct="true" url="/images/breakfast1_5.png">I would choose this meal</answer>
+				<answer url="/images/breakfast1_5.png">I would choose this meal</answer>
+			</singlechoice>
+			<paragraph>
+				Please explain your answer. What did you like about that particular meal?
+			</paragraph>
+			<textarea id="Q5_explanation"/>
 		</slide>
 	</slides>
 </study>
