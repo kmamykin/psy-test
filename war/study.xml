@@ -13,7 +13,7 @@
 	</cases>
 
 	<slides>
-		<slide name="general_intro">
+		<slide name="general_intro" timelimit="5">
 			<paragraph>
 				Hello and welcome to the test!
 
@@ -30,7 +30,7 @@
 			</paragraph>
 		</slide>
 		
-		<slide name="case1_breakfast">
+		<slide name="case1_breakfast" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -40,7 +40,7 @@
 			<image id="image1" url="/images/breakfast1_5.png" />
 		</slide>
 		
-		<slide name="case1_lunch">
+		<slide name="case1_lunch" timelimit="8">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>

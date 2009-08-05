@@ -11,6 +11,7 @@ public class StudySlide implements Serializable {
 
 	private String name;
 	private ArrayList<StudySlideElement> elements;
+	private int timeLimitInSec;
 
 	public StudySlide() {
 		this.elements = new ArrayList<StudySlideElement>();
@@ -45,6 +46,22 @@ public class StudySlide implements Serializable {
 		for(StudySlideElement element: elements){
 			element.recordResult(logger);
 		}
+	}
+
+	public boolean isTimed() {
+		return getTimeLimitInMillis() > 0;
+	}
+
+	public int getTimeLimitInSec() {
+		return timeLimitInSec;
+	}
+
+	public void setTimeLimitInSec(int value) {
+		this.timeLimitInSec = value;
+	}
+
+	public int getTimeLimitInMillis() {
+		return timeLimitInSec * 1000;
 	}
 
 }

@@ -79,6 +79,9 @@ public class StudyFactory {
 	private StudySlide parseSlide(Element node) {
 		StudySlide slide = new StudySlide();
 		slide.setName(node.getAttribute("name"));
+		if (node.hasAttribute("timelimit")) {
+			slide.setTimeLimitInSec(Integer.parseInt(node.getAttribute("timelimit")));
+		}
 		NodeList elements = node.getChildNodes();
 		for (int i = 0; i < elements.getLength(); i++) {
 			if (elements.item(i).getNodeType() == Node.ELEMENT_NODE) {

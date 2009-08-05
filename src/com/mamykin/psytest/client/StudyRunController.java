@@ -6,12 +6,14 @@ import java.util.List;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
+import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HasValue;
 import com.mamykin.psytest.client.model.SlideElementWidget;
 import com.mamykin.psytest.client.model.StudyInfo;
 import com.mamykin.psytest.client.model.StudyRun;
+import com.mamykin.psytest.client.model.StudySlide;
 
 public class StudyRunController {
 
@@ -172,7 +174,19 @@ public class StudyRunController {
 	}
 
 	private void displayCurrentSlide() {
-		runView.setContent(currentRun.getCurrentSlide().createUIElements());
+		StudySlide currentSlide = currentRun.getCurrentSlide();
+		runView.setContent(currentSlide.createUIElements());
+		if(currentSlide.isTimed()){
+			Timer timer = new Timer(){
+
+				@Override
+				public void run() {
+					nextSlideButtonPressed();
+				}
+				
+			};
+			timer.schedule(currentSlide.getTimeLimitInMillis());
+		}
 	}
 
 	private void finishButtonPressed() {
