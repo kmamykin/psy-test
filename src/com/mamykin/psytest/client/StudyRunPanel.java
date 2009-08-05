@@ -19,6 +19,7 @@ public class StudyRunPanel extends VerticalPanel implements
 		super();
 		this.add(main);
 		main.setHorizontalAlignment(ALIGN_CENTER);
+		content.setHorizontalAlignment(ALIGN_LEFT);
 		main.add(content);
 		main.add(continueButton);
 	}

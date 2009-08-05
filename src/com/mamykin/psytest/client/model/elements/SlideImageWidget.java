@@ -11,6 +11,8 @@ public class SlideImageWidget extends SlideElementWidget {
 	
 	public SlideImageWidget(SlideImageElement imageElement) {
 		super();
+		panel.setHorizontalAlignment(VerticalPanel.ALIGN_CENTER);
+		panel.setWidth("100%");
 		image.setUrl(imageElement.getUrl());
 		panel.add(image);
 		initWidget(panel);
