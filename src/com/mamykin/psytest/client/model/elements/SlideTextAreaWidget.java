@@ -1,5 +1,6 @@
 package com.mamykin.psytest.client.model.elements;
 
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.TextArea;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.mamykin.psytest.client.model.SlideElementWidget;
@@ -7,12 +8,16 @@ import com.mamykin.psytest.client.model.SlideElementWidget;
 public class SlideTextAreaWidget extends SlideElementWidget {
 
 	private final VerticalPanel panel = new VerticalPanel();
+	private final Label errorMessage = new Label("Please enter your response in the text area.");
 	private final TextArea textArea = new TextArea();
 	private final SlideTextAreaElement element;
 
 	public SlideTextAreaWidget(SlideTextAreaElement element) {
 		super();
 		this.element = element;
+		errorMessage.setVisible(false);
+		errorMessage.setStyleName("error");
+		panel.add(errorMessage);
 		textArea.setCharacterWidth(80);
 		textArea.setVisibleLines(10);
 		panel.add(textArea);
@@ -21,7 +26,13 @@ public class SlideTextAreaWidget extends SlideElementWidget {
 
 	@Override
 	public boolean isValid() {
-		return (textArea.getText().trim().length() > 0);
+		if (textArea.getText().trim().length() > 0){
+			errorMessage.setVisible(false);
+			return true;
+		}else{
+			errorMessage.setVisible(true);
+			return false;
+		}
 	}
 	
 	@Override

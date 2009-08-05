@@ -15,6 +15,7 @@ public class SlideSingleChoiceWidget extends SlideElementWidget {
 
 	private final SlideSingleChoiceElement element;
 	private final VerticalPanel panel = new VerticalPanel();
+	private final Label errorMessage = new Label("Please choose your response below.");
 	private final List<RadioButton> radioButtons;
 
 	public SlideSingleChoiceWidget(SlideSingleChoiceElement element) {
@@ -22,6 +23,9 @@ public class SlideSingleChoiceWidget extends SlideElementWidget {
 		this.element = element;
 		this.radioButtons = new ArrayList<RadioButton>();
 		panel.add(new Label(element.getQuestion()));
+		errorMessage.setVisible(false);
+		errorMessage.setStyleName("error");
+		panel.add(errorMessage);
 		for (SlideChoiceAnswer answer : element.getAnswers()) {
 			HorizontalPanel answerPanel = new HorizontalPanel();
 			answerPanel.setVerticalAlignment(HasVerticalAlignment.ALIGN_MIDDLE);
@@ -41,7 +45,13 @@ public class SlideSingleChoiceWidget extends SlideElementWidget {
 
 	@Override
 	public boolean isValid() {
-		return getCurrentSelectionIndex() != -1;
+		if( getCurrentSelectionIndex() != -1){
+			errorMessage.setVisible(false);
+			return true;
+		}else{
+			errorMessage.setVisible(true);
+			return false;
+		}
 	}
 
 	@Override
