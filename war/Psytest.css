@@ -9,6 +9,13 @@ h1 {
   margin: 40px 0px 70px;
   text-align: center;
 }
+div#main { 
+	font-size: 100%; 
+}
+
+td {
+	padding: 5px;	
+}
 
 .sendButton {
   display: block;
