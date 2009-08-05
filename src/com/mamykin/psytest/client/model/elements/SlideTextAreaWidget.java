@@ -13,6 +13,8 @@ public class SlideTextAreaWidget extends SlideElementWidget {
 	public SlideTextAreaWidget(SlideTextAreaElement element) {
 		super();
 		this.element = element;
+		textArea.setCharacterWidth(80);
+		textArea.setVisibleLines(10);
 		panel.add(textArea);
 		initWidget(panel);
 	}
