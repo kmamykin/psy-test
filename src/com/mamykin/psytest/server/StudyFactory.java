@@ -19,6 +19,7 @@ import com.mamykin.psytest.client.model.StudySlide;
 import com.mamykin.psytest.client.model.StudySlideElement;
 import com.mamykin.psytest.client.model.elements.SlideChoiceAnswer;
 import com.mamykin.psytest.client.model.elements.SlideImageElement;
+import com.mamykin.psytest.client.model.elements.SlideMultiChoiceElement;
 import com.mamykin.psytest.client.model.elements.SlideParagraphElement;
 import com.mamykin.psytest.client.model.elements.SlideSingleChoiceElement;
 import com.mamykin.psytest.client.model.elements.SlideTextAreaElement;
@@ -73,14 +74,15 @@ public class StudyFactory {
 	}
 
 	private enum ElementType {
-		paragraph, image, singlechoice, textarea, imagesinglechoice
+		paragraph, image, singlechoice, textarea, multichoice
 	}
 
 	private StudySlide parseSlide(Element node) {
 		StudySlide slide = new StudySlide();
 		slide.setName(node.getAttribute("name"));
 		if (node.hasAttribute("timelimit")) {
-			slide.setTimeLimitInSec(Integer.parseInt(node.getAttribute("timelimit")));
+			slide.setTimeLimitInSec(Integer.parseInt(node
+					.getAttribute("timelimit")));
 		}
 		NodeList elements = node.getChildNodes();
 		for (int i = 0; i < elements.getLength(); i++) {
@@ -101,6 +103,9 @@ public class StudyFactory {
 				case textarea:
 					slide.addElement(parseTextArea(slideElement));
 					break;
+				case multichoice:
+					slide.addElement(parseMultiChoice(slideElement));
+					break;
 
 				default:
 					break;
@@ -108,6 +113,19 @@ public class StudyFactory {
 			}
 		}
 		return slide;
+	}
+
+	private StudySlideElement parseMultiChoice(Element slideElement) {
+		String id = slideElement.getAttribute("id");
+		String question = slideElement.getElementsByTagName("question").item(0)
+				.getTextContent();
+		List<String> choices = new ArrayList<String>();
+		NodeList choiceNodes = slideElement.getElementsByTagName("choice");
+		for (int i = 0; i < choiceNodes.getLength(); i++) {
+			Element choiceElement = (Element) choiceNodes.item(i);
+			choices.add(choiceElement.getTextContent());
+		}
+		return new SlideMultiChoiceElement(id, question, choices);
 	}
 
 	private StudySlideElement parseTextArea(Element slideElement) {

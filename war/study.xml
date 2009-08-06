@@ -25,12 +25,11 @@
 				You will have 30 seconds to view each photograph. If you do not click Continue within 
 				these 30 seconds, the picture will change automatically. After you have reviewed all 
 				photographs, you will be asked to answer some questions about the meals of this individual.
-
  				When you are ready to begin, please press Start button below. 
 			</paragraph>
 		</slide>
 		
-		<slide name="case1_breakfast" timelimit="5">
+		<slide name="case1_breakfast">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -38,9 +37,17 @@
 				Day 1: Breakfast
 			</paragraph>
 			<image id="image1" url="/images/breakfast1_5.png" />
+			<multichoice id="MC1">
+				<question>Please tag the picture above</question>
+				<choice>Tag 1</choice>
+				<choice>Tag 2</choice>
+				<choice>Tag 3</choice>
+				<choice>Tag 4</choice>
+				<choice>Tag 5</choice>
+			</multichoice>
 		</slide>
 		
-		<slide name="case1_lunch" timelimit="8">
+		<slide name="case1_lunch" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -50,7 +57,7 @@
 			<image id="image1" url="/images/lunch1_4.png" />
 		</slide>
 		
-		<slide name="case1_dinner">
+		<slide name="case1_dinner" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -60,7 +67,7 @@
 			<image id="image1" url="/images/dinner1_5.png" />
 		</slide>
 		
-		<slide name="case2_breakfast">
+		<slide name="case2_breakfast" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -70,7 +77,7 @@
 			<image id="image1" url="/images/breakfast1_5.png" />
 		</slide>
 		
-		<slide name="case2_lunch">
+		<slide name="case2_lunch" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -80,7 +87,7 @@
 			<image id="image1" url="/images/lunch1_4.png" />
 		</slide>
 		
-		<slide name="case2_dinner">
+		<slide name="case2_dinner" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -90,7 +97,7 @@
 			<image id="image1" url="/images/dinner1_5.png" />
 		</slide>
 		
-		<slide name="case3_breakfast">
+		<slide name="case3_breakfast" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -100,7 +107,7 @@
 			<image id="image1" url="/images/breakfast1_5.png" />
 		</slide>
 		
-		<slide name="case3_lunch">
+		<slide name="case3_lunch" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
@@ -110,7 +117,7 @@
 			<image id="image1" url="/images/lunch1_4.png" />
 		</slide>
 		
-		<slide name="case3_dinner">
+		<slide name="case3_dinner" timelimit="5">
 			<paragraph>
 				Please look at the picture below and think whether this is a healthy meal. 
 			</paragraph>
