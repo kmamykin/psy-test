@@ -6,7 +6,6 @@ import java.util.List;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
 import com.google.gwt.event.dom.client.HasClickHandlers;
-import com.google.gwt.user.client.Timer;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.HasText;
 import com.google.gwt.user.client.ui.HasValue;
@@ -45,6 +44,10 @@ public class StudyRunController {
 		boolean contentIsValid();
 
 		void recordResults();
+
+		void cancelTimer();
+
+		void setTimer(int timeLimitInMillis);
 	}
 
 	interface FinishView {
@@ -57,20 +60,12 @@ public class StudyRunController {
 		void displayError(String message);
 	}
 
-	/**
-	 * The message displayed to the user when the server cannot be reached or
-	 * returns an error.
-	 */
-	// private static final String SERVER_ERROR = "An error occurred while "
-	// + "attempting to contact the server. Please check your network "
-	// + "connection and try again.";
 	private StartView startView;
 	private RunView runView;
 	private FinishView finishView;
 	private StudyServiceAsync studyService;
 	private ErrorsNotification errorsNotification;
 	private StudyRun currentRun;
-	private Timer timer;
 
 	public StudyRunController(StartView startView, RunView runView,
 			FinishView finishView, ErrorsNotification errorsNotification,
@@ -132,16 +127,6 @@ public class StudyRunController {
 			}
 
 		});
-		
-		timer = new Timer() {
-
-			@Override
-			public void run() {
-				nextSlideButtonPressed();
-			}
-
-		};
-
 	}
 
 	private void startButtonPressed() {
@@ -171,10 +156,7 @@ public class StudyRunController {
 	}
 
 	protected void nextSlideButtonPressed() {
-		if(timer!=null){
-			timer.cancel();
-		}
-		
+		runView.cancelTimer();
 		if (runView.contentIsValid()) {
 			runView.recordResults();
 
@@ -192,7 +174,7 @@ public class StudyRunController {
 		StudySlide currentSlide = currentRun.getCurrentSlide();
 		runView.setContent(currentSlide.createUIElements());
 		if (currentSlide.isTimed()) {
-			timer.schedule(currentSlide.getTimeLimitInMillis());
+			runView.setTimer(currentSlide.getTimeLimitInMillis());
 		}
 	}
 
