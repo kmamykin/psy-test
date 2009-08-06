@@ -70,6 +70,7 @@ public class StudyRunController {
 	private StudyServiceAsync studyService;
 	private ErrorsNotification errorsNotification;
 	private StudyRun currentRun;
+	private Timer timer;
 
 	public StudyRunController(StartView startView, RunView runView,
 			FinishView finishView, ErrorsNotification errorsNotification,
@@ -131,6 +132,16 @@ public class StudyRunController {
 			}
 
 		});
+		
+		timer = new Timer() {
+
+			@Override
+			public void run() {
+				nextSlideButtonPressed();
+			}
+
+		};
+
 	}
 
 	private void startButtonPressed() {
@@ -160,6 +171,10 @@ public class StudyRunController {
 	}
 
 	protected void nextSlideButtonPressed() {
+		if(timer!=null){
+			timer.cancel();
+		}
+		
 		if (runView.contentIsValid()) {
 			runView.recordResults();
 
@@ -176,15 +191,7 @@ public class StudyRunController {
 	private void displayCurrentSlide() {
 		StudySlide currentSlide = currentRun.getCurrentSlide();
 		runView.setContent(currentSlide.createUIElements());
-		if(currentSlide.isTimed()){
-			Timer timer = new Timer(){
-
-				@Override
-				public void run() {
-					nextSlideButtonPressed();
-				}
-				
-			};
+		if (currentSlide.isTimed()) {
 			timer.schedule(currentSlide.getTimeLimitInMillis());
 		}
 	}
