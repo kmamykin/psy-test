@@ -4,6 +4,7 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.mamykin.psytest.client.model.elements.StudyPlaceholderElement;
 
 public class StudySlide implements Serializable {
 
@@ -12,19 +13,20 @@ public class StudySlide implements Serializable {
 	private String name;
 	private ArrayList<StudySlideElement> elements;
 	private int timeLimitInSec;
+	private String template;
 
 	public StudySlide() {
 		this.elements = new ArrayList<StudySlideElement>();
 	}
 
-	public String getName(){
+	public String getName() {
 		return name;
 	}
-	
-	public void setName(String value){
+
+	public void setName(String value) {
 		name = value;
 	}
-	
+
 	public ArrayList<StudySlideElement> getElements() {
 		return elements;
 	}
@@ -43,7 +45,7 @@ public class StudySlide implements Serializable {
 	}
 
 	public void recordResults(StudyResultLogger logger) {
-		for(StudySlideElement element: elements){
+		for (StudySlideElement element : elements) {
 			element.recordResult(logger);
 		}
 	}
@@ -62,6 +64,29 @@ public class StudySlide implements Serializable {
 
 	public int getTimeLimitInMillis() {
 		return timeLimitInSec * 1000;
+	}
+
+	public void setTemplate(String value) {
+		this.template = value;
+	}
+
+	public String getTemplate() {
+		return template;
+	}
+
+	public StudySlide buildFrom(StudySlide slideTemplate) {
+		StudySlide result = new StudySlide();
+		result.setName(slideTemplate.getName());
+		result.setTimeLimitInSec(slideTemplate.getTimeLimitInSec());
+		int placeholderReplacementIndex = 0;
+		for (StudySlideElement element : slideTemplate.getElements()) {
+			if (element instanceof StudyPlaceholderElement) {
+				result.addElement(getElements().get(placeholderReplacementIndex++));
+			} else {
+				result.addElement(element);
+			}
+		}
+		return result;
 	}
 
 }

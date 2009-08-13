@@ -15,6 +15,9 @@ import org.w3c.dom.NodeList;
 import org.xml.sax.SAXException;
 
 import com.mamykin.psytest.client.model.Study;
+import com.mamykin.psytest.client.model.StudyBlock;
+import com.mamykin.psytest.client.model.StudyCase;
+import com.mamykin.psytest.client.model.StudyGroup;
 import com.mamykin.psytest.client.model.StudySlide;
 import com.mamykin.psytest.client.model.StudySlideElement;
 import com.mamykin.psytest.client.model.elements.SlideChoiceAnswer;
@@ -23,6 +26,7 @@ import com.mamykin.psytest.client.model.elements.SlideMultiChoiceElement;
 import com.mamykin.psytest.client.model.elements.SlideParagraphElement;
 import com.mamykin.psytest.client.model.elements.SlideSingleChoiceElement;
 import com.mamykin.psytest.client.model.elements.SlideTextAreaElement;
+import com.mamykin.psytest.client.model.elements.StudyPlaceholderElement;
 
 public class StudyFactory {
 
@@ -36,7 +40,7 @@ public class StudyFactory {
 			// parse using builder to get DOM representation of the XML file
 			Document dom = db.parse(url);
 			dom.getDocumentElement().normalize();
-			return parseXmlDocument(dom);
+			return parseStudy(dom);
 		} catch (ParserConfigurationException pce) {
 			pce.printStackTrace();
 		} catch (SAXException se) {
@@ -48,48 +52,88 @@ public class StudyFactory {
 
 	}
 
-	private Study parseXmlDocument(Document dom) {
+	private Study parseStudy(Document dom) {
 		Study study = new Study();
 		study.setName(dom.getDocumentElement().getAttribute("name"));
+		study.setCaseCount(Integer.parseInt(dom.getDocumentElement().getAttribute("casecount")));
+
+		// read slide templates
+		for (Element node : selectGroupedChildrenElements(dom.getDocumentElement(), "slidetemplates", "slidetemplate")) {
+			study.addSlideTemplate(parseSlideTemplate(node));
+		}
+
+		// read blocks with cases and slides
+		for (Element node : selectGroupedChildrenElements(dom.getDocumentElement(), "blocks", "block")) {
+			study.addBlock(parseBlock(node));
+		}
+
 		// read groups
-		NodeList groups = dom.getElementsByTagName("group");
-		for (int i = 0; i < groups.getLength(); i++) {
-			Element node = (Element) groups.item(i);
-			study.addGroup(node.getAttribute("name"));
-		}
-		// read cases
-		NodeList cases = dom.getElementsByTagName("case");
-		for (int i = 0; i < cases.getLength(); i++) {
-			Element node = (Element) cases.item(i);
-			study.addCase(node.getAttribute("name"));
-		}
-		// read slides
-		NodeList slides = dom.getElementsByTagName("slide");
-		for (int i = 0; i < slides.getLength(); i++) {
-			Element node = (Element) slides.item(i);
-			study.addSlide(parseSlide(node));
+		for (Element node : selectGroupedChildrenElements(dom.getDocumentElement(), "groups", "group")) {
+			study.addGroup(parseGroup(node));
 		}
 
 		return study;
 	}
 
+	private StudyGroup parseGroup(Element element) {
+		List<String> blockRefs = new ArrayList<String>();
+		for(Element node : selectChildElements(element, "block")){
+			blockRefs.add(node.getAttribute("ref"));
+		}
+		return new StudyGroup(element.getAttribute("name"), blockRefs);
+	}
+
+	private StudyBlock parseBlock(Element node) {
+		return new StudyBlock(node.getAttribute("id"), parseCases(node));
+	}
+
+	private List<StudyCase> parseCases(Element element) {
+		List<StudyCase> cases = new ArrayList<StudyCase>();
+		for (Element node : selectChildElements(element, "case")) {
+			cases.add(parseCase(node));
+		}
+		return cases;
+	}
+
+	private StudyCase parseCase(Element node) {
+		return new StudyCase(node.getAttribute("id"), parseSlides(node));
+	}
+
+	private List<StudySlide> parseSlides(Element element) {
+		List<StudySlide> slides = new ArrayList<StudySlide>();
+		for (Element node : selectChildElements(element, "slide")) {
+			slides.add(parseSlide(node));
+		}
+		return slides;
+	}
+
 	private enum ElementType {
-		paragraph, image, singlechoice, textarea, multichoice
+		paragraph, image, singlechoice, textarea, multichoice, placeholder
 	}
 
 	private StudySlide parseSlide(Element node) {
 		StudySlide slide = new StudySlide();
+		slide.setTemplate(node.getAttribute("template"));
+		parseSlideElements(node, slide);
+		return slide;
+	}
+
+	private StudySlide parseSlideTemplate(Element node) {
+		StudySlide slide = new StudySlide();
 		slide.setName(node.getAttribute("name"));
 		if (node.hasAttribute("timelimit")) {
-			slide.setTimeLimitInSec(Integer.parseInt(node
-					.getAttribute("timelimit")));
+			slide.setTimeLimitInSec(Integer.parseInt(node.getAttribute("timelimit")));
 		}
+		parseSlideElements(node, slide);
+		return slide;
+	}
+
+	private void parseSlideElements(Element node, StudySlide slide) {
 		NodeList elements = node.getChildNodes();
 		for (int i = 0; i < elements.getLength(); i++) {
 			if (elements.item(i).getNodeType() == Node.ELEMENT_NODE) {
 				Element slideElement = (Element) elements.item(i);
-				ElementType type = ElementType.valueOf(slideElement
-						.getTagName());
+				ElementType type = ElementType.valueOf(slideElement.getTagName());
 				switch (type) {
 				case paragraph:
 					slide.addElement(parseParagraph(slideElement));
@@ -106,19 +150,24 @@ public class StudyFactory {
 				case multichoice:
 					slide.addElement(parseMultiChoice(slideElement));
 					break;
+				case placeholder:
+					slide.addElement(parsePlaceholder(slideElement));
+					break;
 
 				default:
 					break;
 				}
 			}
 		}
-		return slide;
+	}
+
+	private StudySlideElement parsePlaceholder(Element slideElement) {
+		return new StudyPlaceholderElement();
 	}
 
 	private StudySlideElement parseMultiChoice(Element slideElement) {
 		String id = slideElement.getAttribute("id");
-		String question = slideElement.getElementsByTagName("question").item(0)
-				.getTextContent();
+		String question = slideElement.getElementsByTagName("question").item(0).getTextContent();
 		List<String> choices = new ArrayList<String>();
 		NodeList choiceNodes = slideElement.getElementsByTagName("choice");
 		for (int i = 0; i < choiceNodes.getLength(); i++) {
@@ -134,8 +183,7 @@ public class StudyFactory {
 
 	private StudySlideElement parseSingleChoice(Element slideElement) {
 		String id = slideElement.getAttribute("id");
-		String question = slideElement.getElementsByTagName("question").item(0)
-				.getTextContent();
+		String question = slideElement.getElementsByTagName("question").item(0).getTextContent();
 		List<SlideChoiceAnswer> answers = parseChoiceAnswers(slideElement);
 		return new SlideSingleChoiceElement(id, question, answers);
 	}
@@ -148,8 +196,7 @@ public class StudyFactory {
 			SlideChoiceAnswer answer = new SlideChoiceAnswer();
 
 			if (answerElement.hasAttribute("correct")) {
-				answer.setCorrect(answerElement.getAttribute("correct")
-						.equalsIgnoreCase("true"));
+				answer.setCorrect(answerElement.getAttribute("correct").equalsIgnoreCase("true"));
 			}
 			if (answerElement.hasAttribute("url")) {
 				answer.setImageUrl(answerElement.getAttribute("url"));
@@ -161,8 +208,7 @@ public class StudyFactory {
 	}
 
 	private StudySlideElement parseImage(Element slideElement) {
-		SlideImageElement image = new SlideImageElement(slideElement
-				.getAttribute("id"), slideElement.getAttribute("url"));
+		SlideImageElement image = new SlideImageElement(slideElement.getAttribute("id"), slideElement.getAttribute("url"));
 		return image;
 	}
 
@@ -170,4 +216,18 @@ public class StudyFactory {
 		return new SlideParagraphElement(slideElement.getTextContent());
 	}
 
+	private List<Element> selectGroupedChildrenElements(Element element, String groupElementTag, String childElementTag) {
+		Element parentElement = (Element) element.getElementsByTagName(groupElementTag).item(0);
+		return selectChildElements(parentElement, childElementTag);
+	}
+
+	private List<Element> selectChildElements(Element element, String childElementTag) {
+		List<Element> elements = new ArrayList<Element>();
+		NodeList childElementNodes = element.getElementsByTagName(childElementTag);
+		for (int i = 0; i < childElementNodes.getLength(); i++) {
+			Element node = (Element) childElementNodes.item(i);
+			elements.add(node);
+		}
+		return elements;
+	}
 }

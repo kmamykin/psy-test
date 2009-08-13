@@ -19,8 +19,10 @@ import com.mamykin.psytest.client.model.StudyRunResults;
 public class StudyServiceImpl extends RemoteServiceServlet implements
 		StudyService {
 	private static final String STUDY_XML = "http://localhost:8080/study.xml";
-//	private static final String STUDY_XML = "http://psy-test.appspot.com/study.xml";
-	private static final Logger log = Logger.getLogger(StudyServiceImpl.class.getName());
+	// private static final String STUDY_XML =
+	// "http://psy-test.appspot.com/study.xml";
+	private static final Logger log = Logger.getLogger(StudyServiceImpl.class
+			.getName());
 
 	public StudyInfo getStudyInfo() {
 		StudyFactory factory = new StudyFactory();
@@ -36,7 +38,6 @@ public class StudyServiceImpl extends RemoteServiceServlet implements
 	}
 
 	public boolean recordRunResults(StudyRunResults results) {
-		@SuppressWarnings("unused")
 		MailService mailService = MailServiceFactory.getMailService();
 		MailService.Message email = new MailService.Message("kmamyk@gmail.com",
 				"kmamyk@gmail.com", "Study results", results

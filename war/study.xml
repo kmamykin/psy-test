@@ -1,165 +1,218 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<study name="study name">
+<study name="study name" casecount="3">
 	<groups>
-		<group name="Group1"></group>
-		<group name="Group2"></group>
-		<group name="Group3"></group>
+		<group name="Group1">
+			<block ref="intro" />
+			<block ref="trial1" />
+			<block ref="questions1" />
+			<!--
+			<block ref="trial2_1" />
+			<block ref="questions2" />
+			<block ref="trial3" />
+			<block ref="questions3" />
+			-->
+			<block ref="finish" />
+		</group>
+		<group name="Group2">
+			<block ref="intro" />
+			<block ref="trial1" />
+			<block ref="questions1" />
+			<!--
+				block ref="trial2_2" /> <block ref="questions2" /> <block
+				ref="trial3" /> <block ref="questions3" />
+			-->
+			<block ref="finish" />
+		</group>
+		<group name="Group3">
+			<block ref="intro" />
+			<block ref="trial1" />
+			<block ref="questions1" />
+			<!--
+				block ref="trial2_3" /> <block ref="questions2" /> <block
+				ref="trial3" /> <block ref="questions3" />
+			-->
+			<block ref="finish" />
+		</group>
 	</groups>
 
-	<cases>
-		<case name="Case1"></case>
-		<case name="Case2"></case>
-		<case name="Case3"></case>
-	</cases>
+	<blocks>
+		<block id="intro">
+			<case id="1">
+				<slide template="general_intro" />
+			</case>
+		</block>
+		<block id="trial1">
+			<case id="1">
+				<slide template="case1_meal_stimuli">
+					<paragraph>Breakfast</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="case1_meal_stimuli">
+					<paragraph>Lunch</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="case1_meal_stimuli">
+					<paragraph>Dinner</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+			</case>
+			<case id="2">
+				<slide template="case1_meal_stimuli">
+					<paragraph>Breakfast</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="case1_meal_stimuli">
+					<paragraph>Lunch</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="case1_meal_stimuli">
+					<paragraph>Dinner</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+			</case>
+			<case id="3">
+				<slide template="case1_meal_stimuli">
+					<paragraph>Breakfast</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="case1_meal_stimuli">
+					<paragraph>Lunch</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="case1_meal_stimuli">
+					<paragraph>Dinner</paragraph>
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+			</case>
+		</block>
+		<block id="questions1">
+			<case id="1">
+				<slide template="question1_recall" />
+				<slide template="question1_recognition">
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="question1_health_judgement_diet" />
+				<slide template="question1_health_judgement_meal1">
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="question1_health_judgement_meal2">
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="question1_health_judgement_meal3">
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="question1_health_judgement_meal4">
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="question1_health_judgement_meal5">
+					<image id="image5" url="/images/breakfast1_5.png" />
+				</slide>
+				<slide template="question1_mealchoice">
+					<singlechoice id="Q5">
+						<question>Which of these meals would you choose?</question>
+						<answer url="/images/breakfast1_5.png">I would choose this meal</answer>
+						<answer correct="true" url="/images/breakfast1_5.png">I would choose this meal
+						</answer>
+						<answer url="/images/breakfast1_5.png">I would choose this meal</answer>
+					</singlechoice>
+				</slide>
+			</case>
+		</block>
+		<block id="finish">
+			<case id="1">
+				<slide template="general_finish" />
+			</case>
+		</block>
 
-	<slides>
-		<slide name="general_intro" timelimit="5">
+	</blocks>
+
+	<slidetemplates>
+		<slidetemplate name="general_intro" timelimit="30">
 			<paragraph>
 				Hello and welcome to the test!
+			</paragraph>
+			<paragraph>
+				In the next few pages you will be presented with
+				photographs of different meals that
+				composed a diet of an individual.
+				The photographs will be marked as
+				Breakfast, Lunch,
+				and Dinner. You
+				will see meals for three consecutive days. Please look
+				at the
+				photographs
+				carefully, think about what the meals consisted of and
+				how healthy these meals
+				were.
+				When you think you are ready to
+				continue, please click the
+				Continue button.
+				You will have 30 seconds
+				to view each photograph. If you do not click
+				Continue within
+				these 30
+				seconds, the picture will change automatically. After you have
+				reviewed all
+				photographs, you will be asked to answer some questions
+				about the meals of this
+				individual.
+				When you are ready to begin,
+				please press Start button below.
+			</paragraph>
+		</slidetemplate>
 
-				In the next few pages you will be presented with photographs of different meals that 
-				composed a diet of an individual. The photographs will be marked as Breakfast, Lunch, 
-				and Dinner. You will see meals for three consecutive days. Please look at the photographs 
-				carefully, think about what the meals consisted of and how healthy these meals were.
-				When you think you are ready to continue, please click the Continue button. 
-				You will have 30 seconds to view each photograph. If you do not click Continue within 
-				these 30 seconds, the picture will change automatically. After you have reviewed all 
-				photographs, you will be asked to answer some questions about the meals of this individual.
- 				When you are ready to begin, please press Start button below. 
-			</paragraph>
-		</slide>
-		
-		<slide name="case1_breakfast">
+		<slidetemplate name="general_finish">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Game over!
 			</paragraph>
+		</slidetemplate>
+
+		<slidetemplate name="case1_meal_stimuli" timelimit="30">
 			<paragraph>
-				Day 1: Breakfast
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
-			<image id="image1" url="/images/breakfast1_5.png" />
-			<multichoice id="MC1">
-				<question>Please tag the picture above</question>
-				<choice>Tag 1</choice>
-				<choice>Tag 2</choice>
-				<choice>Tag 3</choice>
-				<choice>Tag 4</choice>
-				<choice>Tag 5</choice>
-			</multichoice>
-		</slide>
-		
-		<slide name="case1_lunch" timelimit="5">
+			<placeholder />
+			<placeholder />
+		</slidetemplate>
+
+		<slidetemplate name="question1_recall">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Could you please recall what this person had for
+				breakfasts?
 			</paragraph>
 			<paragraph>
-				Day 1: Lunch
-			</paragraph>
-			<image id="image1" url="/images/lunch1_4.png" />
-		</slide>
-		
-		<slide name="case1_dinner" timelimit="5">
-			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 1: Dinner
-			</paragraph>
-			<image id="image1" url="/images/dinner1_5.png" />
-		</slide>
-		
-		<slide name="case2_breakfast" timelimit="5">
-			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 2: Breakfast
-			</paragraph>
-			<image id="image1" url="/images/breakfast1_5.png" />
-		</slide>
-		
-		<slide name="case2_lunch" timelimit="5">
-			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 2: Lunch
-			</paragraph>
-			<image id="image1" url="/images/lunch1_4.png" />
-		</slide>
-		
-		<slide name="case2_dinner" timelimit="5">
-			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 2: Dinner
-			</paragraph>
-			<image id="image1" url="/images/dinner1_5.png" />
-		</slide>
-		
-		<slide name="case3_breakfast" timelimit="5">
-			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 3: Breakfast
-			</paragraph>
-			<image id="image1" url="/images/breakfast1_5.png" />
-		</slide>
-		
-		<slide name="case3_lunch" timelimit="5">
-			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 2: Lunch
-			</paragraph>
-			<image id="image1" url="/images/lunch1_4.png" />
-		</slide>
-		
-		<slide name="case3_dinner" timelimit="5">
-			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 3: Dinner
-			</paragraph>
-			<image id="image1" url="/images/dinner1_5.png" />
-		</slide>
-	
-		<slide name="question1_recall">
-			<paragraph>
-				Could you please recall what this person had for breakfasts?
-			</paragraph>	
-			<paragraph>	
 				Day 1
 			</paragraph>
-			<textarea id="Q1_day1"/>
+			<textarea id="Q1_day1" />
 			<paragraph>
 				Day 2
 			</paragraph>
-			<textarea id="Q1_day2"/>
+			<textarea id="Q1_day2" />
 			<paragraph>
 				Day 3
 			</paragraph>
-			<textarea id="Q1_day3"/>		
-		</slide>
-		
-		<slide name="question2_recognition">
+			<textarea id="Q1_day3" />
+		</slidetemplate>
+
+		<slidetemplate name="question1_recognition">
 			<paragraph>
-				Please look at the picture below. Was this meal a part of the individual's diet?
+				Please look at the picture below. Was this meal a part of
+				the individual's diet?
 			</paragraph>
-			<image id="image5" url="/images/breakfast1_5.png" />
+			<placeholder />
 			<singlechoice id="Q2">
-				<question>Was this meal a part of the individual's diet?</question>
+				<question>Was this meal a part of the individual's diet?
+				</question>
 				<answer correct="True">Yes</answer>
 				<answer>No</answer>
-			</singlechoice>	
-		</slide>
-		
-		<slide name="question3_health_judgement_diet">
+			</singlechoice>
+		</slidetemplate>
+
+		<slidetemplate name="question1_health_judgement_diet">
 			<paragraph>
-				Based on the pictures that you have seen, how healthy is the diet of this individual?
+				Based on the pictures that you have seen, how healthy is
+				the diet of this individual?
 			</paragraph>
 			<singlechoice id="Q3">
 				<question>How healthy is the diet of this individual?</question>
@@ -168,18 +221,20 @@
 				<answer>Neutral</answer>
 				<answer>Not very healthy</answer>
 				<answer>Not at all healthy</answer>
-			</singlechoice>	
+			</singlechoice>
 			<paragraph>
-				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+				Please explain your answer. What were some of the specific
+				problems/good aspects of the diet?
 			</paragraph>
-			<textarea id="Q3_explanation"/>	
-		</slide>
-		
-		<slide name="question4_health_judgement_meal1">
+			<textarea id="Q3_explanation" />
+		</slidetemplate>
+
+		<slidetemplate name="question1_health_judgement_meal1">
 			<paragraph>
-				Please look at the picture below. How healthy do you think this meal is?
+				Please look at the picture below. How healthy do you think
+				this meal is?
 			</paragraph>
-			<image id="image5" url="/images/breakfast1_5.png" />
+			<placeholder />
 			<singlechoice id="Q4_1">
 				<question>How healthy is this meal?</question>
 				<answer correct="True">Very healthy</answer>
@@ -188,18 +243,20 @@
 				<answer>Neutral</answer>
 				<answer>Not very healthy</answer>
 				<answer>Not at all healthy</answer>
-			</singlechoice>	
+			</singlechoice>
 			<paragraph>
-				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+				Please explain your answer. What were some of the specific
+				problems/good aspects of the diet?
 			</paragraph>
-			<textarea id="Q4_explanation1"/>	
-		</slide>
-		
-		<slide name="question4_health_judgement_meal2">
+			<textarea id="Q4_explanation1" />
+		</slidetemplate>
+
+		<slidetemplate name="question1_health_judgement_meal2">
 			<paragraph>
-				Please look at the picture below. How healthy do you think this meal is?
+				Please look at the picture below. How healthy do you think
+				this meal is?
 			</paragraph>
-			<image id="image5" url="/images/breakfast1_5.png" />
+			<placeholder />
 			<singlechoice id="Q4_2">
 				<question>How healthy is this meal?</question>
 				<answer correct="True">Very healthy</answer>
@@ -208,18 +265,20 @@
 				<answer>Neutral</answer>
 				<answer>Not very healthy</answer>
 				<answer>Not at all healthy</answer>
-			</singlechoice>	
+			</singlechoice>
 			<paragraph>
-				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+				Please explain your answer. What were some of the specific
+				problems/good aspects of the diet?
 			</paragraph>
-			<textarea id="Q4_explanation2"/>	
-		</slide>
-		
-		<slide name="question4_health_judgement_meal3">
+			<textarea id="Q4_explanation2" />
+		</slidetemplate>
+
+		<slidetemplate name="question1_health_judgement_meal3">
 			<paragraph>
-				Please look at the picture below. How healthy do you think this meal is?
+				Please look at the picture below. How healthy do you think
+				this meal is?
 			</paragraph>
-			<image id="image5" url="/images/breakfast1_5.png" />
+			<placeholder />
 			<singlechoice id="Q4_3">
 				<question>How healthy is this meal?</question>
 				<answer correct="True">Very healthy</answer>
@@ -228,18 +287,20 @@
 				<answer>Neutral</answer>
 				<answer>Not very healthy</answer>
 				<answer>Not at all healthy</answer>
-			</singlechoice>	
+			</singlechoice>
 			<paragraph>
-				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+				Please explain your answer. What were some of the specific
+				problems/good aspects of the diet?
 			</paragraph>
-			<textarea id="Q4_explanation3"/>	
-		</slide>
-		
-		<slide name="question4_health_judgement_meal4">
+			<textarea id="Q4_explanation3" />
+		</slidetemplate>
+
+		<slidetemplate name="question1_health_judgement_meal4">
 			<paragraph>
-				Please look at the picture below. How healthy do you think this meal is?
+				Please look at the picture below. How healthy do you think
+				this meal is?
 			</paragraph>
-			<image id="image5" url="/images/breakfast1_5.png" />
+			<placeholder />
 			<singlechoice id="Q4_4">
 				<question>How healthy is this meal?</question>
 				<answer correct="True">Very healthy</answer>
@@ -248,18 +309,20 @@
 				<answer>Neutral</answer>
 				<answer>Not very healthy</answer>
 				<answer>Not at all healthy</answer>
-			</singlechoice>	
+			</singlechoice>
 			<paragraph>
-				Please explain your answer. What were some of the specific problems/good aspects of the diet?
+				Please explain your answer. What were some of the specific
+				problems/good aspects of the diet?
 			</paragraph>
-			<textarea id="Q4_explanation4"/>	
-		</slide>
-		
-		<slide name="question4_health_judgement_meal5">
+			<textarea id="Q4_explanation4" />
+		</slidetemplate>
+
+		<slidetemplate name="question1_health_judgement_meal5">
 			<paragraph>
-				Please look at the picture below. How healthy do you think this meal is?
+				Please look at the picture below. How healthy do you think
+				this meal is?
 			</paragraph>
-			<image id="image5" url="/images/breakfast1_5.png" />
+			<placeholder />
 			<singlechoice id="Q4_5">
 				<question>How healthy is this meal?</question>
 				<answer correct="True">Very healthy</answer>
@@ -268,206 +331,271 @@
 				<answer>Neutral</answer>
 				<answer>Not very healthy</answer>
 				<answer>Not at all healthy</answer>
-			</singlechoice>	
-			<paragraph>
-				Please explain your answer. What were some of the specific problems/good aspects of the diet?
-			</paragraph>
-			<textarea id="Q4_explanation5"/>	
-		</slide>
-
-		<slide name="question5_mealchoice">
-			<paragraph>
-				Please look at the pictures below. Which of these meals would you choose as a healthy meal for yourself? 
-			</paragraph>
-			<singlechoice id="Q5">
-				<question>Which of these meals would you choose?</question>
-				<answer url="/images/breakfast1_5.png">I would choose this meal</answer>
-				<answer correct="true" url="/images/breakfast1_5.png">I would choose this meal</answer>
-				<answer url="/images/breakfast1_5.png">I would choose this meal</answer>
 			</singlechoice>
 			<paragraph>
-				Please explain your answer. What did you like about that particular meal?
+				Please explain your answer. What were some of the specific
+				problems/good aspects of the diet?
 			</paragraph>
-			<textarea id="Q5_explanation"/>
-		</slide>
-		
-		<slide name="tagging_intro">
+			<textarea id="Q4_explanation5" />
+		</slidetemplate>
+
+		<slidetemplate name="question1_mealchoice">
+			<paragraph>
+				Please look at the pictures below. Which of these meals
+				would you choose as a healthy meal for yourself? 
+			</paragraph>
+			<placeholder />
+			<paragraph>
+				Please explain your answer. What did you like about that
+				particular meal?
+			</paragraph>
+			<textarea id="Q5_explanation" />
+		</slidetemplate>
+
+		<slidetemplate name="tagging_intro">
 			<paragraph>
 				Thank you for completing the first trial.
 			</paragraph>
 			<paragraph>
-				In the next trial you will be asked to look at the another series of meal photographs. 
-				This time, as you look at the photographs, you will be asked to assign them tags. 
-				Tags are descriptive key words that could help you to find this photograph at a later time, 
-				or to describe it to other people. Tags could be one-word, or short phrases. 
-				Please separate different tags with ";" Please include as many tags as you can think of. 
+				In the next trial you will be asked to look at the another
+				series of meal photographs.
+				This time, as you look at the
+				photographs, you will be asked to assign
+				them tags.
+				Tags are
+				descriptive key words that could help you to find this
+				photograph at
+				a later time,
+				or to describe it to other people. Tags could be
+				one-word, or short
+				phrases.
+				Please separate different tags with ";"
+				Please include as many tags as you
+				can think of. 
 			</paragraph>
 			<paragraph>
 				When you are ready, please click the Start button below.
 			</paragraph>
-		</slide>
-		
-		<slide name="case2_tags_breakfast1">
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_breakfast1">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 1: Breakfast
 			</paragraph>
 			<image id="image1" url="/images/breakfast1_5.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_breakfast1"/>
-		</slide>
-		
-		<slide name="case2_tags_lunch1">
+			<textarea id="C2_breakfast1" />
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_lunch1">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 1: Lunch
 			</paragraph>
 			<image id="image1" url="/images/lunch1_4.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_lunch1"/>
-		</slide>
-		
-		<slide name="case2_tags_dinner1">
+			<multichoice id="MC1">
+				<question>Please tag the picture above</question>
+				<choice>Tag 1</choice>
+				<choice>Tag 2</choice>
+				<choice>Tag 3</choice>
+				<choice>Tag 4</choice>
+				<choice>Tag 5</choice>
+			</multichoice>
+			<textarea id="C2_lunch1" />
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_dinner1">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 1: Dinner
 			</paragraph>
 			<image id="image1" url="/images/dinner1_5.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_dinner1"/>
-		</slide>
-		
-		<slide name="case2_tags_breakfast2">
+			<textarea id="C2_dinner1" />
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_breakfast2">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 2: Breakfast
 			</paragraph>
 			<image id="image1" url="/images/breakfast1_5.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_breakfast2"/>
-		</slide>
-		
-		<slide name="case2_tags_lunch2">
+			<textarea id="C2_breakfast2" />
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_lunch2">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 2: Lunch
 			</paragraph>
 			<image id="image1" url="/images/lunch1_4.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_lunch2"/>
-		</slide>
-		
-		<slide name="case2_tags_dinner2">
+			<textarea id="C2_lunch2" />
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_dinner2">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 2: Dinner
 			</paragraph>
 			<image id="image1" url="/images/breakfast1_5.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_dinner2"/>
-		</slide>
-		
-		<slide name="case2_tags_breakfast3">
+			<textarea id="C2_dinner2" />
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_breakfast3">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 3: Breakfast
 			</paragraph>
 			<image id="image1" url="/images/breakfast1_5.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_breakfast3"/>
-		</slide>
-		
-		<slide name="case2_tags_lunch3">
+			<textarea id="C2_breakfast3" />
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_lunch3">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 3: Lunch
 			</paragraph>
 			<image id="image1" url="/images/lunch1_4.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_lunch3"/>
-		</slide>
-		
-		<slide name="case2_tags_dinner3">
+			<textarea id="C2_lunch3" />
+		</slidetemplate>
+
+		<slidetemplate name="case2_tags_dinner3">
 			<paragraph>
-				Please look at the picture below and think whether this is a healthy meal. 
+				Please look at the picture below and think whether this is
+				a healthy meal. 
 			</paragraph>
 			<paragraph>
 				Day 3: Dinner
 			</paragraph>
 			<image id="image1" url="/images/dinner1_5.png" />
 			<paragraph>
-				Please select key words or tags to describe this meal. Tags could be one-word or short 
-				phrases. Please separate different tags with ";". Please choose as many tags as you can 
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
 				think of.
 			</paragraph>
-			<textarea id="C2_dinner3"/>
-		</slide>
-		
-		<slide name="social_tagging_intro">
+			<textarea id="C2_dinner3" />
+		</slidetemplate>
+
+		<slidetemplate name="social_tagging_intro">
 			<paragraph>
 				Thank you for completing the first trial.
 			</paragraph>
 			<paragraph>
-				In the next trial you will be asked to look at the another series of meal photographs. 
-				This time, as you look at the photographs, you will be asked to assign them tags. 
-				Tags are descriptive key words that could help you to find this photograph at a later time, 
-				or to describe it to other people. Tags could be one-word, or short phrases. 
-				You can create your own tags, or you could choose from the list of tags created 
-				by other people participating in this experiment. Please separate different tags 
-				with ";" Please include as many tags as you can think of.
+				In the next trial you will be asked to look at the another
+				series of meal photographs.
+				This time, as you look at the
+				photographs, you will be asked to assign
+				them tags.
+				Tags are
+				descriptive key words that could help you to find this
+				photograph at
+				a later time,
+				or to describe it to other people. Tags could be
+				one-word, or short
+				phrases.
+				You can create your own tags, or you could
+				choose from the list of tags
+				created
+				by other people participating in
+				this experiment. Please separate
+				different tags
+				with ";" Please
+				include as many tags as you can think of.
 			</paragraph>
 			<paragraph>
 				When you are ready, please click the Start button below.
 			</paragraph>
-		</slide>
+		</slidetemplate>
 
-	</slides>
+	</slidetemplates>
 </study>
