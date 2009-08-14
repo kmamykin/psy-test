@@ -19,8 +19,7 @@ public class SlideMultiChoiceElement implements StudySlideElement, Serializable 
 		this("", "", null);
 	}
 
-	public SlideMultiChoiceElement(String id, String question,
-			List<String> choices) {
+	public SlideMultiChoiceElement(String id, String question, List<String> choices) {
 		this.id = id;
 		this.question = question;
 		this.choices = choices;
@@ -31,8 +30,7 @@ public class SlideMultiChoiceElement implements StudySlideElement, Serializable 
 	}
 
 	public void recordResult(StudyResultLogger logger) {
-		logger.addValue(getId(), "selected_values",
-				formatAsString(getUserSelectedChoices()));
+		logger.addValue(getId(), formatAsString(getUserSelectedChoices()));
 	}
 
 	private String formatAsString(List<String> list) {

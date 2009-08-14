@@ -69,7 +69,7 @@ public class Study {
 	public StudyRun createRun(String groupName, String caseName, String participant) {
 		StudyGroup group = lookupGroup(groupName);
 		int startingCase = Integer.parseInt(caseName);
-		return new StudyRun(participant, calculateRunSlides(group, startingCase));
+		return new StudyRun(participant, groupName, caseName, calculateRunSlides(group, startingCase));
 	}
 
 	private List<StudySlide> calculateRunSlides(StudyGroup group, int startingCase) {
@@ -83,13 +83,16 @@ public class Study {
 				StudyCase currentcase = block.getCases().get(actualIndex);
 				for (StudySlide slide : currentcase.getSlides()) {
 					String templateName = slide.getTemplate();
+					StudySlide completeSlide;
 					if (null != templateName) {
 						StudySlide template = lookupSlideTemplate(templateName);
-						StudySlide completeSlide = slide.buildFrom(template);
-						runSlides.add(completeSlide);
+						completeSlide = slide.buildFrom(template);
 					} else {
-						runSlides.add(slide);
+						completeSlide = slide;
 					}
+					completeSlide.setBlock(blockRef);
+					completeSlide.setCaseIndex(Integer.toString(actualIndex));
+					runSlides.add(completeSlide);
 				}
 			}
 		}

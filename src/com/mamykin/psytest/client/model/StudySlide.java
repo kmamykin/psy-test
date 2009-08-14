@@ -15,6 +15,25 @@ public class StudySlide implements Serializable {
 	private int timeLimitInSec;
 	private String template;
 
+	private String block;
+	private String caseIndex;
+
+	public String getBlock() {
+		return block;
+	}
+
+	public void setBlock(String block) {
+		this.block = block;
+	}
+
+	public String getCaseIndex() {
+		return caseIndex;
+	}
+
+	public void setCaseIndex(String caseIndex) {
+		this.caseIndex = caseIndex;
+	}
+
 	public StudySlide() {
 		this.elements = new ArrayList<StudySlideElement>();
 	}
@@ -34,20 +53,6 @@ public class StudySlide implements Serializable {
 	public StudySlide addElement(StudySlideElement element) {
 		elements.add(element);
 		return this;
-	}
-
-	public List<SlideElementWidget> createUIElements() {
-		ArrayList<SlideElementWidget> widgets = new ArrayList<SlideElementWidget>();
-		for (StudySlideElement element : elements) {
-			widgets.add(element.createWidget());
-		}
-		return widgets;
-	}
-
-	public void recordResults(StudyResultLogger logger) {
-		for (StudySlideElement element : elements) {
-			element.recordResult(logger);
-		}
 	}
 
 	public boolean isTimed() {
@@ -72,6 +77,23 @@ public class StudySlide implements Serializable {
 
 	public String getTemplate() {
 		return template;
+	}
+
+	public List<SlideElementWidget> createUIElements() {
+		ArrayList<SlideElementWidget> widgets = new ArrayList<SlideElementWidget>();
+		for (StudySlideElement element : elements) {
+			widgets.add(element.createWidget());
+		}
+		return widgets;
+	}
+
+	public void recordResults(StudyResultLogger logger) {
+		logger.addValue("Block", block);
+		logger.addValue("Case", caseIndex);
+		logger.addValue("Template", template);
+		for (StudySlideElement element : elements) {
+			element.recordResult(logger);
+		}
 	}
 
 	public StudySlide buildFrom(StudySlide slideTemplate) {

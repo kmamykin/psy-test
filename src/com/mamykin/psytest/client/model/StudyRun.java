@@ -7,24 +7,32 @@ import java.util.List;
 public class StudyRun implements Serializable {
 
 	private static final long serialVersionUID = -228547564447628663L;
-	private List<StudySlide> slides;
 	private String participant;
+	private String group;
+	private String startingCase;
+	private List<StudySlide> slides;
+
 	private int currentSlide;
 
 	public StudyRun() {
-		this("", new ArrayList<StudySlide>());
+		this("", "", "", new ArrayList<StudySlide>());
 	}
 
-	public StudyRun(String participant, List<StudySlide> slides) {
+	public StudyRun(String participant, String group, String startingCase, List<StudySlide> slides) {
 		this.participant = participant;
+		this.group = group;
+		this.startingCase = startingCase;
 		this.slides = slides;
 		this.currentSlide = 0;
-		
+
 	}
 
-	public StudyRunResults getResults() {
+	public StudyRunResults recordResults() {
 		StudyRunResults results = new StudyRunResults();
-		for(StudySlide slide : slides){
+		results.addValue("Participant", participant);
+		results.addValue("Group", group);
+		results.addValue("Starting Case", startingCase);
+		for (StudySlide slide : slides) {
 			slide.recordResults(results);
 		}
 		return results;

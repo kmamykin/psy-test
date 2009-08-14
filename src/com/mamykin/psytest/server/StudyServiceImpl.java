@@ -16,13 +16,11 @@ import com.mamykin.psytest.client.model.StudyRunResults;
  * The server side implementation of the RPC service.
  */
 @SuppressWarnings("serial")
-public class StudyServiceImpl extends RemoteServiceServlet implements
-		StudyService {
+public class StudyServiceImpl extends RemoteServiceServlet implements StudyService {
 	private static final String STUDY_XML = "http://localhost:8080/study.xml";
 	// private static final String STUDY_XML =
 	// "http://psy-test.appspot.com/study.xml";
-	private static final Logger log = Logger.getLogger(StudyServiceImpl.class
-			.getName());
+	private static final Logger log = Logger.getLogger(StudyServiceImpl.class.getName());
 
 	public StudyInfo getStudyInfo() {
 		StudyFactory factory = new StudyFactory();
@@ -30,8 +28,7 @@ public class StudyServiceImpl extends RemoteServiceServlet implements
 		return study.getStudyInfo();
 	}
 
-	public StudyRun getStudyRun(String groupName, String caseName,
-			String participant) {
+	public StudyRun getStudyRun(String groupName, String caseName, String participant) {
 		StudyFactory factory = new StudyFactory();
 		Study study = factory.createFromXml(STUDY_XML);
 		return study.createRun(groupName, caseName, participant);
@@ -39,9 +36,7 @@ public class StudyServiceImpl extends RemoteServiceServlet implements
 
 	public boolean recordRunResults(StudyRunResults results) {
 		MailService mailService = MailServiceFactory.getMailService();
-		MailService.Message email = new MailService.Message("kmamyk@gmail.com",
-				"kmamyk@gmail.com", "Study results", results
-						.formatAsEmailBody());
+		MailService.Message email = new MailService.Message("kmamyk@gmail.com", "kmamyk@gmail.com", "Study results", results.formatAsEmailBody());
 		log.info(email.getTextBody());
 		try {
 			mailService.send(email);
