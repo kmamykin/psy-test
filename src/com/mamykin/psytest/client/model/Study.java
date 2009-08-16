@@ -79,9 +79,9 @@ public class Study {
 			StudyBlock block = lookupBlock(blockRef);
 			for (int i = 0; i < block.getCases().size(); i++) {
 				// arrange the cases in the order starting with startingcase
-				int actualIndex = (i + startingCase - 1) % caseCount;
-				StudyCase currentcase = block.getCases().get(actualIndex);
-				for (StudySlide slide : currentcase.getSlides()) {
+				int actualIndex = getActualCaseIndex(i, startingCase, block.getCases().size());
+				StudyCase currentCase = block.getCases().get(actualIndex);
+				for (StudySlide slide : currentCase.getSlides()) {
 					String templateName = slide.getTemplate();
 					StudySlide completeSlide;
 					if (null != templateName) {
@@ -97,6 +97,14 @@ public class Study {
 			}
 		}
 		return runSlides;
+	}
+
+	private int getActualCaseIndex(int currentIndex, int startingIndex, int casesInBlock) {
+		int actualIndex = startingIndex + currentIndex;
+		while (actualIndex >= casesInBlock) {
+			actualIndex -= casesInBlock;
+		}
+		return actualIndex;
 	}
 
 	private StudyGroup lookupGroup(String groupName) {
