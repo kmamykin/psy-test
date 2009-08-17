@@ -4,7 +4,7 @@
 		<group name="Group1">
 			<block ref="intro" />
 			<block ref="trial1" />
-			<block ref="questions1" />
+			<block ref="C1_questions" />
 			<!--
 			<block ref="trial2_1" />
 			<block ref="questions2" />
@@ -16,7 +16,7 @@
 		<group name="Group2">
 			<block ref="intro" />
 			<block ref="trial1" />
-			<block ref="questions1" />
+			<block ref="C2_questions" />
 			<!--
 				block ref="trial2_2" /> <block ref="questions2" /> <block
 				ref="trial3" /> <block ref="questions3" />
@@ -275,7 +275,7 @@
 				</slide>
 				<slide template="question3_health_judgement_diet">
 					<singlechoice id="Q3_1">
-						<question>How healthy is the diet of this individual?</quesion>
+						<question>How healthy is the diet of this individual?</question>
 						<answer>Very healthy</answer>
 						<answer>Moderately healthy</answer>
 						<answer>Neutral</answer>
