@@ -9,7 +9,7 @@ import com.mamykin.psytest.client.model.elements.StudyPlaceholderElement;
 public class StudySlide implements Serializable {
 
 	private static final long serialVersionUID = 1950612878896366169L;
-
+	
 	private String name;
 	private ArrayList<StudySlideElement> elements;
 	private int timeLimitInSec;

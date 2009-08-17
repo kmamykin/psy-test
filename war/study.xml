@@ -37,90 +37,314 @@
 
 	<blocks>
 		<block id="intro">
-			<case id="1">
+			<case id="C1_intro">
 				<slide template="general_intro" />
 			</case>
 		</block>
 		<block id="trial1">
-			<case id="1">
-				<slide template="case1_meal_stimuli">
+			<case id="C1_1">
+				<slide template="case_meal_stimuli">
 					<paragraph>Breakfast</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image1" url="/images/case1_1_br.jpg" />
 				</slide>
-				<slide template="case1_meal_stimuli">
+				<slide template="case_meal_stimuli">
 					<paragraph>Lunch</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image2" url="/images/case1_1_lunch.jpg" />
 				</slide>
-				<slide template="case1_meal_stimuli">
+				<slide template="case_meal_stimuli">
 					<paragraph>Dinner</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image3" url="/images/case1_1_dinner.jpg" />
 				</slide>
 			</case>
-			<case id="2">
-				<slide template="case1_meal_stimuli">
+			<case id="C1_2">
+				<slide template="case_meal_stimuli">
 					<paragraph>Breakfast</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image4" url="/images/case1_2_br.jpg" />
 				</slide>
-				<slide template="case1_meal_stimuli">
+				<slide template="case_meal_stimuli">
 					<paragraph>Lunch</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image5" url="/images/case1_2_lunch.jpg" />
 				</slide>
-				<slide template="case1_meal_stimuli">
+				<slide template="case_meal_stimuli">
 					<paragraph>Dinner</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image6" url="/images/case1_2_dinner.jpg" />
 				</slide>
 			</case>
-			<case id="3">
-				<slide template="case1_meal_stimuli">
+			<case id="C1_3">
+				<slide template="case_meal_stimuli">
 					<paragraph>Breakfast</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image7" url="/images/case1_3_br.jpg" />
 				</slide>
-				<slide template="case1_meal_stimuli">
+				<slide template="case_meal_stimuli">
 					<paragraph>Lunch</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image8" url="/images/case1_3_lunch.jpg" />
 				</slide>
-				<slide template="case1_meal_stimuli">
+				<slide template="case_meal_stimuli">
 					<paragraph>Dinner</paragraph>
-					<image id="image5" url="/images/breakfast1_5.png" />
+					<image id="C1_image9" url="/images/case1_3_dinner.jpg" />
 				</slide>
 			</case>
 		</block>
-		<block id="questions1">
-			<case id="1">
-				<slide template="question1_recall" />
-				<slide template="question1_recognition">
-					<image id="image5" url="/images/breakfast1_5.png" />
+		<block id="C1_questions">
+			<case id="C1_Q">
+				<slide template="question1_recall">
+					<textarea id="C1_Q1_day1" />
+					<textarea id="C1_Q1_day2" />
+					<textarea id="C1_Q1_day3" />
 				</slide>
-				<slide template="question1_health_judgement_diet" />
-				<slide template="question1_health_judgement_meal1">
-					<image id="image5" url="/images/breakfast1_5.png" />
-				</slide>
-				<slide template="question1_health_judgement_meal2">
-					<image id="image5" url="/images/breakfast1_5.png" />
-				</slide>
-				<slide template="question1_health_judgement_meal3">
-					<image id="image5" url="/images/breakfast1_5.png" />
-				</slide>
-				<slide template="question1_health_judgement_meal4">
-					<image id="image5" url="/images/breakfast1_5.png" />
-				</slide>
-				<slide template="question1_health_judgement_meal5">
-					<image id="image5" url="/images/breakfast1_5.png" />
-				</slide>
-				<slide template="question1_mealchoice">
-					<singlechoice id="Q5">
-						<question>Which of these meals would you choose?</question>
-						<answer url="/images/breakfast1_5.png">I would choose this meal</answer>
-						<answer correct="true" url="/images/breakfast1_5.png">I would choose this meal
-						</answer>
-						<answer url="/images/breakfast1_5.png">I would choose this meal</answer>
+				<slide template="question2_recognition">
+					<image id="C1_image10" url="/images/case1_1_lunch.jpg" />
+					<singlechoice id="C1_Q2_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
 					</singlechoice>
 				</slide>
+				<slide template="question2_recognition">
+					<image id="C1_image11" url="/images/distractor_1.jpg" />
+					<singlechoice id="C1_Q2_2">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer>Yes</answer>
+						<answer correct="True">No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C1_image12" url="/images/case1_3_dinner.jpg" />
+					<singlechoice id="C1_Q2_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question3_health_judgement_diet">
+					<singlechoice id="C1_Q3">
+						<question>How healthy was the diet of this individual?</question>
+						<answer>Very healthy</answer>
+						<answer correct="True">Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer>Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C1_Q3_explanation" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C1_image13" url="/images/healthy_1.jpg" />
+					<singlechoice id="C1_Q4_1">
+						<question>How healthy do you think is this meal?</question>
+						<answer correct="True">Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer>Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C1_Q4_explanation1" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C1_image14" url="/images/healthy_2.jpg" />
+					<singlechoice id="C1_Q4_2">
+						<question>How healthy do you think is this meal?</question>
+						<answer correct="True">Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer>Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C1_Q4_explanation2" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C1_image15" url="/images/unhealthy_1.jpg" />
+					<singlechoice id="C1_Q4_3">
+						<question>How healthy do you think is this meal?</question>
+						<answer>Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer>Not very healthy</answer>
+						<answer correct="True">Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C1_Q4_explanation3" />
+				</slide>
+				<slide template="question5_mealchoice">
+					<singlechoice id="C1_Q5_1">
+						<question>Which of these meals would you choose?</question>
+						<answer url="/images/set1_bad1.jpg">I would choose this meal</answer>
+						<answer correct="true" url="/images/set1_good.jpg">I would choose this meal</answer>
+						<answer url="/images/set1_bad2.jpg">I would choose this meal</answer>
+					</singlechoice>
+					<textarea id="C1_Q5_explanation1" />
+				</slide>
+				<slide template="question5_mealchoice">
+					<singlechoice id="C1_Q5_2">
+						<question>Which of these meals would you choose?</question>
+						<answer correct="true" url="/images/set2_good.jpg">I would choose this meal</answer>
+						<answer url="/images/set2_bad1.jpg">I would choose this meal</answer>
+						<answer url="/images/set2_bad2.jpg">I would choose this meal</answer>
+					</singlechoice>
+					<textarea id="C1_Q5_explanation2" />
+				</slide>
 			</case>
 		</block>
+		
+		<block id="tagging_intro">
+			<case id="C2_intro">
+				<slide template="tagging_intro" />
+			</case>
+		</block>
+		<block id="trial2">
+			<case id="C2_1">
+				<slide template="case_tags_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C2_image1" url="/images/case2_1_br.jpg" />
+					<textarea id="C2_1_br_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C2_image2" url="/images/case2_1_lunch.jpg" />
+					<textarea id="C2_1_lunch_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C2_image3" url="/images/case2_1_dinner.jpg" />
+					<textarea id="C2_1_dinner_tags" />
+				</slide>
+			</case>
+			<case id="C2_2">
+				<slide template="case_tags_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C1_image4" url="/images/case2_2_br.jpg" />
+					<textarea id="C2_2_br_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C1_image5" url="/images/case2_2_lunch.jpg" />
+					<textarea id="C2_2_lunch_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C1_image6" url="/images/case2_2_dinner.jpg" />
+					<textarea id="C2_2_dinner_tags" />
+				</slide>
+			</case>
+			<case id="C2_3">
+				<slide template="case_tags_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C1_image7" url="/images/case2_3_br.jpg" />
+					<textarea id="C2_3_br_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C1_image8" url="/images/case2_3_lunch.jpg" />
+					<textarea id="C2_3_lunch_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C1_image9" url="/images/case2_3_dinner.jpg" />
+					<textarea id="C2_3_dinner_tags" />
+				</slide>
+			</case>
+		</block>
+		<block id="C2_questions">
+			<case id="C2_Q">
+				<slide template="question1_recall">
+					<textarea id="C2_Q1_day1" />
+					<textarea id="C2_Q1_day2" />
+					<textarea id="C2_Q1_day3" />
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C2_image10" url="/images/case2_1_br_unhealthy.jpg" />
+					<singlechoice id="C2_Q3_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C2_image11" url="/images/case2_3_lunch_unhealthy.jpg" />
+					<singlechoice id="C2_Q3_2">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer>Yes</answer>
+						<answer correct="True">No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image12" url="/images/distractor.jpg" />
+					<singlechoice id="C2_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question3_health_judgement_diet">
+					<singlechoice id="Q3_1">
+						<question>How healthy is the diet of this individual?</quesion>
+						<answer>Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer correct="True">Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C2_Q3_explanation" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C2_image13" url="/images/unhealthy_2.jpg" />
+					<singlechoice id="C2_Q4_1">
+						<question>How healthy do you think is this meal?</question>
+						<answer>Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer correct="True">Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C2_Q4_explanation1" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C2_image14" url="/images/healthy_3.jpg" />
+					<singlechoice id="C2_Q4_2">
+						<question>How healthy do you think is this meal?</question>
+						<answer correct="True">Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer>Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C2_Q4_explanation2" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C2_image15" url="/images/unhealthy_3.jpg" />
+					<singlechoice id="C2_Q4_3">
+						<question>How healthy do you think is this meal?</question>
+						<answer>Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer>Not very healthy</answer>
+						<answer correct="True">Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C2_Q4_explanation3" />
+				</slide>
+				<slide template="question5_mealchoice">
+					<singlechoice id="C2_Q5_1">
+						<question>Which of these meals would you choose?</question>
+						<answer correct="true" url="/images/set3_good.jpg">I would choose this meal</answer>
+						<answer url="/images/set3_bad1.jpg">I would choose this meal</answer>
+						<answer url="/images/set3_bad2.jpg">I would choose this meal</answer>
+					</singlechoice>
+					<textarea id="C2_Q5_explanation1" />
+				</slide>
+				<slide template="question5_mealchoice">
+					<singlechoice id="C2_Q5_2">
+						<question>Which of these meals would you choose?</question>
+						<answer url="/images/set4_bad1.jpg">I would choose this meal</answer>
+						<answer url="/images/set4_bad2.jpg">I would choose this meal</answer>
+						<answer correct="true" url="/images/set4_good.jpg">I would choose this meal</answer>
+					</singlechoice>
+					<textarea id="C2_Q5_explanation2" />
+				</slide>
+			</case>
+		</block>
+		
 		<block id="finish">
-			<case id="1">
-				<slide template="general_finish" />
+			<case id="end">
+				<slide template="general_finish">
+				</slide>
 			</case>
 		</block>
 
@@ -167,7 +391,7 @@
 			</paragraph>
 		</slidetemplate>
 
-		<slidetemplate name="case1_meal_stimuli" timelimit="30">
+		<slidetemplate name="case_meal_stimuli" timelimit="30">
 			<paragraph>
 				Please look at the picture below and think whether this is
 				a healthy meal. 
@@ -184,172 +408,60 @@
 			<paragraph>
 				Day 1
 			</paragraph>
-			<textarea id="Q1_day1" />
+			<placeholder />
 			<paragraph>
 				Day 2
 			</paragraph>
-			<textarea id="Q1_day2" />
+			<placeholder />
 			<paragraph>
 				Day 3
 			</paragraph>
-			<textarea id="Q1_day3" />
+			<placeholder />
 		</slidetemplate>
 
-		<slidetemplate name="question1_recognition">
+		<slidetemplate name="question2_recognition">
 			<paragraph>
-				Please look at the picture below. Was this meal a part of
-				the individual's diet?
+				Please look at the picture below. 
 			</paragraph>
 			<placeholder />
-			<singlechoice id="Q2">
-				<question>Was this meal a part of the individual's diet?
-				</question>
-				<answer correct="True">Yes</answer>
-				<answer>No</answer>
-			</singlechoice>
+			<placeholder />
 		</slidetemplate>
 
-		<slidetemplate name="question1_health_judgement_diet">
+		<slidetemplate name="question3_health_judgement_diet">
 			<paragraph>
-				Based on the pictures that you have seen, how healthy is
-				the diet of this individual?
+				Based on the pictures that you have seen, please think of the diet of this individual.
 			</paragraph>
-			<singlechoice id="Q3">
-				<question>How healthy is the diet of this individual?</question>
-				<answer correct="True">Very healthy</answer>
-				<answer>Moderately healthy</answer>
-				<answer>Neutral</answer>
-				<answer>Not very healthy</answer>
-				<answer>Not at all healthy</answer>
-			</singlechoice>
+			<placeholder />
 			<paragraph>
 				Please explain your answer. What were some of the specific
 				problems/good aspects of the diet?
 			</paragraph>
-			<textarea id="Q3_explanation" />
+			<placeholder />
 		</slidetemplate>
 
-		<slidetemplate name="question1_health_judgement_meal1">
+		<slidetemplate name="question4_health_judgement_meal">
 			<paragraph>
-				Please look at the picture below. How healthy do you think
-				this meal is?
+				Please look at the picture below.
 			</paragraph>
 			<placeholder />
-			<singlechoice id="Q4_1">
-				<question>How healthy is this meal?</question>
-				<answer correct="True">Very healthy</answer>
-				<answer correct="True">Very healthy</answer>
-				<answer>Moderately healthy</answer>
-				<answer>Neutral</answer>
-				<answer>Not very healthy</answer>
-				<answer>Not at all healthy</answer>
-			</singlechoice>
+			<placeholder />
 			<paragraph>
 				Please explain your answer. What were some of the specific
-				problems/good aspects of the diet?
-			</paragraph>
-			<textarea id="Q4_explanation1" />
-		</slidetemplate>
-
-		<slidetemplate name="question1_health_judgement_meal2">
-			<paragraph>
-				Please look at the picture below. How healthy do you think
-				this meal is?
+				problems/good aspects of this meal?
 			</paragraph>
 			<placeholder />
-			<singlechoice id="Q4_2">
-				<question>How healthy is this meal?</question>
-				<answer correct="True">Very healthy</answer>
-				<answer correct="True">Very healthy</answer>
-				<answer>Moderately healthy</answer>
-				<answer>Neutral</answer>
-				<answer>Not very healthy</answer>
-				<answer>Not at all healthy</answer>
-			</singlechoice>
-			<paragraph>
-				Please explain your answer. What were some of the specific
-				problems/good aspects of the diet?
-			</paragraph>
-			<textarea id="Q4_explanation2" />
 		</slidetemplate>
 
-		<slidetemplate name="question1_health_judgement_meal3">
+		<slidetemplate name="question5_mealchoice">
 			<paragraph>
-				Please look at the picture below. How healthy do you think
-				this meal is?
-			</paragraph>
-			<placeholder />
-			<singlechoice id="Q4_3">
-				<question>How healthy is this meal?</question>
-				<answer correct="True">Very healthy</answer>
-				<answer correct="True">Very healthy</answer>
-				<answer>Moderately healthy</answer>
-				<answer>Neutral</answer>
-				<answer>Not very healthy</answer>
-				<answer>Not at all healthy</answer>
-			</singlechoice>
-			<paragraph>
-				Please explain your answer. What were some of the specific
-				problems/good aspects of the diet?
-			</paragraph>
-			<textarea id="Q4_explanation3" />
-		</slidetemplate>
-
-		<slidetemplate name="question1_health_judgement_meal4">
-			<paragraph>
-				Please look at the picture below. How healthy do you think
-				this meal is?
-			</paragraph>
-			<placeholder />
-			<singlechoice id="Q4_4">
-				<question>How healthy is this meal?</question>
-				<answer correct="True">Very healthy</answer>
-				<answer correct="True">Very healthy</answer>
-				<answer>Moderately healthy</answer>
-				<answer>Neutral</answer>
-				<answer>Not very healthy</answer>
-				<answer>Not at all healthy</answer>
-			</singlechoice>
-			<paragraph>
-				Please explain your answer. What were some of the specific
-				problems/good aspects of the diet?
-			</paragraph>
-			<textarea id="Q4_explanation4" />
-		</slidetemplate>
-
-		<slidetemplate name="question1_health_judgement_meal5">
-			<paragraph>
-				Please look at the picture below. How healthy do you think
-				this meal is?
-			</paragraph>
-			<placeholder />
-			<singlechoice id="Q4_5">
-				<question>How healthy is this meal?</question>
-				<answer correct="True">Very healthy</answer>
-				<answer correct="True">Very healthy</answer>
-				<answer>Moderately healthy</answer>
-				<answer>Neutral</answer>
-				<answer>Not very healthy</answer>
-				<answer>Not at all healthy</answer>
-			</singlechoice>
-			<paragraph>
-				Please explain your answer. What were some of the specific
-				problems/good aspects of the diet?
-			</paragraph>
-			<textarea id="Q4_explanation5" />
-		</slidetemplate>
-
-		<slidetemplate name="question1_mealchoice">
-			<paragraph>
-				Please look at the pictures below. Which of these meals
-				would you choose as a healthy meal for yourself? 
+				Please look at the pictures below.  
 			</paragraph>
 			<placeholder />
 			<paragraph>
 				Please explain your answer. What did you like about that
 				particular meal?
 			</paragraph>
-			<textarea id="Q5_explanation" />
+			<placeholder />
 		</slidetemplate>
 
 		<slidetemplate name="tagging_intro">
@@ -378,193 +490,23 @@
 			</paragraph>
 		</slidetemplate>
 
-		<slidetemplate name="case2_tags_breakfast1">
+		<slidetemplate name="case_tags_meal">
 			<paragraph>
 				Please look at the picture below and think whether this is
 				a healthy meal. 
 			</paragraph>
+			<placeholder />
+			<placeholder />
 			<paragraph>
-				Day 1: Breakfast
-			</paragraph>
-			<image id="image1" url="/images/breakfast1_5.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
+				Please enter key words (tags) to describe this meal.
 				Tags could be one-word or short
 				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
+				tags with ";". Please enter as many tags
+				as you can think of.
 			</paragraph>
-			<textarea id="C2_breakfast1" />
+			<placeholder />
 		</slidetemplate>
 
-		<slidetemplate name="case2_tags_lunch1">
-			<paragraph>
-				Please look at the picture below and think whether this is
-				a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 1: Lunch
-			</paragraph>
-			<image id="image1" url="/images/lunch1_4.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
-				Tags could be one-word or short
-				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
-			</paragraph>
-			<multichoice id="MC1">
-				<question>Please tag the picture above</question>
-				<choice>Tag 1</choice>
-				<choice>Tag 2</choice>
-				<choice>Tag 3</choice>
-				<choice>Tag 4</choice>
-				<choice>Tag 5</choice>
-			</multichoice>
-			<textarea id="C2_lunch1" />
-		</slidetemplate>
-
-		<slidetemplate name="case2_tags_dinner1">
-			<paragraph>
-				Please look at the picture below and think whether this is
-				a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 1: Dinner
-			</paragraph>
-			<image id="image1" url="/images/dinner1_5.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
-				Tags could be one-word or short
-				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
-			</paragraph>
-			<textarea id="C2_dinner1" />
-		</slidetemplate>
-
-		<slidetemplate name="case2_tags_breakfast2">
-			<paragraph>
-				Please look at the picture below and think whether this is
-				a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 2: Breakfast
-			</paragraph>
-			<image id="image1" url="/images/breakfast1_5.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
-				Tags could be one-word or short
-				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
-			</paragraph>
-			<textarea id="C2_breakfast2" />
-		</slidetemplate>
-
-		<slidetemplate name="case2_tags_lunch2">
-			<paragraph>
-				Please look at the picture below and think whether this is
-				a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 2: Lunch
-			</paragraph>
-			<image id="image1" url="/images/lunch1_4.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
-				Tags could be one-word or short
-				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
-			</paragraph>
-			<textarea id="C2_lunch2" />
-		</slidetemplate>
-
-		<slidetemplate name="case2_tags_dinner2">
-			<paragraph>
-				Please look at the picture below and think whether this is
-				a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 2: Dinner
-			</paragraph>
-			<image id="image1" url="/images/breakfast1_5.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
-				Tags could be one-word or short
-				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
-			</paragraph>
-			<textarea id="C2_dinner2" />
-		</slidetemplate>
-
-		<slidetemplate name="case2_tags_breakfast3">
-			<paragraph>
-				Please look at the picture below and think whether this is
-				a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 3: Breakfast
-			</paragraph>
-			<image id="image1" url="/images/breakfast1_5.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
-				Tags could be one-word or short
-				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
-			</paragraph>
-			<textarea id="C2_breakfast3" />
-		</slidetemplate>
-
-		<slidetemplate name="case2_tags_lunch3">
-			<paragraph>
-				Please look at the picture below and think whether this is
-				a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 3: Lunch
-			</paragraph>
-			<image id="image1" url="/images/lunch1_4.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
-				Tags could be one-word or short
-				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
-			</paragraph>
-			<textarea id="C2_lunch3" />
-		</slidetemplate>
-
-		<slidetemplate name="case2_tags_dinner3">
-			<paragraph>
-				Please look at the picture below and think whether this is
-				a healthy meal. 
-			</paragraph>
-			<paragraph>
-				Day 3: Dinner
-			</paragraph>
-			<image id="image1" url="/images/dinner1_5.png" />
-			<paragraph>
-				Please select key words or tags to describe this meal.
-				Tags could be one-word or short
-				phrases. Please separate different
-				tags with ";". Please choose as many tags
-				as you can
-				think of.
-			</paragraph>
-			<textarea id="C2_dinner3" />
-		</slidetemplate>
 
 		<slidetemplate name="social_tagging_intro">
 			<paragraph>
@@ -595,6 +537,33 @@
 			<paragraph>
 				When you are ready, please click the Start button below.
 			</paragraph>
+		</slidetemplate>
+		<slidetemplate name="case_soc_tags_lunch">
+			<paragraph>
+				Please look at the picture below and think whether this is
+				a healthy meal. 
+			</paragraph>
+			<paragraph>
+				Day 1: Lunch
+			</paragraph>
+			<image id="image1" url="/images/lunch1_4.png" />
+			<paragraph>
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can
+				think of.
+			</paragraph>
+			<multichoice id="MC1">
+				<question>Please tag the picture above</question>
+				<choice>Tag 1</choice>
+				<choice>Tag 2</choice>
+				<choice>Tag 3</choice>
+				<choice>Tag 4</choice>
+				<choice>Tag 5</choice>
+			</multichoice>
+			<textarea id="C2_lunch1" />
 		</slidetemplate>
 
 	</slidetemplates>
