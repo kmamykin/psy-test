@@ -8,8 +8,7 @@ import com.mamykin.psytest.client.model.SlideElementWidget;
 import com.mamykin.psytest.client.model.StudyResultLogger;
 import com.mamykin.psytest.client.model.StudySlideElement;
 
-public class SlideSingleChoiceElement implements StudySlideElement,
-		Serializable {
+public class SlideSingleChoiceElement implements StudySlideElement, Serializable {
 	private static final long serialVersionUID = -1243708904233988308L;
 
 	protected String id;
@@ -21,8 +20,7 @@ public class SlideSingleChoiceElement implements StudySlideElement,
 		this("", "", new ArrayList<SlideChoiceAnswer>());
 	}
 
-	public SlideSingleChoiceElement(String id, String question,
-			List<SlideChoiceAnswer> answers) {
+	public SlideSingleChoiceElement(String id, String question, List<SlideChoiceAnswer> answers) {
 		this.id = id;
 		this.question = question;
 		this.answers = answers;
@@ -62,10 +60,11 @@ public class SlideSingleChoiceElement implements StudySlideElement,
 	}
 
 	public void recordResult(StudyResultLogger logger) {
-		logger.addValue(getId(), "user_selection", Integer
-				.toString(getUserSelectedAnswerIndex()));
-		logger.addValue(getId(), "correct_answer", Integer
-				.toString(getCorrectAnswerIndex()));
+		logger.addValue(getId(), correctAnswerSelected());
+	}
+
+	private String correctAnswerSelected() {
+		return getCorrectAnswerIndex() == getUserSelectedAnswerIndex() ? "Correct" : "Incorrect";
 	}
 
 }

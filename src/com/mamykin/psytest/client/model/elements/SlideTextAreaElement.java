@@ -29,14 +29,14 @@ public class SlideTextAreaElement implements StudySlideElement, Serializable {
 	}
 
 	public void recordResult(StudyResultLogger logger) {
-		logger.addValue(getId(), "text", text);
+		logger.addValue(getId(), text);
 	}
 
 	public void setText(String value) {
 		this.text = value;
 	}
-	
-	public String getText(){
+
+	public String getText() {
 		return text;
 	}
 

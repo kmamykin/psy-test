@@ -183,7 +183,7 @@ public class StudyRunController {
 	}
 
 	private void recordStudyResults() {
-		studyService.recordRunResults(currentRun.getResults(),
+		studyService.recordRunResults(currentRun.recordResults(),
 				new AsyncCallback<Boolean>() {
 
 					public void onFailure(Throwable caught) {
