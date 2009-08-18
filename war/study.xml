@@ -5,37 +5,49 @@
 			<block ref="intro" />
 			<block ref="trial1" />
 			<block ref="C1_questions" />
-			<!--
-			<block ref="trial2_1" />
-			<block ref="questions2" />
+
+			<block ref="tagging_intro" />
+			<block ref="trial2_g1" />
+			<block ref="C2_questions" />
+			
+			<block ref="tagging_intro" />
 			<block ref="trial3" />
-			<block ref="questions3" />
-			-->
+			<block ref="C3_questions" />
+		
 			<block ref="finish" />
 		</group>
 		<group name="Group2">
 			<block ref="intro" />
 			<block ref="trial1" />
-			<block ref="C2_questions" />
-			<!--
-				block ref="trial2_2" /> <block ref="questions2" /> <block
-				ref="trial3" /> <block ref="questions3" />
-			-->
+			<block ref="C1_questions" />
+			
+			<block ref="trial2_g2" /> 
+			<block ref="C2_questions" /> 
+
+			<block ref="trial3" /> 
+			<block ref="C3_questions" />
 			<block ref="finish" />
 		</group>
+		
 		<group name="Group3">
 			<block ref="intro" />
 			<block ref="trial1" />
-			<block ref="questions1" />
+			<block ref="C1_questions" />
 			<!--
-				block ref="trial2_3" /> <block ref="questions2" /> <block
-				ref="trial3" /> <block ref="questions3" />
+			block ref="trial2_3" /> 
+			<block ref="C2_questions" /> 
 			-->
+			<block ref="trial3" /> 
+			<block ref="C3_questions" />
 			<block ref="finish" />
 		</group>
 	</groups>
 
 	<blocks>
+		
+<!-- Trial 1: same for everybody
+-->
+		
 		<block id="intro">
 			<case id="C1_intro">
 				<slide template="general_intro" />
@@ -46,45 +58,57 @@
 				<slide template="case_meal_stimuli">
 					<paragraph>Breakfast</paragraph>
 					<image id="C1_image1" url="/images/case1_1_br.jpg" />
+					<paragraph>Egg and cheese on whole grain muffin with a tomato; coffee with milk and sugar</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
 					<paragraph>Lunch</paragraph>
 					<image id="C1_image2" url="/images/case1_1_lunch.jpg" />
+					<paragraph>Fried chicken thighs with rice and mixed salad</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
 					<paragraph>Dinner</paragraph>
 					<image id="C1_image3" url="/images/case1_1_dinner.jpg" />
+					<paragraph>Pork chops with potato gratin and green beans</paragraph>
 				</slide>
 			</case>
 			<case id="C1_2">
 				<slide template="case_meal_stimuli">
 					<paragraph>Breakfast</paragraph>
 					<image id="C1_image4" url="/images/case1_2_br.jpg" />
+					<paragraph>Cheese omelet on whole grain English muffin</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
 					<paragraph>Lunch</paragraph>
 					<image id="C1_image5" url="/images/case1_2_lunch.jpg" />
+					<paragraph>Fried breaded fish, pasta with tomato sauce, green beans with almonds</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
 					<paragraph>Dinner</paragraph>
 					<image id="C1_image6" url="/images/case1_2_dinner.jpg" />
+					<paragraph>Chicken with brown rice and chick peas, green beans with almonds, melon white cranberry juice</paragraph>
 				</slide>
 			</case>
 			<case id="C1_3">
 				<slide template="case_meal_stimuli">
 					<paragraph>Breakfast</paragraph>
 					<image id="C1_image7" url="/images/case1_3_br.jpg" />
+					<paragraph>High fiber cereal with 1% milk and V-8 juice</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
 					<paragraph>Lunch</paragraph>
 					<image id="C1_image8" url="/images/case1_3_lunch.jpg" />
+					<paragraph>Chicken sausages with mashed potatoes and mixed vegetables</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
 					<paragraph>Dinner</paragraph>
 					<image id="C1_image9" url="/images/case1_3_dinner.jpg" />
+					<paragraph>Breaded fried chicken breast with mixed vegetables and roasted potatoes</paragraph>
 				</slide>
 			</case>
 		</block>
+		
+<!--  Trial 1 Questions  -->		
+		
 		<block id="C1_questions">
 			<case id="C1_Q">
 				<slide template="question1_recall">
@@ -129,6 +153,7 @@
 				</slide>
 				<slide template="question4_health_judgement_meal">
 					<image id="C1_image13" url="/images/healthy_1.jpg" />
+					<paragraph>Whole grain English muffin with brown yogurt spread, hard boiled egg, Activa yogurt and coffee</paragraph>
 					<singlechoice id="C1_Q4_1">
 						<question>How healthy do you think is this meal?</question>
 						<answer correct="True">Very healthy</answer>
@@ -141,6 +166,7 @@
 				</slide>
 				<slide template="question4_health_judgement_meal">
 					<image id="C1_image14" url="/images/healthy_2.jpg" />
+					<paragraph>Chicken, cheese and mixed greens salad, strawberries, rye bread</paragraph>
 					<singlechoice id="C1_Q4_2">
 						<question>How healthy do you think is this meal?</question>
 						<answer correct="True">Very healthy</answer>
@@ -153,6 +179,7 @@
 				</slide>
 				<slide template="question4_health_judgement_meal">
 					<image id="C1_image15" url="/images/unhealthy_1.jpg" />
+					<paragraph>Fried fish with corn on a cob and rice, cranberry juice</paragraph>
 					<singlechoice id="C1_Q4_3">
 						<question>How healthy do you think is this meal?</question>
 						<answer>Very healthy</answer>
@@ -166,82 +193,102 @@
 				<slide template="question5_mealchoice">
 					<singlechoice id="C1_Q5_1">
 						<question>Which of these meals would you choose?</question>
-						<answer url="/images/set1_bad1.jpg">I would choose this meal</answer>
-						<answer correct="true" url="/images/set1_good.jpg">I would choose this meal</answer>
-						<answer url="/images/set1_bad2.jpg">I would choose this meal</answer>
+						<answer url="/images/set1_bad1.jpg">Cheese omelet with a sausage and a whole wheat bagel</answer>
+						<answer correct="true" url="/images/set1_good.jpg">Half a grapefruit, low fat yogurt, V-8 juice</answer>
+						<answer url="/images/set1_bad2.jpg">Egg, sausage and cheese croissant, cottage cheese, V-8 juice</answer>
 					</singlechoice>
 					<textarea id="C1_Q5_explanation1" />
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C1_Q5_2">
 						<question>Which of these meals would you choose?</question>
-						<answer correct="true" url="/images/set2_good.jpg">I would choose this meal</answer>
-						<answer url="/images/set2_bad1.jpg">I would choose this meal</answer>
-						<answer url="/images/set2_bad2.jpg">I would choose this meal</answer>
+						<answer correct="true" url="/images/set2_good.jpg">Tuna salad sandwich on whole wheat bread, with lettuce and tomato</answer>
+						<answer url="/images/set2_bad1.jpg">Fried chicken with white rice</answer>
+						<answer url="/images/set2_bad2.jpg">Pasta and meatballs</answer>
 					</singlechoice>
 					<textarea id="C1_Q5_explanation2" />
 				</slide>
 			</case>
 		</block>
 		
+<!-- Trial 2: group 1 - free tagging; 
+			  group 2: social tagging with descriptive tags; 
+			  group 3: social tagging with assessment tags;
+-->
+		
+<!-- Trial 2: group 1 -->
+
 		<block id="tagging_intro">
 			<case id="C2_intro">
 				<slide template="tagging_intro" />
 			</case>
 		</block>
-		<block id="trial2">
-			<case id="C2_1">
+		
+		<block id="trial2_g1">
+			<case id="C2G1_1">
 				<slide template="case_tags_meal">
 					<paragraph>Breakfast</paragraph>
-					<image id="C2_image1" url="/images/case2_1_br.jpg" />
-					<textarea id="C2_1_br_tags" />
+					<image id="C2G1_image1" url="/images/case2_1_br.jpg" />
+					<paragraph>Pancakes with syrup, coffee with milk and sugar</paragraph>
+					<textarea id="C2G1_1_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
 					<paragraph>Lunch</paragraph>
-					<image id="C2_image2" url="/images/case2_1_lunch.jpg" />
-					<textarea id="C2_1_lunch_tags" />
+					<image id="C2G1_image2" url="/images/case2_1_lunch.jpg" />
+					<paragraph>Shrimp with cocktail sauce</paragraph>
+					<textarea id="C2G1_1_lunch_tags" />
 				</slide>
 				<slide template="case_tags_meal">
 					<paragraph>Dinner</paragraph>
-					<image id="C2_image3" url="/images/case2_1_dinner.jpg" />
-					<textarea id="C2_1_dinner_tags" />
+					<image id="C2G1_image3" url="/images/case2_1_dinner.jpg" />
+					<paragraph>Pasta and meatballs in tomato sauce</paragraph>
+					<textarea id="C2G1_1_dinner_tags" />
 				</slide>
 			</case>
-			<case id="C2_2">
+			<case id="C2G1_2">
 				<slide template="case_tags_meal">
 					<paragraph>Breakfast</paragraph>
-					<image id="C1_image4" url="/images/case2_2_br.jpg" />
-					<textarea id="C2_2_br_tags" />
+					<image id="C2G1_image4" url="/images/case2_2_br.jpg" />
+					<paragraph>Omelet with ricotta cheese</paragraph>
+					<textarea id="C2G1_2_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
 					<paragraph>Lunch</paragraph>
-					<image id="C1_image5" url="/images/case2_2_lunch.jpg" />
-					<textarea id="C2_2_lunch_tags" />
+					<image id="C2G1_image5" url="/images/case2_2_lunch.jpg" />
+					<paragraph>Ham and cheese hot pocket with peanuts</paragraph>
+					<textarea id="C2G1_2_lunch_tags" />
 				</slide>
 				<slide template="case_tags_meal">
 					<paragraph>Dinner</paragraph>
-					<image id="C1_image6" url="/images/case2_2_dinner.jpg" />
-					<textarea id="C2_2_dinner_tags" />
+					<image id="C2G1_image6" url="/images/case2_2_dinner.jpg" />
+					<paragraph>Turkey wrap with cheese and a pickle</paragraph>
+					<textarea id="C2G1_2_dinner_tags" />
 				</slide>
 			</case>
-			<case id="C2_3">
+			<case id="C2G1_3">
 				<slide template="case_tags_meal">
 					<paragraph>Breakfast</paragraph>
-					<image id="C1_image7" url="/images/case2_3_br.jpg" />
-					<textarea id="C2_3_br_tags" />
+					<image id="C2G1_image7" url="/images/case2_3_br.jpg" />
+					<paragraph>Granola with whole milk, coffee with cream and sugar</paragraph>
+					<textarea id="C2G1_3_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
 					<paragraph>Lunch</paragraph>
-					<image id="C1_image8" url="/images/case2_3_lunch.jpg" />
-					<textarea id="C2_3_lunch_tags" />
+					<image id="C2G1_image8" url="/images/case2_3_lunch.jpg" />
+					<paragraph>Crepe with mushrooms and cream sauce</paragraph>
+					<textarea id="C2G1_3_lunch_tags" />
 				</slide>
 				<slide template="case_tags_meal">
 					<paragraph>Dinner</paragraph>
-					<image id="C1_image9" url="/images/case2_3_dinner.jpg" />
-					<textarea id="C2_3_dinner_tags" />
+					<image id="C2G1_image9" url="/images/case2_3_dinner.jpg" />
+					<paragraph>Double cheeseburger with large french fries</paragraph>
+					<textarea id="C2G1_3_dinner_tags" />
 				</slide>
 			</case>
 		</block>
+		
+<!-- Case 2 questions -->		
+		
 		<block id="C2_questions">
 			<case id="C2_Q">
 				<slide template="question1_recall">
@@ -250,7 +297,7 @@
 					<textarea id="C2_Q1_day3" />
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C2_image10" url="/images/case2_1_br_unhealthy.jpg" />
+					<image id="C2_image10" url="/images/case2_1_br.jpg" />
 					<singlechoice id="C2_Q3_1">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
@@ -258,7 +305,7 @@
 					</singlechoice>
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C2_image11" url="/images/case2_3_lunch_unhealthy.jpg" />
+					<image id="C2_image11" url="/images/case2_3_lunch.jpg" />
 					<singlechoice id="C2_Q3_2">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer>Yes</answer>
@@ -266,7 +313,7 @@
 					</singlechoice>
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C3_image12" url="/images/distractor.jpg" />
+					<image id="C3_image12" url="/images/distractor_2.jpg" />
 					<singlechoice id="C2_Q3_3">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
@@ -274,7 +321,7 @@
 					</singlechoice>
 				</slide>
 				<slide template="question3_health_judgement_diet">
-					<singlechoice id="Q3_1">
+					<singlechoice id="C2_Q3_1">
 						<question>How healthy is the diet of this individual?</question>
 						<answer>Very healthy</answer>
 						<answer>Moderately healthy</answer>
@@ -286,6 +333,7 @@
 				</slide>
 				<slide template="question4_health_judgement_meal">
 					<image id="C2_image13" url="/images/unhealthy_2.jpg" />
+					<paragraph></paragraph>
 					<singlechoice id="C2_Q4_1">
 						<question>How healthy do you think is this meal?</question>
 						<answer>Very healthy</answer>
@@ -298,6 +346,7 @@
 				</slide>
 				<slide template="question4_health_judgement_meal">
 					<image id="C2_image14" url="/images/healthy_3.jpg" />
+					<paragraph></paragraph>
 					<singlechoice id="C2_Q4_2">
 						<question>How healthy do you think is this meal?</question>
 						<answer correct="True">Very healthy</answer>
@@ -310,6 +359,7 @@
 				</slide>
 				<slide template="question4_health_judgement_meal">
 					<image id="C2_image15" url="/images/unhealthy_3.jpg" />
+					<paragraph></paragraph>
 					<singlechoice id="C2_Q4_3">
 						<question>How healthy do you think is this meal?</question>
 						<answer>Very healthy</answer>
@@ -337,6 +387,325 @@
 						<answer correct="true" url="/images/set4_good.jpg">I would choose this meal</answer>
 					</singlechoice>
 					<textarea id="C2_Q5_explanation2" />
+				</slide>
+			</case>
+		</block>
+		
+<!--  Trial 2: group 2 -->
+
+		<block id="social_tagging_intro">
+			<case id="C2G2_intro">
+				<slide template="social_tagging_intro" />
+			</case>
+		</block>
+
+		<block id="trial2_g2">
+			<case id="C2G2_1">
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C2G2_image1" url="/images/case2_1_br.jpg" />
+					<paragraph>Pancakes with syrup, coffee with milk and sugar</paragraph>
+					<textarea id="C2G2_1_br_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C2G2_image2" url="/images/case2_1_lunch.jpg" />
+					<paragraph>Shrimp with cocktail sauce</paragraph>
+					<textarea id="C2G2_1_lunch_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C2G2_image3" url="/images/case2_1_dinner.jpg" />
+					<paragraph>Pasta and meatballs in tomato sauce</paragraph>
+					<textarea id="C2G2_1_dinner_tags" />
+				</slide>
+			</case>
+			<case id="C2G2_2">
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C2G2_image4" url="/images/case2_2_br.jpg" />
+					<paragraph>Omelet with ricotta cheese</paragraph>
+					<textarea id="C2G2_2_br_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C2G2_image5" url="/images/case2_2_lunch.jpg" />
+					<paragraph>Ham and cheese hot pocket with peanuts</paragraph>
+					<textarea id="C2G2_2_lunch_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C2G2_image6" url="/images/case2_2_dinner.jpg" />
+					<paragraph>Turkey wrap with cheese and a pickle</paragraph>
+					<textarea id="C2G2_2_dinner_tags" />
+				</slide>
+			</case>
+			<case id="C2G2_3">
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C2G2_image7" url="/images/case2_3_br.jpg" />
+					<paragraph>Granola with whole milk, coffee with cream and sugar</paragraph>
+					<textarea id="C2G2_3_br_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C2G2_image8" url="/images/case2_3_lunch.jpg" />
+					<paragraph>Crepe with mushrooms and cream sauce</paragraph>
+					<textarea id="C2G2_3_lunch_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C2G2_image9" url="/images/case2_3_dinner.jpg" />
+					<paragraph>Double cheeseburger with large french fries</paragraph>
+					<textarea id="C2G2_3_dinner_tags" />
+				</slide>
+			</case>
+		</block>
+		
+		
+<!--  Trial 2: group 3 -->
+
+		<block id="social_tagging_intro">
+			<case id="C2G3_intro">
+				<slide template="social_tagging_intro" />
+			</case>
+		</block>
+
+		<block id="trial2_g3">
+			<case id="C2G3_1">
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C2G3_image1" url="/images/case2_1_br.jpg" />
+					<paragraph>Pancakes with syrup, coffee with milk and sugar</paragraph>
+					<textarea id="C2G3_1_br_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C2G3_image2" url="/images/case2_1_lunch.jpg" />
+					<paragraph>Shrimp with cocktail sauce</paragraph>
+					<textarea id="C2G3_1_lunch_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C2G3_image3" url="/images/case2_1_dinner.jpg" />
+					<paragraph>Pasta and meatballs in tomato sauce</paragraph>
+					<textarea id="C2G3_1_dinner_tags" />
+				</slide>
+			</case>
+			<case id="C2G3_2">
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C2G3_image4" url="/images/case2_2_br.jpg" />
+					<paragraph>Omelet with ricotta cheese</paragraph>
+					<textarea id="C2G3_2_br_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C2G3_image5" url="/images/case2_2_lunch.jpg" />
+					<paragraph>Ham and cheese hot pocket with peanuts</paragraph>
+					<textarea id="C2G3_2_lunch_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C2G3_image6" url="/images/case2_2_dinner.jpg" />
+					<paragraph>Turkey wrap with cheese and a pickle</paragraph>
+					<textarea id="C2G3_2_dinner_tags" />
+				</slide>
+			</case>
+			<case id="C2G3_3">
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C2G3_image7" url="/images/case2_3_br.jpg" />
+					<paragraph>Granola with whole milk, coffee with cream and sugar</paragraph>
+					<textarea id="C2G3_3_br_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C2G3_image8" url="/images/case2_3_lunch.jpg" />
+					<paragraph>Crepe with mushrooms and cream sauce</paragraph>
+					<textarea id="C2G3_3_lunch_tags" />
+				</slide>
+				<slide template="case_soc_tags_descriptive_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C2G3_image9" url="/images/case2_3_dinner.jpg" />
+					<paragraph>Double cheeseburger with large french fries</paragraph>
+					<textarea id="C2G3_3_dinner_tags" />
+				</slide>
+			</case>
+		</block>
+		
+				
+		
+		
+<!-- Case 3: same for everybody
+-->
+		<block id="tagging_intro">
+			<case id="C3_intro">
+				<slide template="tagging_intro" />
+			</case>
+		</block>
+		
+		<block id="trial3">
+			<case id="C3_1">
+				<slide template="case_tags_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C3_image1" url="/images/case3_1_br.jpg" />
+					<paragraph>Whole wheat toast with white cheese spread and fruite spread,  blueberries</paragraph>
+					<textarea id="C3_1_br_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C3_image2" url="/images/case3_1_lunch.jpg" />
+					<paragraph>Rigatoni with tomato meat sauce and mixed vegetables</paragraph>
+					<textarea id="C3_1_lunch_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C3_image3" url="/images/case3_1_dinner.jpg" />
+					<paragraph>Grilled chicken breast with squash, corn on a cob, and tomato salad</paragraph>
+					<textarea id="C3_1_dinner_tags" />
+				</slide>
+			</case>
+			<case id="C3_2">
+				<slide template="case_tags_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C3_image4" url="/images/case3_2_br.jpg" />
+					<paragraph>Whole wheat toast with cream cheese and fruit spread, melon</paragraph>
+					<textarea id="C3_2_br_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C3_image5" url="/images/case3_2_lunch.jpg" />
+					<paragraph>Chicken and mixed greens salad, 2 rice cakes</paragraph>
+					<textarea id="C3_2_lunch_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C3_image6" url="/images/case3_2_dinner.jpg" />
+					<paragraph>Chicken breast with roasted potatoes and  summer vegetables</paragraph>
+					<textarea id="C3_2_dinner_tags" />
+				</slide>
+			</case>
+			<case id="C3_3">
+				<slide template="case_tags_meal">
+					<paragraph>Breakfast</paragraph>
+					<image id="C3_image7" url="/images/case3_3_br.jpg" />
+					<paragraph>Whole grain toast with camembert cheese and fruit preserve</paragraph>
+					<textarea id="C3_3_br_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Lunch</paragraph>
+					<image id="C3_image8" url="/images/case3_3_lunch.jpg" />
+					<paragraph>Chicken thighs with roasted potatoes and cauliflower</paragraph>
+					<textarea id="C3_3_lunch_tags" />
+				</slide>
+				<slide template="case_tags_meal">
+					<paragraph>Dinner</paragraph>
+					<image id="C3_image9" url="/images/case3_3_dinner.jpg" />
+					<paragraph>Steamed chicken breast with mashed potatoes and mixed vegetables</paragraph>
+					<textarea id="C3_3_dinner_tags" />
+				</slide>
+			</case>
+		</block>
+		
+		<block id="C3_questions">
+			<case id="C3_Q">
+				<slide template="question1_recall">
+					<textarea id="C3_Q1_day1" />
+					<textarea id="C3_Q1_day2" />
+					<textarea id="C3_Q1_day3" />
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image10" url="/images/distractor_3.jpg" />
+					<singlechoice id="C2_Q3_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image11" url="/images/case3_1_lunch.jpg" />
+					<singlechoice id="C3_Q3_2">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer>Yes</answer>
+						<answer correct="True">No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image12" url="/images/case3_2_br.jpg" />
+					<singlechoice id="C3_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question3_health_judgement_diet">
+					<singlechoice id="C3_Q3_1">
+						<question>How healthy is the diet of this individual?</question>
+						<answer>Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer correct="True">Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C3_Q3_explanation" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C2_image13" url="/images/unhealthy_4.jpg" />
+					<paragraph></paragraph>
+					<singlechoice id="C3_Q4_1">
+						<question>How healthy do you think is this meal?</question>
+						<answer>Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer correct="True">Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C3_Q4_explanation1" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C3_image14" url="/images/healthy_4.jpg" />
+					<paragraph></paragraph>
+					<singlechoice id="C2_Q4_2">
+						<question>How healthy do you think is this meal?</question>
+						<answer correct="True">Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer>Not very healthy</answer>
+						<answer>Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C3_Q4_explanation2" />
+				</slide>
+				<slide template="question4_health_judgement_meal">
+					<image id="C3_image15" url="/images/unhealthy_5.jpg" />
+					<paragraph></paragraph>
+					<singlechoice id="C3_Q4_3">
+						<question>How healthy do you think is this meal?</question>
+						<answer>Very healthy</answer>
+						<answer>Moderately healthy</answer>
+						<answer>Neutral</answer>
+						<answer>Not very healthy</answer>
+						<answer correct="True">Not at all healthy</answer>
+					</singlechoice>
+					<textarea id="C3_Q4_explanation3" />
+				</slide>
+				<slide template="question5_mealchoice">
+					<singlechoice id="C3_Q5_1">
+						<question>Which of these meals would you choose?</question>
+						<answer correct="true" url="/images/set5_good.jpg">I would choose this meal</answer>
+						<answer url="/images/set5_bad1.jpg">I would choose this meal</answer>
+						<answer url="/images/set5_bad2.jpg">I would choose this meal</answer>
+					</singlechoice>
+					<textarea id="C3_Q5_explanation1" />
+				</slide>
+				<slide template="question5_mealchoice">
+					<singlechoice id="C3_Q5_2">
+						<question>Which of these meals would you choose?</question>
+						<answer url="/images/set6_bad1.jpg">I would choose this meal</answer>
+						<answer url="/images/set6_bad2.jpg">I would choose this meal</answer>
+						<answer correct="true" url="/images/set6_good.jpg">I would choose this meal</answer>
+					</singlechoice>
+					<textarea id="C3_Q5_explanation2" />
 				</slide>
 			</case>
 		</block>
@@ -398,6 +767,7 @@
 			</paragraph>
 			<placeholder />
 			<placeholder />
+			<placeholder />
 		</slidetemplate>
 
 		<slidetemplate name="question1_recall">
@@ -443,6 +813,7 @@
 			<paragraph>
 				Please look at the picture below.
 			</paragraph>
+			<placeholder />
 			<placeholder />
 			<placeholder />
 			<paragraph>
@@ -497,6 +868,7 @@
 			</paragraph>
 			<placeholder />
 			<placeholder />
+			<placeholder />
 			<paragraph>
 				Please enter key words (tags) to describe this meal.
 				Tags could be one-word or short
@@ -510,7 +882,7 @@
 
 		<slidetemplate name="social_tagging_intro">
 			<paragraph>
-				Thank you for completing the first trial.
+				Thank you for completing the trial.
 			</paragraph>
 			<paragraph>
 				In the next trial you will be asked to look at the another
@@ -538,7 +910,73 @@
 				When you are ready, please click the Start button below.
 			</paragraph>
 		</slidetemplate>
-		<slidetemplate name="case_soc_tags_lunch">
+		
+		<slidetemplate name="case_soc_tags_assessment_meal">
+			<paragraph>
+				Please look at the picture below and think whether this is
+				a healthy meal. 
+			</paragraph>
+			<placeholder />
+			<placeholder />
+			<placeholder />
+			<paragraph>
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can think of.
+			</paragraph>
+			<multichoice id="MC1">
+				<question>Please tag the picture above</question>
+				<choice>Poor proportions</choice>
+				<choice>Not enough carbohydrate</choice>
+				<choice>Not enough protein</choice>
+				<choice>Needs veggies</choice>
+				<choice>Needs fruit</choice>
+				<choice>Too much carbohydrate</choice>
+				<choice>Too much fat</choice>
+				<choice>Too large portion size</choice>
+			</multichoice>>
+			<placeholder />
+		</slidetemplate>
+		
+		<slidetemplate name="case_soc_tags_descriptive_meal">
+			<paragraph>
+				Please look at the picture below and think whether this is
+				a healthy meal. 
+			</paragraph>
+			<placeholder />
+			<placeholder />
+			<placeholder />
+			<paragraph>
+				Please select key words or tags to describe this meal.
+				Tags could be one-word or short
+				phrases. Please separate different
+				tags with ";". Please choose as many tags
+				as you can think of.
+			</paragraph>
+			<multichoice id="MC2">
+				<question>Please tag the picture above</question>
+				<choice>Eggs</choice>
+				<choice>Bacon</choice>
+				<choice>Ham</choice>
+				<choice>Mashed potatoes</choice>
+				<choice>Mixed veggetables</choice>
+				<choice>Steamed chicken breast</choice>
+				<choice>Fried chicken breast</choice>
+				<choice>Grilled salmon</choice>
+				<choice>Mixed green salad</choice>
+				<choice>Coffee with milk and sweetener</choice>
+				<choice>Glass of milk</choice>
+				<choice>Water</choice>
+				<choice>Juice</choice>
+				<choice>Apple</choice>
+			</multichoice>>
+			<placeholder />
+		</slidetemplate>
+		
+		<!--
+		<slidetemplate name="case_soc_tags_meal">
 			<paragraph>
 				Please look at the picture below and think whether this is
 				a healthy meal. 
@@ -565,6 +1003,7 @@
 			</multichoice>
 			<textarea id="C2_lunch1" />
 		</slidetemplate>
+		-->
 
 	</slidetemplates>
 </study>
