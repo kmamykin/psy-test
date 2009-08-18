@@ -36,7 +36,11 @@ public class StudyServiceImpl extends RemoteServiceServlet implements StudyServi
 
 	public boolean recordRunResults(StudyRunResults results) {
 		MailService mailService = MailServiceFactory.getMailService();
-		MailService.Message email = new MailService.Message("kmamyk@gmail.com", "kmamyk@gmail.com", "Study results", results.formatAsEmailBody());
+		MailService.Message email = new MailService.Message();
+		email.setSender("kmamyk@gmail.com");
+		email.setTo("kmamyk@gmail.com", "mamykina@gmail.com");
+		email.setSubject("Study results");
+		email.setTextBody(results.formatAsEmailBody());
 		log.info(email.getTextBody());
 		try {
 			mailService.send(email);
