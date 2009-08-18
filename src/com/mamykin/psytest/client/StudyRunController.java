@@ -60,35 +60,47 @@ public class StudyRunController {
 		void displayError(String message);
 	}
 
+	interface ProgressNotification {
+		void start();
+
+		void stop();
+	}
+
 	private StartView startView;
 	private RunView runView;
 	private FinishView finishView;
 	private StudyServiceAsync studyService;
 	private ErrorsNotification errorsNotification;
+	private ProgressNotification progressNotification;
 	private StudyRun currentRun;
 
-	public StudyRunController(StartView startView, RunView runView,
-			FinishView finishView, ErrorsNotification errorsNotification,
-			StudyServiceAsync studyService) {
+	public StudyRunController(StartView startView, RunView runView, FinishView finishView, ProgressNotification progressNofitication,
+			ErrorsNotification errorsNotification, StudyServiceAsync studyService) {
 		this.startView = startView;
 		this.runView = runView;
 		this.finishView = finishView;
 		this.errorsNotification = errorsNotification;
+		this.progressNotification = progressNofitication;
 		this.studyService = studyService;
 		wireEvents();
 	}
 
 	public void start() {
-		startView.setVisible(true);
+		showLoading();
+		retrieveStudy();
+	}
+
+	private void showLoading() {
+		startView.setVisible(false);
 		runView.setVisible(false);
 		finishView.setVisible(false);
-		retrieveStudy();
+		progressNotification.start();
 	}
 
 	private void retrieveStudy() {
 		studyService.getStudyInfo(new AsyncCallback<StudyInfo>() {
-
 			public void onFailure(Throwable caught) {
+				progressNotification.stop();
 				errorsNotification.displayError(caught.getMessage());
 			}
 
@@ -103,6 +115,8 @@ public class StudyRunController {
 		startView.setGroupsList(info.getGroups());
 		startView.setCasesList(info.getCases());
 		startView.getParticipantName().setValue("");
+		startView.setVisible(true);
+		progressNotification.stop();
 	}
 
 	private void wireEvents() {
@@ -136,8 +150,7 @@ public class StudyRunController {
 	}
 
 	private void retrieveStudyRunSlides() {
-		studyService.getStudyRun(startView.getSelectedGroup(), startView
-				.getSelectedCase(), startView.getParticipantName().getValue(),
+		studyService.getStudyRun(startView.getSelectedGroup(), startView.getSelectedCase(), startView.getParticipantName().getValue(),
 				new AsyncCallback<StudyRun>() {
 
 					public void onFailure(Throwable caught) {
@@ -183,17 +196,16 @@ public class StudyRunController {
 	}
 
 	private void recordStudyResults() {
-		studyService.recordRunResults(currentRun.recordResults(),
-				new AsyncCallback<Boolean>() {
+		studyService.recordRunResults(currentRun.recordResults(), new AsyncCallback<Boolean>() {
 
-					public void onFailure(Throwable caught) {
-						errorsNotification.displayError(caught.getMessage());
-					}
+			public void onFailure(Throwable caught) {
+				errorsNotification.displayError(caught.getMessage());
+			}
 
-					public void onSuccess(Boolean result) {
-						start();
-					}
-				});
+			public void onSuccess(Boolean result) {
+				start();
+			}
+		});
 	}
 
 }

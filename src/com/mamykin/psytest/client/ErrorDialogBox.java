@@ -14,10 +14,11 @@ public class ErrorDialogBox extends DialogBox {
 
 	public ErrorDialogBox() {
 		super();
-		setTitle("Error");
+		// setTitle("Error");
 		setModal(true);
-		add(panel);
+		setText("Error");
 		panel.add(messageLabel);
+		panel.setHorizontalAlignment(VerticalPanel.ALIGN_CENTER);
 		panel.add(ok);
 		ok.addClickHandler(new ClickHandler() {
 
@@ -25,10 +26,12 @@ public class ErrorDialogBox extends DialogBox {
 				hide();
 			}
 		});
+		setWidget(panel);
 	}
-	
-	public void displayError(String errorMessage){
+
+	public void displayError(String errorMessage) {
 		messageLabel.setText(errorMessage);
+		center();
 		this.show();
 	}
 
