@@ -9,7 +9,7 @@ import com.mamykin.psytest.client.model.elements.StudyPlaceholderElement;
 public class StudySlide implements Serializable {
 
 	private static final long serialVersionUID = 1950612878896366169L;
-	
+
 	private String name;
 	private ArrayList<StudySlideElement> elements;
 	private int timeLimitInSec;
@@ -17,6 +17,10 @@ public class StudySlide implements Serializable {
 
 	private String block;
 	private String caseIndex;
+
+	private long displayStartTime;
+
+	private long displayEndTime;
 
 	public String getBlock() {
 		return block;
@@ -91,6 +95,7 @@ public class StudySlide implements Serializable {
 		logger.addValue("Block", block);
 		logger.addValue("Case", caseIndex);
 		logger.addValue("Template", template);
+		logger.addValue("Display Time", Long.toString(getDisplayDurationInSeconds()));
 		for (StudySlideElement element : elements) {
 			element.recordResult(logger);
 		}
@@ -109,6 +114,18 @@ public class StudySlide implements Serializable {
 			}
 		}
 		return result;
+	}
+
+	public void setDisplayStartTime(long currentMillis) {
+		this.displayStartTime = currentMillis;
+	}
+
+	public void setDisplayEndTime(long currentMillis) {
+		this.displayEndTime = currentMillis;
+	}
+
+	private long getDisplayDurationInSeconds() {
+		return (displayEndTime - displayStartTime) / 1000;
 	}
 
 }

@@ -171,6 +171,7 @@ public class StudyRunController {
 	protected void nextSlideButtonPressed() {
 		runView.cancelTimer();
 		if (runView.contentIsValid()) {
+			currentRun.getCurrentSlide().setDisplayEndTime(System.currentTimeMillis());
 			runView.recordResults();
 
 			if (currentRun.hasMoreSlides()) {
@@ -186,6 +187,7 @@ public class StudyRunController {
 	private void displayCurrentSlide() {
 		StudySlide currentSlide = currentRun.getCurrentSlide();
 		runView.setContent(currentSlide.createUIElements());
+		currentSlide.setDisplayStartTime(System.currentTimeMillis());
 		if (currentSlide.isTimed()) {
 			runView.setTimer(currentSlide.getTimeLimitInMillis());
 		}
