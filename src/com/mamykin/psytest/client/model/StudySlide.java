@@ -108,7 +108,12 @@ public class StudySlide implements Serializable {
 		int placeholderReplacementIndex = 0;
 		for (StudySlideElement element : slideTemplate.getElements()) {
 			if (element instanceof StudyPlaceholderElement) {
-				result.addElement(getElements().get(placeholderReplacementIndex++));
+				try {
+					result.addElement(getElements().get(placeholderReplacementIndex++));
+				} catch (IndexOutOfBoundsException e) {
+					throw new IndexOutOfBoundsException("Trying to access " + placeholderReplacementIndex + " element in slide " + getName()
+							+ " to match template " + slideTemplate.getName());
+				}
 			} else {
 				result.addElement(element);
 			}
