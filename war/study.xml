@@ -21,9 +21,11 @@
 			<block ref="trial1" />
 			<block ref="C1_questions" />
 			
+			<block ref="social_tagging_intro" />
 			<block ref="trial2_g2" /> 
 			<block ref="C2_questions" /> 
 
+			<block ref="tagging_intro" />
 			<block ref="trial3" /> 
 			<block ref="C3_questions" />
 			<block ref="finish" />
@@ -33,10 +35,12 @@
 			<block ref="intro" />
 			<block ref="trial1" />
 			<block ref="C1_questions" />
-			<!--
-			block ref="trial2_3" /> 
+			
+			<block ref="social_tagging_intro" />
+			<block ref="trial2_g3" /> 
 			<block ref="C2_questions" /> 
-			-->
+			
+			<block ref="tagging_intro" />
 			<block ref="trial3" /> 
 			<block ref="C3_questions" />
 			<block ref="finish" />
@@ -244,7 +248,7 @@
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C1_Q5_1">
-						<question>Which of these meals would you choose?</question>
+						<question>You are trying to follow a healthy diet. Which of these meals would you choose?</question>
 						<answer url="/images/set1_bad1.jpg">Cheese omelet with a sausage and a whole wheat bagel</answer>
 						<answer correct="true" url="/images/set1_good.jpg">Half a grapefruit, low fat yogurt, V-8 juice</answer>
 						<answer url="/images/set1_bad2.jpg">Egg, sausage and cheese croissant, cottage cheese, V-8 juice</answer>
@@ -253,7 +257,7 @@
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C1_Q5_2">
-						<question>Which of these meals would you choose?</question>
+						<question>You are trying to follow a healthy diet. Which of these meals would you choose?</question>
 						<answer correct="true" url="/images/set2_good.jpg">Tuna salad sandwich on whole wheat bread, with lettuce and tomato</answer>
 						<answer url="/images/set2_bad1.jpg">Fried chicken with white rice</answer>
 						<answer url="/images/set2_bad2.jpg">Pasta and meatballs</answer>
@@ -479,7 +483,7 @@
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C2_Q5_1">
-						<question>Which of these meals would you choose?</question>
+						<question>You are trying to follow a healthy diet. Which of these meals would you choose?</question>
 						<answer correct="true" url="/images/set3_good.jpg">Pasta with meatballs and garlic bread, mixed greens salad</answer>
 						<answer url="/images/set3_bad1.jpg">Turkey wrap with Cheetos and walnuts</answer>
 						<answer url="/images/set3_bad2.jpg">Shrimp florenteine, 2 slices of bread with butter</answer>
@@ -488,7 +492,7 @@
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C2_Q5_2">
-						<question>Which of these meals would you choose?</question>
+						<question>You are trying to follow a healthy diet. Which of these meals would you choose?</question>
 						<answer url="/images/set4_bad1.jpg">Puffy rice cereal with sliced banana and a glass of orange juice</answer>
 						<answer url="/images/set4_bad2.jpg">Two scrambled eggs with cheese, breakfast sausage, a bagel with butter.</answer>
 						<answer correct="true" url="/images/set4_good.jpg">Sour dough bread with brie cheese and strawberries</answer>
@@ -580,19 +584,19 @@
 
 		<block id="trial2_g3">
 			<case id="C2G3_1">
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G3_image1" url="/images/case2_1_br.jpg" />
 					<paragraph>Pancakes with syrup, coffee with milk and sugar</paragraph>
 					<textarea id="C2G3_1_br_tags" optional="true"/>
 				</slide>
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G3_image2" url="/images/case2_1_lunch.jpg" />
 					<paragraph>Shrimp with cocktail sauce</paragraph>
 					<textarea id="C2G3_1_lunch_tags" optional="true"/>
 				</slide>
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G3_image3" url="/images/case2_1_dinner.jpg" />
 					<paragraph>Pasta and meatballs in tomato sauce</paragraph>
@@ -600,19 +604,19 @@
 				</slide>
 			</case>
 			<case id="C2G3_2">
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G3_image4" url="/images/case2_2_br.jpg" />
 					<paragraph>Omelet with ricotta cheese</paragraph>
 					<textarea id="C2G3_2_br_tags" optional="true"/>
 				</slide>
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G3_image5" url="/images/case2_2_lunch.jpg" />
 					<paragraph>Ham and cheese hot pocket with peanuts</paragraph>
 					<textarea id="C2G3_2_lunch_tags" optional="true"/>
 				</slide>
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G3_image6" url="/images/case2_2_dinner.jpg" />
 					<paragraph>Turkey wrap with cheese and a pickle</paragraph>
@@ -620,19 +624,19 @@
 				</slide>
 			</case>
 			<case id="C2G3_3">
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G3_image7" url="/images/case2_3_br.jpg" />
 					<paragraph>Granola with whole milk, coffee with cream and sugar</paragraph>
 					<textarea id="C2G3_3_br_tags" optional="true"/>
 				</slide>
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G3_image8" url="/images/case2_3_lunch.jpg" />
 					<paragraph>Crepe with mushrooms and cream sauce</paragraph>
 					<textarea id="C2G3_3_lunch_tags" optional="true"/>
 				</slide>
-				<slide template="case_soc_tags_descriptive_meal">
+				<slide template="case_soc_tags_assessment_meal">
 					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G3_image9" url="/images/case2_3_dinner.jpg" />
 					<paragraph>Double cheeseburger with large french fries</paragraph>
@@ -761,7 +765,7 @@
 					</singlechoice>
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C3_image14" url="/images/distractor.jpg" />
+					<image id="C3_image14" url="/images/distractor_8.jpg" />
 					<singlechoice id="C3_Q3_3">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
@@ -785,7 +789,7 @@
 					</singlechoice>
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C3_image17" url="/images/distractor.jpg" />
+					<image id="C3_image17" url="/images/distractor_9.jpg" />
 					<singlechoice id="C3_Q3_3">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
@@ -856,7 +860,7 @@
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C3_Q5_1">
-						<question>Which of these meals would you choose?</question>
+						<question>You are trying to follow a healthy diet. Which of these meals would you choose?</question>
 						<answer correct="true" url="/images/set5_good.jpg">Peppered chicken with cauliflower, peppers, corn on a cob and tomato salad</answer>
 						<answer url="/images/set5_bad1.jpg">Slice of pizza with white sauce and cheese</answer>
 						<answer url="/images/set5_bad2.jpg">Hod dogs sausages with rice and beans</answer>
@@ -865,7 +869,7 @@
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C3_Q5_2">
-						<question>Which of these meals would you choose?</question>
+						<question>You are trying to follow a healthy diet. Which of these meals would you choose?</question>
 						<answer url="/images/set6_bad1.jpg">Scramble eggs with breakfast sausage, hash browns, white bread toast, muffin and a strawberry</answer>
 						<answer url="/images/set6_bad2.jpg">Bagel with butter, fruit cup, skim milk</answer>
 						<answer correct="true" url="/images/set6_good.jpg">Oatmeal with blueberries and a glass of orange juice</answer>
@@ -890,32 +894,18 @@
 				Hello and welcome to the test!
 			</paragraph>
 			<paragraph align="left">
-				In the next few pages you will be presented with
-				photographs of different meals that
-				composed a diet of an individual.
-				The photographs will be marked as
-				Breakfast, Lunch,
-				and Dinner. You
-				will see meals for three consecutive days. Please look
-				at the
-				photographs
-				carefully, think about what the meals consisted of and
-				how healthy these meals
-				were.
-				When you think you are ready to
-				continue, please click the
-				Continue button.
-				You will have 30 seconds
-				to view each photograph. If you do not click
-				Continue within
-				these 30
-				seconds, the picture will change automatically. After you have
-				reviewed all
-				photographs, you will be asked to answer some questions
-				about the meals of this
-				individual.
-				When you are ready to begin,
-				please press Start button below.
+				In the next few pages you will be presented with photographs of different meals 
+				that composed a diet of an individual. The photographs will be marked as Breakfast, 
+				Lunch, and Dinner. You will see meals for three consecutive days. Please look at 
+				the photographs carefully, think about what the meals consisted of and how healthy 
+				these meals were. After you have reviewed all photographs, you will be asked to 
+				describe some of these meals, view photographs of meals and decide whether these 
+				meals were a part of the individual’s diet, judge how healthy the diet of this 
+				individual was, judge several new pictures on their healthfulness and think 
+				about what meals you would choose for yourself. 
+			</paragraph>
+			<paragraph>
+				When you think you are ready to continue, please click the Continue button.
 			</paragraph>
 		</slidetemplate>
 
@@ -1005,21 +995,12 @@
 				Thank you for completing the first trial.
 			</paragraph>
 			<paragraph>
-				In the next trial you will be asked to look at the another
-				series of meal photographs.
-				This time, as you look at the
-				photographs, you will be asked to assign
-				them tags.
-				Tags are
-				descriptive key words that could help you to find this
-				photograph at
-				a later time,
-				or to describe it to other people. Tags could be
-				one-word, or short
-				phrases.
-				Please separate different tags with ";"
-				Please include as many tags as you
-				can think of. 
+				In the next trial you will be asked to look at another set of meal photographs 
+				of the same individual. This time, as you look at the photographs, please think 
+				of what you would note about this meal. You will be asked to capture your notes 
+				using tags. Tags are key words or short phrases that could help you find this 
+				photograph at a later time, or to describe this individual’s diet to other people. 
+				Please separate different tags with ";" Please include as many tags as you can think of.
 			</paragraph>
 			<paragraph>
 				When you are ready, please click the Start button below.
@@ -1050,29 +1031,19 @@
 				Thank you for completing the trial.
 			</paragraph>
 			<paragraph>
-				In the next trial you will be asked to look at the another
-				series of meal photographs.
-				This time, as you look at the
-				photographs, you will be asked to assign
-				them tags.
-				Tags are
-				descriptive key words that could help you to find this
-				photograph at
-				a later time,
-				or to describe it to other people. Tags could be
-				one-word, or short
-				phrases.
-				You can create your own tags, or you could
-				choose from the list of tags
-				created
-				by other people participating in
-				this experiment. Please separate
-				different tags
-				with ";" Please
-				include as many tags as you can think of.
+				In the next trial you will be asked to look at another set of meal photographs of the 
+				same individual. This time, as you look at the photographs, please think of what you 
+				would note about this meal. You will be asked to capture your notes using tags. Tags 
+				are key words or short phrases that could help you find this photograph at a later time, 
+				or to describe this individual’s diet to other people. Below the picture you will see 
+				a list of tags created by a professional dietician. Please fill free to select tags 
+				from the list, or to create your own in the text area below. You can select multiple 
+				tags from the list by holding “Ctrl” (“command” button for Mac users) button when you 
+				select them with your mouse. Please separate different tags with ";" Please include 
+				as many tags as you can think of.
 			</paragraph>
 			<paragraph>
-				When you are ready, please click the Start button below.
+				When you are ready, please click the Continue button below.
 			</paragraph>
 		</slidetemplate>
 		
@@ -1087,20 +1058,69 @@
 			<paragraph>
 				Please select key words or tags to describe this meal.
 				Tags could be one-word or short
-				phrases. Please separate different
+				phrases. Please fill free to select tags 
+				from the list, or to create your own in the text area below. You can select multiple 
+				tags from the list by holding “Ctrl” (“command” button for Mac users) button when you 
+				select them with your mouse. Please separate different tags with ";" Please include 
+				as many tags as you can think of. Please separate different
 				tags with ";". Please choose as many tags
 				as you can think of.
 			</paragraph>
-			<multichoice id="MC1">
+			<multichoice id="MC3">
 				<question>Please tag the picture above</question>
-				<choice>Poor proportions</choice>
-				<choice>Not enough carbohydrate</choice>
-				<choice>Not enough protein</choice>
-				<choice>Needs veggies</choice>
-				<choice>Needs fruit</choice>
-				<choice>Too much carbohydrate</choice>
-				<choice>Too much fat</choice>
-				<choice>Too large portion size</choice>
+				<choice>apple</choice>
+				<choice>appropriate portion size</choice>
+				<choice>bacon</choice>
+				<choice>bread</choice>
+				<choice>broccoli</choice>
+				<choice>chicken</choice>
+				<choice>coffee with milk and sweetener</choice>
+				<choice>eggs</choice>
+				<choice>excellent portion size</choice>
+				<choice>fried chicken breast</choice>
+				<choice>fish</choice>
+				<choice>fruit</choice>
+				<choice>good balance</choice>
+				<choice>good carbohydrate</choice>
+				<choice>good fiber</choice>
+				<choice>good proportions</choice>
+				<choice>green beans</choice>
+				<choice>green vegetables</choice>
+				<choice>grilled salmon</choice>
+				<choice>ham</choice>
+				<choice>healthy juice</choice>
+				<choice>high fat</choice>
+				<choice>high fiber</choice>
+				<choice>high salt</choice>
+				<choice>includes fruit</choice>
+				<choice>includes greens</choice>
+				<choice>juice</choice>
+				<choice>lean protein</choice>
+				<choice>low fiber</choice>
+				<choice>mashed potatoes</choice>
+				<choice>meat</choice>
+				<choice>melon</choice>
+				<choice>milk</choice>
+				<choice>mixed green salad</choice>
+				<choice>mixed vegetables</choice>
+				<choice>no carbohydrate</choice>
+				<choice>no fruit</choice>
+				<choice>no protein</choice>
+				<choice>no vegetable</choice>
+				<choice>pasta</choice>
+				<choice>poor balance of protein, fat and carbohydrate</choice>
+				<choice>poor proportions</choice>
+				<choice>pork chops</choice>
+				<choice>portion sizes too large</choice>
+				<choice>potato gratin</choice>
+				<choice>rice</choice>
+				<choice>steamed chicken breast</choice>
+				<choice>too much refined carbohydrate</choice>
+				<choice>too much starch</choice>
+				<choice>unbalanced</choice>
+				<choice>water</choice>
+				<choice>whole grain</choice>
+				<choice>whole grain muffin</choice>
 			</multichoice>>
 			<placeholder />
 		</slidetemplate>
@@ -1116,29 +1136,48 @@
 			<paragraph>
 				Please select key words or tags to describe this meal.
 				Tags could be one-word or short
-				phrases. Please separate different
+				phrases. Please fill free to select tags 
+				from the list, or to create your own in the text area below. You can select multiple 
+				tags from the list by holding “Ctrl” (“command” button for Mac users) button when you 
+				select them with your mouse. Please separate different tags with ";" Please include 
+				as many tags as you can think of. Please separate different
 				tags with ";". Please choose as many tags
 				as you can think of.
 			</paragraph>
 			<multichoice id="MC2">
 				<question>Please tag the picture above</question>
-				<choice>Eggs</choice>
-				<choice>Bacon</choice>
-				<choice>Ham</choice>
-				<choice>Mashed potatoes</choice>
-				<choice>Mixed veggetables</choice>
-				<choice>Steamed chicken breast</choice>
-				<choice>Fried chicken breast</choice>
-				<choice>Grilled salmon</choice>
-				<choice>Mixed green salad</choice>
-				<choice>Coffee with milk and sweetener</choice>
-				<choice>Glass of milk</choice>
-				<choice>Water</choice>
-				<choice>Juice</choice>
-				<choice>Apple</choice>
+				<choice>apple</choice>
+				<choice>bacon</choice>
+				<choice>bread</choice>
+				<choice>broccoli</choice>
+				<choice>chicken</choice>
+				<choice>coffee with milk and sweetener</choice>
+				<choice>eggs</choice>
+				<choice>fried chicken breast</choice>
+				<choice>green beans</choice>
+				<choice>green vegetables</choice>
+				<choice>grilled salmon</choice>
+				<choice>fish</choice>
+				<choice>fruit</choice>
+				<choice>ham</choice>
+				<choice>juice</choice>
+				<choice>mashed potatoes</choice>
+				<choice>meat</choice>
+				<choice>melon</choice>
+				<choice>milk</choice>
+				<choice>mixed green salad</choice>
+				<choice>mixed vegetables</choice>
+				<choice>pork chops</choice>
+				<choice>potato gratin</choice>
+				<choice>rice</choice>
+				<choice>steamed chicken breast</choice>
+				<choice>water</choice>
+				<choice>whole grain muffin</choice>
 			</multichoice>>
 			<placeholder />
 		</slidetemplate>
+		
+
 		
 		<!--
 		<slidetemplate name="case_soc_tags_meal">
