@@ -4,14 +4,15 @@ import com.google.gwt.event.dom.client.HasClickHandlers;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.VerticalPanel;
 
-public class StudyFinishPanel extends VerticalPanel implements StudyRunController.FinishView{
+public class StudyFinishPanel extends VerticalPanel implements StudyRunController.FinishView {
 	Button finishButton = new Button("Finish");
-	
-	public StudyFinishPanel(){
+
+	public StudyFinishPanel() {
 		this.add(finishButton);
+		this.setSpacing(15);
 	}
-	
-	public HasClickHandlers getFinishButton(){
+
+	public HasClickHandlers getFinishButton() {
 		return finishButton;
 	}
 

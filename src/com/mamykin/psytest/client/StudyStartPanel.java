@@ -14,8 +14,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.ListBox;
 import com.google.gwt.user.client.ui.TextBox;
 
-public class StudyStartPanel extends FlowPanel implements
-		StudyRunController.StartView {
+public class StudyStartPanel extends FlowPanel implements StudyRunController.StartView {
 	Label studyName = new Label();
 	Label groupSelectionLabel = new Label("Select group:");
 	ListBox groupSelection = new ListBox();
@@ -23,28 +22,30 @@ public class StudyStartPanel extends FlowPanel implements
 	ListBox caseSelection = new ListBox();
 	Label participantNameLabel = new Label("Enter participant name:");
 	TextBox participantName = new TextBox();
-	
+
 	Button startButton = new Button("Start");
 
 	public StudyStartPanel() {
 		super();
 
 		FlexTable t = new FlexTable();
-		t.setWidget(0, 0, studyName);
-		t.getFlexCellFormatter().setColSpan(0, 0, 2);
-		t.getFlexCellFormatter().setAlignment(0, 0, HasHorizontalAlignment.ALIGN_CENTER, HasVerticalAlignment.ALIGN_MIDDLE);
-		
-		
+		// t.setWidget(0, 0, studyName);
+		// t.getFlexCellFormatter().setColSpan(0, 0, 2);
+		// t.getFlexCellFormatter().setAlignment(0, 0,
+		// HasHorizontalAlignment.ALIGN_CENTER,
+		// HasVerticalAlignment.ALIGN_MIDDLE);
+		t.setCellSpacing(10);
+
 		t.setWidget(1, 0, groupSelectionLabel);
 		t.getFlexCellFormatter().setAlignment(1, 0, HasHorizontalAlignment.ALIGN_RIGHT, HasVerticalAlignment.ALIGN_MIDDLE);
 		t.setWidget(1, 1, groupSelection);
 		t.getFlexCellFormatter().setAlignment(1, 1, HasHorizontalAlignment.ALIGN_LEFT, HasVerticalAlignment.ALIGN_MIDDLE);
-		
+
 		t.setWidget(2, 0, caseSelectionLabel);
 		t.getFlexCellFormatter().setAlignment(2, 0, HasHorizontalAlignment.ALIGN_RIGHT, HasVerticalAlignment.ALIGN_MIDDLE);
 		t.setWidget(2, 1, caseSelection);
 		t.getFlexCellFormatter().setAlignment(2, 1, HasHorizontalAlignment.ALIGN_LEFT, HasVerticalAlignment.ALIGN_MIDDLE);
-		
+
 		t.setWidget(3, 0, participantNameLabel);
 		t.getFlexCellFormatter().setAlignment(3, 0, HasHorizontalAlignment.ALIGN_RIGHT, HasVerticalAlignment.ALIGN_MIDDLE);
 		t.setWidget(3, 1, participantName);
@@ -53,6 +54,7 @@ public class StudyStartPanel extends FlowPanel implements
 		t.setWidget(4, 0, startButton);
 		t.getFlexCellFormatter().setColSpan(4, 0, 2);
 		t.getFlexCellFormatter().setAlignment(4, 0, HasHorizontalAlignment.ALIGN_CENTER, HasVerticalAlignment.ALIGN_MIDDLE);
+
 		this.add(t);
 	}
 
@@ -89,7 +91,7 @@ public class StudyStartPanel extends FlowPanel implements
 
 	public void setCasesList(Collection<String> cases) {
 		caseSelection.clear();
-		for(String caseName : cases){
+		for (String caseName : cases) {
 			caseSelection.addItem(caseName);
 		}
 	}

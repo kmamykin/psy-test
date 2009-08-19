@@ -9,8 +9,7 @@ import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.VerticalPanel;
 import com.mamykin.psytest.client.model.SlideElementWidget;
 
-public class StudyRunPanel extends VerticalPanel implements
-		StudyRunController.RunView {
+public class StudyRunPanel extends VerticalPanel implements StudyRunController.RunView {
 
 	private static final int EVERY_SECOND = 1000; // in milliseconds
 	private final VerticalPanel main = new VerticalPanel();
@@ -20,17 +19,21 @@ public class StudyRunPanel extends VerticalPanel implements
 	private List<SlideElementWidget> elementWidgets;
 	private Timer timer;
 	private long slideEndTime;
-	
+
 	public StudyRunPanel() {
 		super();
-		this.add(main);
-		main.setHorizontalAlignment(ALIGN_CENTER);
-		content.setHorizontalAlignment(ALIGN_LEFT);
+		content.setHorizontalAlignment(ALIGN_CENTER);
+		content.setSpacing(15);
 		main.add(content);
+
 		timeLeftLabel.setVisible(false);
+		main.setHorizontalAlignment(ALIGN_CENTER);
+		main.setSpacing(15);
 		main.add(timeLeftLabel);
 		main.add(continueButton);
-		this.timer = new Timer(){
+		this.add(main);
+
+		this.timer = new Timer() {
 			@Override
 			public void run() {
 				updateTimer();
@@ -84,16 +87,16 @@ public class StudyRunPanel extends VerticalPanel implements
 
 	private void updateTimer() {
 		long millisLeft = slideEndTime - System.currentTimeMillis();
-		if(millisLeft <= 0){
+		if (millisLeft <= 0) {
 			continueButton.click();
-		}else{
+		} else {
 			timeLeftLabel.setText(getFormattedTimeLeft(millisLeft));
 			timeLeftLabel.setVisible(true);
 		}
 	}
 
 	private String getFormattedTimeLeft(long millisLeft) {
-		return "Time left: " + Integer.toString((int)(millisLeft / 1000));
+		return "Time left: " + Integer.toString((int) (millisLeft / 1000));
 	}
-	
+
 }
