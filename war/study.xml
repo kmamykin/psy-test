@@ -885,11 +885,11 @@
 	</blocks>
 
 	<slidetemplates>
-		<slidetemplate name="general_intro" timelimit="30">
+		<slidetemplate name="general_intro">
 			<paragraph>
 				Hello and welcome to the test!
 			</paragraph>
-			<paragraph>
+			<paragraph align="left">
 				In the next few pages you will be presented with
 				photographs of different meals that
 				composed a diet of an individual.
@@ -925,7 +925,7 @@
 			</paragraph>
 		</slidetemplate>
 
-		<slidetemplate name="case_meal_stimuli" timelimit="30">
+		<slidetemplate name="case_meal_stimuli">
 			<paragraph>
 				Please look at the picture below and think whether this is
 				a healthy meal. 
