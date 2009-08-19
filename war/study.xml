@@ -110,15 +110,19 @@
 <!--  Trial 1 Questions  -->		
 		
 		<block id="C1_questions">
+		
+<!-- Question 1: recall  -->
 			<case id="C1_Q">
 				<slide template="question1_recall">
 					<textarea id="C1_Q1_day1" />
 					<textarea id="C1_Q1_day2" />
 					<textarea id="C1_Q1_day3" />
 				</slide>
+				
+<!-- Question 2: recognition  -->
 				<slide template="question2_recognition">
-					<image id="C1_image10" url="/images/case1_1_lunch.jpg" />
-					<singlechoice id="C1_Q2_1">
+					<image id="C2_image10" url="/images/case1_1_lunch.jpg" />
+					<singlechoice id="C2_Q2_1">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
 						<answer>No</answer>
@@ -140,6 +144,54 @@
 						<answer>No</answer>
 					</singlechoice>
 				</slide>
+				<slide template="question2_recognition">
+					<image id="C2_image13" url="/images/case1_2_br.jpg" />
+					<singlechoice id="C2_Q2_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C2_image14" url="/images/distractor_2.jpg" />
+					<singlechoice id="C2_Q2_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C2_image15" url="/images/case1_3_lunch.jpg" />
+					<singlechoice id="C2_Q2_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C2_image16" url="/images/case1_2_dinner.jpg" />
+					<singlechoice id="C2_Q2_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C2_image17" url="/images/distractor_3.jpg" />
+					<singlechoice id="C2_Q2_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C2_image18" url="/images/case1_1_breakfast.jpg" />
+					<singlechoice id="C2_Q2_1">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
 				<slide template="question3_health_judgement_diet">
 					<singlechoice id="C1_Q3">
 						<question>How healthy was the diet of this individual?</question>
@@ -152,7 +204,7 @@
 					<textarea id="C1_Q3_explanation" />
 				</slide>
 				<slide template="question4_health_judgement_meal">
-					<image id="C1_image13" url="/images/healthy_1.jpg" />
+					<image id="C1_image19" url="/images/healthy_1.jpg" />
 					<paragraph>Whole grain English muffin with brown yogurt spread, hard boiled egg, Activa yogurt and coffee</paragraph>
 					<singlechoice id="C1_Q4_1">
 						<question>How healthy do you think is this meal?</question>
@@ -165,7 +217,7 @@
 					<textarea id="C1_Q4_explanation1" />
 				</slide>
 				<slide template="question4_health_judgement_meal">
-					<image id="C1_image14" url="/images/healthy_2.jpg" />
+					<image id="C1_image20" url="/images/healthy_2.jpg" />
 					<paragraph>Chicken, cheese and mixed greens salad, strawberries, rye bread</paragraph>
 					<singlechoice id="C1_Q4_2">
 						<question>How healthy do you think is this meal?</question>
@@ -178,7 +230,7 @@
 					<textarea id="C1_Q4_explanation2" />
 				</slide>
 				<slide template="question4_health_judgement_meal">
-					<image id="C1_image15" url="/images/unhealthy_1.jpg" />
+					<image id="C1_image21" url="/images/unhealthy_1.jpg" />
 					<paragraph>Fried fish with corn on a cob and rice, cranberry juice</paragraph>
 					<singlechoice id="C1_Q4_3">
 						<question>How healthy do you think is this meal?</question>
@@ -288,7 +340,8 @@
 		</block>
 		
 <!-- Case 2 questions -->		
-		
+
+<!-- Question 1: recall  -->
 		<block id="C2_questions">
 			<case id="C2_Q">
 				<slide template="question1_recall">
@@ -296,8 +349,10 @@
 					<textarea id="C2_Q1_day2" />
 					<textarea id="C2_Q1_day3" />
 				</slide>
+				
+<!-- Question 2: recognition  -->
 				<slide template="question2_recognition">
-					<image id="C2_image10" url="/images/case2_1_br.jpg" />
+					<image id="C2_image10" url="/images/case2_1_lunch.jpg" />
 					<singlechoice id="C2_Q3_1">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
@@ -305,7 +360,7 @@
 					</singlechoice>
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C2_image11" url="/images/case2_3_lunch.jpg" />
+					<image id="C2_image11" url="/images/distractor_4.jpg" />
 					<singlechoice id="C2_Q3_2">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer>Yes</answer>
@@ -313,13 +368,63 @@
 					</singlechoice>
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C3_image12" url="/images/distractor_2.jpg" />
+					<image id="C3_image12" url="/images/case2_3_dinner.jpg" />
 					<singlechoice id="C2_Q3_3">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
 						<answer>No</answer>
 					</singlechoice>
 				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image13" url="/images/case2_2_br.jpg" />
+					<singlechoice id="C2_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image14" url="/images/distractor_5.jpg" />
+					<singlechoice id="C2_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image15" url="/images/case2_3_lunch.jpg" />
+					<singlechoice id="C2_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image16" url="/images/case2_2_dinner.jpg" />
+					<singlechoice id="C2_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image17" url="/images/distractor_6.jpg" />
+					<singlechoice id="C2_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image18" url="/images/case2_1_br.jpg" />
+					<singlechoice id="C2_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				
+<!--   Question 3: diet judgement -->
 				<slide template="question3_health_judgement_diet">
 					<singlechoice id="C2_Q3_1">
 						<question>How healthy is the diet of this individual?</question>
@@ -331,9 +436,11 @@
 					</singlechoice>
 					<textarea id="C2_Q3_explanation" />
 				</slide>
+				
+<!--  Question 4: meal judgement -->
 				<slide template="question4_health_judgement_meal">
-					<image id="C2_image13" url="/images/unhealthy_2.jpg" />
-					<paragraph></paragraph>
+					<image id="C2_image19" url="/images/unhealthy_2.jpg" />
+					<paragraph>Turkey and cheese sandwich on white roll</paragraph>
 					<singlechoice id="C2_Q4_1">
 						<question>How healthy do you think is this meal?</question>
 						<answer>Very healthy</answer>
@@ -345,8 +452,8 @@
 					<textarea id="C2_Q4_explanation1" />
 				</slide>
 				<slide template="question4_health_judgement_meal">
-					<image id="C2_image14" url="/images/healthy_3.jpg" />
-					<paragraph></paragraph>
+					<image id="C2_image20" url="/images/healthy_3.jpg" />
+					<paragraph>Poached salmon with red potatoes and cauliflower, brocolli and carrots</paragraph>
 					<singlechoice id="C2_Q4_2">
 						<question>How healthy do you think is this meal?</question>
 						<answer correct="True">Very healthy</answer>
@@ -358,8 +465,8 @@
 					<textarea id="C2_Q4_explanation2" />
 				</slide>
 				<slide template="question4_health_judgement_meal">
-					<image id="C2_image15" url="/images/unhealthy_3.jpg" />
-					<paragraph></paragraph>
+					<image id="C2_image21" url="/images/unhealthy_3.jpg" />
+					<paragraph>Pizza bread, a large bowl of melon, coffee</paragraph>
 					<singlechoice id="C2_Q4_3">
 						<question>How healthy do you think is this meal?</question>
 						<answer>Very healthy</answer>
@@ -373,18 +480,18 @@
 				<slide template="question5_mealchoice">
 					<singlechoice id="C2_Q5_1">
 						<question>Which of these meals would you choose?</question>
-						<answer correct="true" url="/images/set3_good.jpg">I would choose this meal</answer>
-						<answer url="/images/set3_bad1.jpg">I would choose this meal</answer>
-						<answer url="/images/set3_bad2.jpg">I would choose this meal</answer>
+						<answer correct="true" url="/images/set3_good.jpg">Pasta with meatballs and garlic bread, mixed greens salad</answer>
+						<answer url="/images/set3_bad1.jpg">Turkey wrap with Cheetos and walnuts</answer>
+						<answer url="/images/set3_bad2.jpg">Shrimp florenteine, 2 slices of bread with butter</answer>
 					</singlechoice>
 					<textarea id="C2_Q5_explanation1" />
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C2_Q5_2">
 						<question>Which of these meals would you choose?</question>
-						<answer url="/images/set4_bad1.jpg">I would choose this meal</answer>
-						<answer url="/images/set4_bad2.jpg">I would choose this meal</answer>
-						<answer correct="true" url="/images/set4_good.jpg">I would choose this meal</answer>
+						<answer url="/images/set4_bad1.jpg">Puffy rice cereal with sliced banana and a glass of orange juice</answer>
+						<answer url="/images/set4_bad2.jpg">Two scrambled eggs with cheese, breakfast sausage, a bagel with butter.</answer>
+						<answer correct="true" url="/images/set4_good.jpg">Sour dough bread with brie cheese and strawberries</answer>
 					</singlechoice>
 					<textarea id="C2_Q5_explanation2" />
 				</slide>
@@ -607,16 +714,22 @@
 				</slide>
 			</case>
 		</block>
-		
+
+<!--  Case 3 questions -->
+
 		<block id="C3_questions">
+		
+<!--  Question 1: recall -->
 			<case id="C3_Q">
 				<slide template="question1_recall">
 					<textarea id="C3_Q1_day1" />
 					<textarea id="C3_Q1_day2" />
 					<textarea id="C3_Q1_day3" />
 				</slide>
+				
+<!--  Question 2: recognition -->
 				<slide template="question2_recognition">
-					<image id="C3_image10" url="/images/distractor_3.jpg" />
+					<image id="C3_image10" url="/images/case3_1_lunch.jpg" />
 					<singlechoice id="C2_Q3_1">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
@@ -624,7 +737,7 @@
 					</singlechoice>
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C3_image11" url="/images/case3_1_lunch.jpg" />
+					<image id="C3_image11" url="/images/distractor_7.jpg" />
 					<singlechoice id="C3_Q3_2">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer>Yes</answer>
@@ -632,13 +745,63 @@
 					</singlechoice>
 				</slide>
 				<slide template="question2_recognition">
-					<image id="C3_image12" url="/images/case3_2_br.jpg" />
+					<image id="C3_image12" url="/images/case3_3_dinner.jpg" />
 					<singlechoice id="C3_Q3_3">
 						<question>Was this meal a part of the individual's diet?</question>
 						<answer correct="True">Yes</answer>
 						<answer>No</answer>
 					</singlechoice>
 				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image13" url="/images/case3_2_br.jpg" />
+					<singlechoice id="C3_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image14" url="/images/distractor.jpg" />
+					<singlechoice id="C3_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image15" url="/images/case3_3_lunch.jpg" />
+					<singlechoice id="C3_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image16" url="/images/case3_2_dinner.jpg" />
+					<singlechoice id="C3_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image17" url="/images/distractor.jpg" />
+					<singlechoice id="C3_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				<slide template="question2_recognition">
+					<image id="C3_image18" url="/images/case3_1_br.jpg" />
+					<singlechoice id="C3_Q3_3">
+						<question>Was this meal a part of the individual's diet?</question>
+						<answer correct="True">Yes</answer>
+						<answer>No</answer>
+					</singlechoice>
+				</slide>
+				
+<!-- Question 3: diet judgement -->
 				<slide template="question3_health_judgement_diet">
 					<singlechoice id="C3_Q3_1">
 						<question>How healthy is the diet of this individual?</question>
@@ -650,9 +813,11 @@
 					</singlechoice>
 					<textarea id="C3_Q3_explanation" />
 				</slide>
+				
+<!--  Question 4: meal judgement -->
 				<slide template="question4_health_judgement_meal">
-					<image id="C2_image13" url="/images/unhealthy_4.jpg" />
-					<paragraph></paragraph>
+					<image id="C2_image19" url="/images/unhealthy_4.jpg" />
+					<paragraph>Omlete, white bread toast with butter</paragraph>
 					<singlechoice id="C3_Q4_1">
 						<question>How healthy do you think is this meal?</question>
 						<answer>Very healthy</answer>
@@ -664,8 +829,8 @@
 					<textarea id="C3_Q4_explanation1" />
 				</slide>
 				<slide template="question4_health_judgement_meal">
-					<image id="C3_image14" url="/images/healthy_4.jpg" />
-					<paragraph></paragraph>
+					<image id="C3_image20" url="/images/healthy_4.jpg" />
+					<paragraph>Baked chicken with red potatoes and mixed vegetables</paragraph>
 					<singlechoice id="C2_Q4_2">
 						<question>How healthy do you think is this meal?</question>
 						<answer correct="True">Very healthy</answer>
@@ -677,8 +842,8 @@
 					<textarea id="C3_Q4_explanation2" />
 				</slide>
 				<slide template="question4_health_judgement_meal">
-					<image id="C3_image15" url="/images/unhealthy_5.jpg" />
-					<paragraph></paragraph>
+					<image id="C3_image21" url="/images/unhealthy_9.jpg" />
+					<paragraph>White rice with ground beef, chilli brans and green peas</paragraph>
 					<singlechoice id="C3_Q4_3">
 						<question>How healthy do you think is this meal?</question>
 						<answer>Very healthy</answer>
@@ -692,18 +857,18 @@
 				<slide template="question5_mealchoice">
 					<singlechoice id="C3_Q5_1">
 						<question>Which of these meals would you choose?</question>
-						<answer correct="true" url="/images/set5_good.jpg">I would choose this meal</answer>
-						<answer url="/images/set5_bad1.jpg">I would choose this meal</answer>
-						<answer url="/images/set5_bad2.jpg">I would choose this meal</answer>
+						<answer correct="true" url="/images/set5_good.jpg">Peppered chicken with cauliflower, peppers, corn on a cob and tomato salad</answer>
+						<answer url="/images/set5_bad1.jpg">Slice of pizza with white sauce and cheese</answer>
+						<answer url="/images/set5_bad2.jpg">Hod dogs sausages with rice and beans</answer>
 					</singlechoice>
 					<textarea id="C3_Q5_explanation1" />
 				</slide>
 				<slide template="question5_mealchoice">
 					<singlechoice id="C3_Q5_2">
 						<question>Which of these meals would you choose?</question>
-						<answer url="/images/set6_bad1.jpg">I would choose this meal</answer>
-						<answer url="/images/set6_bad2.jpg">I would choose this meal</answer>
-						<answer correct="true" url="/images/set6_good.jpg">I would choose this meal</answer>
+						<answer url="/images/set6_bad1.jpg">Scramble eggs with breakfast sausage, hash browns, white bread toast, muffin and a strawberry</answer>
+						<answer url="/images/set6_bad2.jpg">Bagel with butter, fruit cup, skim milk</answer>
+						<answer correct="true" url="/images/set6_good.jpg">Oatmeal with blueberries and a glass of orange juice</answer>
 					</singlechoice>
 					<textarea id="C3_Q5_explanation2" />
 				</slide>
