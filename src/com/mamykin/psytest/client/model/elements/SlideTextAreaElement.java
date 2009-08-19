@@ -11,13 +11,15 @@ public class SlideTextAreaElement implements StudySlideElement, Serializable {
 	private static final long serialVersionUID = -5954010399318894396L;
 	private String id;
 	private String text;
+	private boolean optional;
 
 	public SlideTextAreaElement() {
-		this("");
+		this("", null);
 	}
 
-	public SlideTextAreaElement(String id) {
+	public SlideTextAreaElement(String id, String optional) {
 		this.id = id;
+		this.optional = (optional == null ? false : Boolean.valueOf(optional));
 	}
 
 	public SlideElementWidget createWidget() {
@@ -26,6 +28,10 @@ public class SlideTextAreaElement implements StudySlideElement, Serializable {
 
 	public String getId() {
 		return id;
+	}
+
+	public Boolean isOptional() {
+		return optional;
 	}
 
 	public void recordResult(StudyResultLogger logger) {

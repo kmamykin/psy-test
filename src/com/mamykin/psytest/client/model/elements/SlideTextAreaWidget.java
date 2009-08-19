@@ -26,15 +26,15 @@ public class SlideTextAreaWidget extends SlideElementWidget {
 
 	@Override
 	public boolean isValid() {
-		if (textArea.getText().trim().length() > 0){
+		if (textArea.getText().trim().length() > 0 || element.isOptional()) {
 			errorMessage.setVisible(false);
 			return true;
-		}else{
+		} else {
 			errorMessage.setVisible(true);
 			return false;
 		}
 	}
-	
+
 	@Override
 	public void recordValues() {
 		element.setText(textArea.getText());

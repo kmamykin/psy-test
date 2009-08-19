@@ -178,7 +178,7 @@ public class StudyFactory {
 	}
 
 	private StudySlideElement parseTextArea(Element slideElement) {
-		return new SlideTextAreaElement(slideElement.getAttribute("id"));
+		return new SlideTextAreaElement(slideElement.getAttribute("id"), slideElement.getAttribute("optional"));
 	}
 
 	private StudySlideElement parseSingleChoice(Element slideElement) {
