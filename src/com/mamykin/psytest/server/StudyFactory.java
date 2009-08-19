@@ -77,7 +77,7 @@ public class StudyFactory {
 
 	private StudyGroup parseGroup(Element element) {
 		List<String> blockRefs = new ArrayList<String>();
-		for(Element node : selectChildElements(element, "block")){
+		for (Element node : selectChildElements(element, "block")) {
 			blockRefs.add(node.getAttribute("ref"));
 		}
 		return new StudyGroup(element.getAttribute("name"), blockRefs);
@@ -213,7 +213,7 @@ public class StudyFactory {
 	}
 
 	private StudySlideElement parseParagraph(Element slideElement) {
-		return new SlideParagraphElement(slideElement.getTextContent());
+		return new SlideParagraphElement(slideElement.getTextContent(), slideElement.getAttribute("align"));
 	}
 
 	private List<Element> selectGroupedChildrenElements(Element element, String groupElementTag, String childElementTag) {
