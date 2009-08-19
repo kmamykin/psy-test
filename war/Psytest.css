@@ -14,8 +14,7 @@ div#main {
 	align: center;
 }
 
-td {
-	/*padding: 5px;*/
+td { /*padding: 5px;*/
 }
 
 .normal {
@@ -24,4 +23,8 @@ td {
 
 .error {
 	color: red;
+}
+
+.gwt-Label-bold {
+	font-weight: bold;
 }

@@ -56,51 +56,51 @@
 		<block id="trial1">
 			<case id="C1_1">
 				<slide template="case_meal_stimuli">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C1_image1" url="/images/case1_1_br.jpg" />
 					<paragraph>Egg and cheese on whole grain muffin with a tomato; coffee with milk and sugar</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C1_image2" url="/images/case1_1_lunch.jpg" />
 					<paragraph>Fried chicken thighs with rice and mixed salad</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C1_image3" url="/images/case1_1_dinner.jpg" />
 					<paragraph>Pork chops with potato gratin and green beans</paragraph>
 				</slide>
 			</case>
 			<case id="C1_2">
 				<slide template="case_meal_stimuli">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C1_image4" url="/images/case1_2_br.jpg" />
 					<paragraph>Cheese omelet on whole grain English muffin</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C1_image5" url="/images/case1_2_lunch.jpg" />
 					<paragraph>Fried breaded fish, pasta with tomato sauce, green beans with almonds</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C1_image6" url="/images/case1_2_dinner.jpg" />
 					<paragraph>Chicken with brown rice and chick peas, green beans with almonds, melon white cranberry juice</paragraph>
 				</slide>
 			</case>
 			<case id="C1_3">
 				<slide template="case_meal_stimuli">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C1_image7" url="/images/case1_3_br.jpg" />
 					<paragraph>High fiber cereal with 1% milk and V-8 juice</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C1_image8" url="/images/case1_3_lunch.jpg" />
 					<paragraph>Chicken sausages with mashed potatoes and mixed vegetables</paragraph>
 				</slide>
 				<slide template="case_meal_stimuli">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C1_image9" url="/images/case1_3_dinner.jpg" />
 					<paragraph>Breaded fried chicken breast with mixed vegetables and roasted potatoes</paragraph>
 				</slide>
@@ -279,13 +279,13 @@
 		<block id="trial2_g1">
 			<case id="C2G1_1">
 				<slide template="case_tags_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G1_image1" url="/images/case2_1_br.jpg" />
 					<paragraph>Pancakes with syrup, coffee with milk and sugar</paragraph>
 					<textarea id="C2G1_1_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G1_image2" url="/images/case2_1_lunch.jpg" />
 					<paragraph>Shrimp with cocktail sauce</paragraph>
 					<textarea id="C2G1_1_lunch_tags" />
@@ -299,19 +299,19 @@
 			</case>
 			<case id="C2G1_2">
 				<slide template="case_tags_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G1_image4" url="/images/case2_2_br.jpg" />
 					<paragraph>Omelet with ricotta cheese</paragraph>
 					<textarea id="C2G1_2_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G1_image5" url="/images/case2_2_lunch.jpg" />
 					<paragraph>Ham and cheese hot pocket with peanuts</paragraph>
 					<textarea id="C2G1_2_lunch_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G1_image6" url="/images/case2_2_dinner.jpg" />
 					<paragraph>Turkey wrap with cheese and a pickle</paragraph>
 					<textarea id="C2G1_2_dinner_tags" />
@@ -319,19 +319,19 @@
 			</case>
 			<case id="C2G1_3">
 				<slide template="case_tags_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G1_image7" url="/images/case2_3_br.jpg" />
 					<paragraph>Granola with whole milk, coffee with cream and sugar</paragraph>
 					<textarea id="C2G1_3_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G1_image8" url="/images/case2_3_lunch.jpg" />
 					<paragraph>Crepe with mushrooms and cream sauce</paragraph>
 					<textarea id="C2G1_3_lunch_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G1_image9" url="/images/case2_3_dinner.jpg" />
 					<paragraph>Double cheeseburger with large french fries</paragraph>
 					<textarea id="C2G1_3_dinner_tags" />
@@ -509,19 +509,19 @@
 		<block id="trial2_g2">
 			<case id="C2G2_1">
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G2_image1" url="/images/case2_1_br.jpg" />
 					<paragraph>Pancakes with syrup, coffee with milk and sugar</paragraph>
 					<textarea id="C2G2_1_br_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G2_image2" url="/images/case2_1_lunch.jpg" />
 					<paragraph>Shrimp with cocktail sauce</paragraph>
 					<textarea id="C2G2_1_lunch_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G2_image3" url="/images/case2_1_dinner.jpg" />
 					<paragraph>Pasta and meatballs in tomato sauce</paragraph>
 					<textarea id="C2G2_1_dinner_tags" optional="true"/>
@@ -529,19 +529,19 @@
 			</case>
 			<case id="C2G2_2">
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G2_image4" url="/images/case2_2_br.jpg" />
 					<paragraph>Omelet with ricotta cheese</paragraph>
 					<textarea id="C2G2_2_br_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G2_image5" url="/images/case2_2_lunch.jpg" />
 					<paragraph>Ham and cheese hot pocket with peanuts</paragraph>
 					<textarea id="C2G2_2_lunch_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G2_image6" url="/images/case2_2_dinner.jpg" />
 					<paragraph>Turkey wrap with cheese and a pickle</paragraph>
 					<textarea id="C2G2_2_dinner_tags" optional="true"/>
@@ -549,19 +549,19 @@
 			</case>
 			<case id="C2G2_3">
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G2_image7" url="/images/case2_3_br.jpg" />
 					<paragraph>Granola with whole milk, coffee with cream and sugar</paragraph>
 					<textarea id="C2G2_3_br_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G2_image8" url="/images/case2_3_lunch.jpg" />
 					<paragraph>Crepe with mushrooms and cream sauce</paragraph>
 					<textarea id="C2G2_3_lunch_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G2_image9" url="/images/case2_3_dinner.jpg" />
 					<paragraph>Double cheeseburger with large french fries</paragraph>
 					<textarea id="C2G2_3_dinner_tags" optional="true"/>
@@ -581,19 +581,19 @@
 		<block id="trial2_g3">
 			<case id="C2G3_1">
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G3_image1" url="/images/case2_1_br.jpg" />
 					<paragraph>Pancakes with syrup, coffee with milk and sugar</paragraph>
 					<textarea id="C2G3_1_br_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G3_image2" url="/images/case2_1_lunch.jpg" />
 					<paragraph>Shrimp with cocktail sauce</paragraph>
 					<textarea id="C2G3_1_lunch_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G3_image3" url="/images/case2_1_dinner.jpg" />
 					<paragraph>Pasta and meatballs in tomato sauce</paragraph>
 					<textarea id="C2G3_1_dinner_tags" optional="true"/>
@@ -601,19 +601,19 @@
 			</case>
 			<case id="C2G3_2">
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G3_image4" url="/images/case2_2_br.jpg" />
 					<paragraph>Omelet with ricotta cheese</paragraph>
 					<textarea id="C2G3_2_br_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G3_image5" url="/images/case2_2_lunch.jpg" />
 					<paragraph>Ham and cheese hot pocket with peanuts</paragraph>
 					<textarea id="C2G3_2_lunch_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G3_image6" url="/images/case2_2_dinner.jpg" />
 					<paragraph>Turkey wrap with cheese and a pickle</paragraph>
 					<textarea id="C2G3_2_dinner_tags" optional="true"/>
@@ -621,19 +621,19 @@
 			</case>
 			<case id="C2G3_3">
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C2G3_image7" url="/images/case2_3_br.jpg" />
 					<paragraph>Granola with whole milk, coffee with cream and sugar</paragraph>
 					<textarea id="C2G3_3_br_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C2G3_image8" url="/images/case2_3_lunch.jpg" />
 					<paragraph>Crepe with mushrooms and cream sauce</paragraph>
 					<textarea id="C2G3_3_lunch_tags" optional="true"/>
 				</slide>
 				<slide template="case_soc_tags_descriptive_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C2G3_image9" url="/images/case2_3_dinner.jpg" />
 					<paragraph>Double cheeseburger with large french fries</paragraph>
 					<textarea id="C2G3_3_dinner_tags" optional="true"/>
@@ -655,19 +655,19 @@
 		<block id="trial3">
 			<case id="C3_1">
 				<slide template="case_tags_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C3_image1" url="/images/case3_1_br.jpg" />
 					<paragraph>Whole wheat toast with white cheese spread and fruite spread,  blueberries</paragraph>
 					<textarea id="C3_1_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C3_image2" url="/images/case3_1_lunch.jpg" />
 					<paragraph>Rigatoni with tomato meat sauce and mixed vegetables</paragraph>
 					<textarea id="C3_1_lunch_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C3_image3" url="/images/case3_1_dinner.jpg" />
 					<paragraph>Grilled chicken breast with squash, corn on a cob, and tomato salad</paragraph>
 					<textarea id="C3_1_dinner_tags" />
@@ -675,19 +675,19 @@
 			</case>
 			<case id="C3_2">
 				<slide template="case_tags_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C3_image4" url="/images/case3_2_br.jpg" />
 					<paragraph>Whole wheat toast with cream cheese and fruit spread, melon</paragraph>
 					<textarea id="C3_2_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C3_image5" url="/images/case3_2_lunch.jpg" />
 					<paragraph>Chicken and mixed greens salad, 2 rice cakes</paragraph>
 					<textarea id="C3_2_lunch_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C3_image6" url="/images/case3_2_dinner.jpg" />
 					<paragraph>Chicken breast with roasted potatoes and  summer vegetables</paragraph>
 					<textarea id="C3_2_dinner_tags" />
@@ -695,19 +695,19 @@
 			</case>
 			<case id="C3_3">
 				<slide template="case_tags_meal">
-					<paragraph>Breakfast</paragraph>
+					<paragraph style="bold">Breakfast</paragraph>
 					<image id="C3_image7" url="/images/case3_3_br.jpg" />
 					<paragraph>Whole grain toast with camembert cheese and fruit preserve</paragraph>
 					<textarea id="C3_3_br_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Lunch</paragraph>
+					<paragraph style="bold">Lunch</paragraph>
 					<image id="C3_image8" url="/images/case3_3_lunch.jpg" />
 					<paragraph>Chicken thighs with roasted potatoes and cauliflower</paragraph>
 					<textarea id="C3_3_lunch_tags" />
 				</slide>
 				<slide template="case_tags_meal">
-					<paragraph>Dinner</paragraph>
+					<paragraph style="bold">Dinner</paragraph>
 					<image id="C3_image9" url="/images/case3_3_dinner.jpg" />
 					<paragraph>Steamed chicken breast with mashed potatoes and mixed vegetables</paragraph>
 					<textarea id="C3_3_dinner_tags" />

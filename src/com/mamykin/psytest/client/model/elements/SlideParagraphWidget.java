@@ -14,6 +14,9 @@ public class SlideParagraphWidget extends SlideElementWidget {
 		label.setText(paragraph.getText());
 		label.setWordWrap(true);
 		label.setHorizontalAlignment(convertAlignment(paragraph.getAlignment()));
+		if (paragraph.getStyle() != null) {
+			label.addStyleDependentName(paragraph.getStyle());
+		}
 		initWidget(label);
 	}
 

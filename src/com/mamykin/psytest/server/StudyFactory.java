@@ -213,7 +213,7 @@ public class StudyFactory {
 	}
 
 	private StudySlideElement parseParagraph(Element slideElement) {
-		return new SlideParagraphElement(slideElement.getTextContent(), slideElement.getAttribute("align"));
+		return new SlideParagraphElement(slideElement.getTextContent(), slideElement.getAttribute("align"), slideElement.getAttribute("style"));
 	}
 
 	private List<Element> selectGroupedChildrenElements(Element element, String groupElementTag, String childElementTag) {

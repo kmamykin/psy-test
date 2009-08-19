@@ -11,14 +11,16 @@ public class SlideParagraphElement implements StudySlideElement, Serializable {
 	private static final long serialVersionUID = -2605107804906451484L;
 	private String text;
 	private String alignment;
+	private String style;
 
 	public SlideParagraphElement() {
-		this("", null);
+		this("", null, null);
 	}
 
-	public SlideParagraphElement(String text, String alignment) {
+	public SlideParagraphElement(String text, String alignment, String style) {
 		this.text = text;
 		this.alignment = alignment;
+		this.style = style;
 	}
 
 	public String getText() {
@@ -27,6 +29,10 @@ public class SlideParagraphElement implements StudySlideElement, Serializable {
 
 	public String getAlignment() {
 		return alignment;
+	}
+
+	public String getStyle() {
+		return style;
 	}
 
 	public SlideElementWidget createWidget() {
