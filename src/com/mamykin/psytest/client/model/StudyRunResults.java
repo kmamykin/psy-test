@@ -21,7 +21,7 @@ public class StudyRunResults implements Serializable, StudyResultLogger {
 		}
 		sb.delete(sb.length() - 2, sb.length()).append("\n");
 		for (ResultRowValue value : results) {
-			sb.append(value.Value).append(", ");
+			sb.append(quoteForCsv(value.Value)).append(", ");
 		}
 		sb.delete(sb.length() - 2, sb.length()).append("\n");
 		return sb.toString();
@@ -32,6 +32,14 @@ public class StudyRunResults implements Serializable, StudyResultLogger {
 		rowValue.Key = key;
 		rowValue.Value = value;
 		results.add(rowValue);
+	}
+
+	private String quoteForCsv(String value) {
+		if (value == null) {
+			return "\"n/a\"";
+		} else {
+			return "\"" + value.replaceAll("\"", "\"\"").replaceAll("\n", " ") + "\"";
+		}
 	}
 
 	public static class ResultRowValue implements Serializable {
