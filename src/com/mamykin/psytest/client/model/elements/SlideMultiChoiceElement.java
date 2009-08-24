@@ -14,6 +14,7 @@ public class SlideMultiChoiceElement implements StudySlideElement, Serializable 
 	private String id;
 	private String question;
 	private List<String> choices;
+	private String text;
 
 	public SlideMultiChoiceElement() {
 		this("", "", null);
@@ -30,10 +31,13 @@ public class SlideMultiChoiceElement implements StudySlideElement, Serializable 
 	}
 
 	public void recordResult(StudyResultLogger logger) {
-		logger.addValue(getId(), formatAsString(getUserSelectedChoices()));
+		logger.addValue(getId() + "Tags", formatAsString(getUserSelectedChoices()));
+		logger.addValue(getId() + "Text", getText());
 	}
 
 	private String formatAsString(List<String> list) {
+		if (list.size() == 0)
+			return "";
 		StringBuilder sb = new StringBuilder();
 		for (String element : list) {
 			sb.append(element).append(";");
@@ -54,11 +58,19 @@ public class SlideMultiChoiceElement implements StudySlideElement, Serializable 
 	}
 
 	public void setUserSelectedChoices(List<String> selectedChoices) {
-		this.userSelectedChoices = selectedChoices;
+		userSelectedChoices = selectedChoices;
 	}
 
 	public List<String> getUserSelectedChoices() {
-		return this.userSelectedChoices;
+		return userSelectedChoices;
+	}
+
+	public void setText(String value) {
+		text = value;
+	}
+
+	public String getText() {
+		return text;
 	}
 
 }
