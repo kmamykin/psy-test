@@ -43,4 +43,8 @@ public class SlideParagraphElement implements StudySlideElement, Serializable {
 		// do nothing
 	}
 
+	public StudySlideElement copyElement() {
+		return new SlideParagraphElement(this.getText(), this.getAlignment(), this.getStyle());
+	}
+
 }

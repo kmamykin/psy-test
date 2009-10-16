@@ -36,4 +36,8 @@ public class SlideImageElement implements StudySlideElement, Serializable {
 	public String getId() {
 		return id;
 	}
+
+	public StudySlideElement copyElement() {
+		return new SlideImageElement(this.getId(), this.getUrl());
+	}
 }

@@ -9,16 +9,21 @@ import com.mamykin.psytest.client.model.StudySlideElement;
 public class StudyPlaceholderElement implements StudySlideElement, Serializable {
 	private static final long serialVersionUID = -5232787288721037717L;
 
-	public StudyPlaceholderElement(){
-		
+	public StudyPlaceholderElement() {
+
 	}
+
 	public SlideElementWidget createWidget() {
 		throw new UnsupportedOperationException("This placeholder should  have been replaced with a real widget.");
 	}
 
 	public void recordResult(StudyResultLogger logger) {
 		// do nothin, as the placeholder will be replaced with a real element
-		
+
+	}
+
+	public StudySlideElement copyElement() {
+		return new StudyPlaceholderElement();
 	}
 
 }

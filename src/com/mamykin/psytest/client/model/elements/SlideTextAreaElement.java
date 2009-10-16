@@ -38,6 +38,10 @@ public class SlideTextAreaElement implements StudySlideElement, Serializable {
 		logger.addValue(getId(), text);
 	}
 
+	public StudySlideElement copyElement() {
+		return new SlideTextAreaElement(this.getId(), Boolean.toString(this.isOptional()));
+	}
+
 	public void setText(String value) {
 		this.text = value;
 	}

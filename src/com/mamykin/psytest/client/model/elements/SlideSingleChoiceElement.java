@@ -63,6 +63,10 @@ public class SlideSingleChoiceElement implements StudySlideElement, Serializable
 		logger.addValue(getId(), correctAnswerSelected());
 	}
 
+	public StudySlideElement copyElement() {
+		return new SlideSingleChoiceElement(this.getId(), this.getQuestion(), this.getAnswers());
+	}
+
 	private String correctAnswerSelected() {
 		return getCorrectAnswerIndex() == getUserSelectedAnswerIndex() ? "Correct" : "Incorrect";
 	}

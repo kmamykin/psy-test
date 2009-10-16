@@ -107,16 +107,18 @@ public class StudySlide implements Serializable {
 		result.setTimeLimitInSec(slideTemplate.getTimeLimitInSec());
 		int placeholderReplacementIndex = 0;
 		for (StudySlideElement element : slideTemplate.getElements()) {
+			StudySlideElement elementDuplicate = null;
 			if (element instanceof StudyPlaceholderElement) {
 				try {
-					result.addElement(getElements().get(placeholderReplacementIndex++));
+					elementDuplicate = getElements().get(placeholderReplacementIndex++).copyElement();
 				} catch (IndexOutOfBoundsException e) {
 					throw new IndexOutOfBoundsException("Trying to access " + placeholderReplacementIndex + " element in slide " + getName()
 							+ " to match template " + slideTemplate.getName());
 				}
 			} else {
-				result.addElement(element);
+				elementDuplicate = element.copyElement();
 			}
+			result.addElement(elementDuplicate);
 		}
 		return result;
 	}

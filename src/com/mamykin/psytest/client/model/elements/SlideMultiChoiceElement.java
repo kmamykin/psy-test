@@ -35,6 +35,10 @@ public class SlideMultiChoiceElement implements StudySlideElement, Serializable 
 		logger.addValue(getId() + "Text", getText());
 	}
 
+	public StudySlideElement copyElement() {
+		return new SlideMultiChoiceElement(this.getId(), this.getQuestion(), this.getChoices());
+	}
+
 	private String formatAsString(List<String> list) {
 		if (list.size() == 0)
 			return "";
