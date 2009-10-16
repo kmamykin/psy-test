@@ -195,6 +195,9 @@
 						<answer>No</answer>
 					</singlechoice>
 				</slide>
+				
+<!--  Question 3: health judgment diet -->
+
 				<slide template="question3_health_judgement_diet">
 					<singlechoice id="C1_Q3">
 						<question>How healthy was the diet of this individual?</question>
@@ -206,6 +209,9 @@
 					</singlechoice>
 					<textarea id="C1_Q3_explanation" />
 				</slide>
+				
+<!--  Question 4: health judgment meal -->
+
 				<slide template="question4_health_judgement_meal">
 					<image id="C1_image19" url="/images/healthy_1.jpg" />
 					<paragraph>Whole grain English muffin with brown yogurt spread, hard boiled egg, Activa yogurt and coffee</paragraph>
@@ -245,6 +251,9 @@
 					</singlechoice>
 					<textarea id="C1_Q4_explanation3" />
 				</slide>
+				
+<!--  Question 5: meal choice -->
+
 				<slide template="question5_mealchoice">
 					<singlechoice id="C1_Q5_1">
 						<question>You are trying to follow a healthy diet. Which of these meals would you choose?</question>
@@ -883,7 +892,8 @@
 				describe some of these meals, view photographs of meals and decide whether these 
 				meals were a part of the individual’s diet, judge how healthy the diet of this 
 				individual was, judge several new pictures on their healthfulness and think 
-				about what meals you would choose for yourself. 
+				about what meals you would choose for yourself. When asked to judge how healthy the meals were, 
+				please be honest and direct, your poor assessment of meals will not hurt anybody's feelings. 
 			</paragraph>
 			<paragraph>
 				When you think you are ready to continue, please click the Continue button.
@@ -966,14 +976,14 @@
 			<placeholder />
 			<paragraph>
 				Please explain your answer. What did you like about that
-				particular meal?
+				particular meal or disliked about the alternatives?
 			</paragraph>
 			<placeholder />
 		</slidetemplate>
 
 		<slidetemplate name="tagging_intro">
 			<paragraph>
-				Thank you for completing the first trial.
+				Thank you for completing the trial.
 			</paragraph>
 			<paragraph>
 				In the next trial you will be asked to look at another set of meal photographs 
